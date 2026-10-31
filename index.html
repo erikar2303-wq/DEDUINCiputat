@@ -463,7 +463,13 @@ async function startShared(){
 }
 (async function initShared(){
   if(!(window.supabase && supabase.createClient)){ fatal("Pustaka Supabase gagal dimuat. Periksa koneksi internet."); return; }
-  if(!CFG.SUPABASE_URL || /xxxx/.test(CFG.SUPABASE_URL) || !CFG.SUPABASE_ANON_KEY){ fatal("config.js belum diisi (SUPABASE_URL dan SUPABASE_ANON_KEY)."); return; }
+  const cfgUrl = new URL("config.js", location.href).href;
+  const cfgLink = `<br><a href="${cfgUrl}" target="_blank" rel="noopener">${esc(cfgUrl)}</a>`;
+  if(!window.KK_CONFIG){ fatal("Berkas <b>config.js</b> tidak ditemukan di alamat ini atau isinya salah ketik (tanda kutip/koma/kurung terhapus). Buka:" + cfgLink); return; }
+  if(!CFG.SUPABASE_URL || /xxxx/.test(CFG.SUPABASE_URL)){ fatal("<b>SUPABASE_URL</b> di config.js masih contoh/kosong. Berkas yang terbaca:" + cfgLink); return; }
+  if(!CFG.SUPABASE_ANON_KEY || /TEMPEL/i.test(CFG.SUPABASE_ANON_KEY)){ fatal("<b>SUPABASE_ANON_KEY</b> di config.js belum diisi (masih TEMPEL_...). Isi dengan Publishable key / anon key. Berkas yang terbaca:" + cfgLink); return; }
+  CFG.SUPABASE_URL = CFG.SUPABASE_URL.trim().replace(/\/rest\/v1\/?$/,"").replace(/\/+$/,"");
+  CFG.SUPABASE_ANON_KEY = CFG.SUPABASE_ANON_KEY.trim();
   SB = supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY, { auth:{ persistSession:true, autoRefreshToken:true, detectSessionInUrl:true } });
   let started = false;
   const go = async (session)=>{ if(session && !started){ started = true; await startShared(); } };
