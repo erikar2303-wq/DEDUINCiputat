@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta name="kk-versi" content="2026-10-31 22:25">
 <title>Kertas Kerja Evaluasi Kualifikasi – Perencana Gedung Asrama UIN Jakarta 2026</title>
 <style>
 :root{
@@ -87,6 +86,7 @@ ul.r{margin:4px 0 0;padding-left:18px;font-size:12.5px}
 @keyframes sp{to{transform:rotate(360deg)}}
 a.btn{text-decoration:none}
 #loadingOv{background:#e9efea}
+#pwBox{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:110;padding:16px}
 .lnk{background:none;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:1px 8px;font:inherit;font-size:11px;cursor:pointer;margin-left:6px}
 @media(max-width:640px){
   html,body{font-size:15px}
@@ -109,7 +109,13 @@ a.btn{text-decoration:none}
 }
 </style>
 <script>/* konfigurasi tertanam (cadangan bila config.js tidak terbaca) */
-window.KK_CONFIG_EMBED = {SUPABASE_URL:"https://pnlrtmvaylnzwysxuiav.supabase.co", SUPABASE_ANON_KEY:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBubHJ0bXZheWxuend5c3h1aWF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM0NTQxMzIsImV4cCI6MjEwOTAzMDEzMn0.Bh0m2EoDxut4vEH6pSwYn-mj4fYOu9HdovpCyIUtckw", LOGIN_GOOGLE:false};</script>
+/* Konfigurasi Kertas Kerja Pokja — proyek Supabase pnlrtmvaylnzwysxuiav (kunci anon/public). */
+window.KK_CONFIG_EMBED = {
+  SUPABASE_URL: "https://pnlrtmvaylnzwysxuiav.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBubHJ0bXZheWxuend5c3h1aWF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM0NTQxMzIsImV4cCI6MjEwOTAzMDEzMn0.Bh0m2EoDxut4vEH6pSwYn-mj4fYOu9HdovpCyIUtckw",
+  LOGIN_GOOGLE: false
+};
+</script>
 <script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 </head>
@@ -341,7 +347,8 @@ function showOnline(){
   const el = document.getElementById("onlineBar"); if(!el) return;
   const others = SY.online.filter(x=>x!==SY.me);
   el.innerHTML = `<span class="dot"></span> ${esc(SY.nama||SY.me)}` + (others.length? ` · juga membuka: ${others.map(esc).join(", ")}` : "") +
-    ` <button class="lnk" id="btnLogout">Keluar</button>`;
+    ` <button class="lnk" id="btnPw">Ganti sandi</button><button class="lnk" id="btnLogout">Keluar</button>`;
+  const bp = document.getElementById("btnPw"); if(bp) bp.onclick = changePassword;
   const b = document.getElementById("btnLogout"); if(b) b.onclick = async ()=>{ await flushNow(); await SB.auth.signOut(); location.reload(); };
 }
 
@@ -410,26 +417,60 @@ async function poll(){
   }catch(e){ setStatus("Koneksi terputus, mencoba lagi…"); }
 }
 
-/* ---------- login ---------- */
-function loginScreen(msg){
+/* ---------- login (email + kata sandi) ---------- */
+function loginScreen(msg, emailVal){
   const ov = document.getElementById("loadingOv");
   ov.innerHTML = `<div class="ovbox" style="text-align:left">
     <b style="font-size:16px">Masuk ke Kertas Kerja Pokja</b>
-    <p class="hint">Khusus anggota Pokja yang terdaftar. Masukkan email Anda; tautan masuk akan dikirim ke email tersebut.</p>
-    ${msg? `<div class="alert info">${msg}</div>`:""}
-    <label class="f"><span class="l">Email</span><input id="lgEmail" type="email" autocomplete="email" placeholder="nama@instansi.go.id"></label>
-    <div class="row" style="margin-top:10px"><button class="btn" id="lgSend">Kirim tautan masuk</button></div>
-    ${CFG.LOGIN_GOOGLE? `<div class="row" style="margin-top:8px"><button class="btn sec" id="lgGoogle">Masuk dengan akun Google</button></div>`:""}
-    <p class="hint" style="margin-top:10px">Buka tautan dari email pada perangkat dan peramban yang sama dengan halaman ini.</p></div>`;
-  const redirect = location.origin + location.pathname;
-  document.getElementById("lgSend").onclick = async ()=>{
-    const email = document.getElementById("lgEmail").value.trim();
-    if(!/^\S+@\S+\.\S+$/.test(email)){ loginScreen("Format email tidak valid."); return; }
-    const { error } = await SB.auth.signInWithOtp({ email, options:{ emailRedirectTo: redirect } });
-    loginScreen(error? "Gagal mengirim tautan: " + esc(error.message) : `Tautan masuk telah dikirim ke <b>${esc(email)}</b>. Periksa kotak masuk/spam, lalu klik tautannya.`);
+    <p class="hint">Khusus anggota Pokja yang terdaftar. Gunakan email dan kata sandi yang diberikan Ketua/Sekretaris Pokja.</p>
+    ${msg? `<div class="alert ${/berhasil/i.test(msg)?"ok":"bad"}">${msg}</div>`:""}
+    <form id="lgForm" autocomplete="on">
+      <label class="f"><span class="l">Email</span><input id="lgEmail" type="email" autocomplete="username" placeholder="nama@instansi.go.id" value="${esc(emailVal||"")}" required></label>
+      <label class="f" style="margin-top:8px"><span class="l">Kata sandi</span>
+        <div style="display:flex;gap:6px"><input id="lgPass" type="password" autocomplete="current-password" required style="flex:1"><button type="button" class="btn sec sm" id="lgShow">Lihat</button></div></label>
+      <div class="row" style="margin-top:12px"><button class="btn" id="lgBtn" type="submit" style="flex:1;justify-content:center">Masuk</button></div>
+    </form>
+    ${CFG.LOGIN_GOOGLE? `<div class="row" style="margin-top:8px"><button class="btn sec" id="lgGoogle" style="flex:1;justify-content:center">Masuk dengan akun Google</button></div>`:""}
+    <p class="hint" style="margin-top:10px">Lupa kata sandi? Hubungi Ketua/Sekretaris Pokja untuk mengatur ulang. Setelah masuk, Anda tidak perlu masuk lagi di perangkat ini sampai menekan <b>Keluar</b>.</p></div>`;
+  const em = document.getElementById("lgEmail"), pw = document.getElementById("lgPass");
+  (emailVal? pw : em).focus();
+  document.getElementById("lgShow").onclick = ()=>{ pw.type = pw.type==="password"? "text" : "password"; };
+  document.getElementById("lgForm").onsubmit = async (ev)=>{
+    ev.preventDefault();
+    const btn = document.getElementById("lgBtn"); btn.disabled = true; btn.textContent = "Memeriksa…";
+    const email = em.value.trim().toLowerCase(), password = pw.value;
+    const { error } = await SB.auth.signInWithPassword({ email, password });
+    if(error){
+      const m = /invalid login credentials/i.test(error.message)? "Email atau kata sandi salah." :
+                /email not confirmed/i.test(error.message)? "Akun belum dikonfirmasi. Minta Ketua/Sekretaris mencentang <b>Auto Confirm User</b> saat membuat akun." :
+                "Gagal masuk: " + esc(error.message);
+      loginScreen(m, email);
+    }
   };
   const g = document.getElementById("lgGoogle");
-  if(g) g.onclick = ()=> SB.auth.signInWithOAuth({ provider:"google", options:{ redirectTo: redirect } });
+  if(g) g.onclick = ()=> SB.auth.signInWithOAuth({ provider:"google", options:{ redirectTo: location.origin + location.pathname } });
+}
+/* ganti kata sandi sendiri */
+function changePassword(){
+  let box = document.getElementById("pwBox");
+  if(!box){ box = document.createElement("div"); box.id = "pwBox"; document.body.appendChild(box); }
+  box.style.display = "flex";
+  box.innerHTML = `<div class="ovbox" style="text-align:left"><b>Ganti kata sandi</b>
+    <p class="hint">Minimal 8 karakter. Gunakan kombinasi huruf dan angka.</p>
+    <div id="pwMsg"></div>
+    <label class="f"><span class="l">Kata sandi baru</span><input id="pw1" type="password" autocomplete="new-password"></label>
+    <label class="f" style="margin-top:8px"><span class="l">Ulangi kata sandi baru</span><input id="pw2" type="password" autocomplete="new-password"></label>
+    <div class="row" style="margin-top:12px"><button class="btn sec" id="pwCancel">Batal</button><button class="btn" id="pwSave">Simpan</button></div></div>`;
+  const msg = t=>{ document.getElementById("pwMsg").innerHTML = t; };
+  document.getElementById("pwCancel").onclick = ()=>{ box.style.display = "none"; };
+  document.getElementById("pwSave").onclick = async ()=>{
+    const a = document.getElementById("pw1").value, b = document.getElementById("pw2").value;
+    if(a.length < 8){ msg(`<div class="alert bad">Kata sandi minimal 8 karakter.</div>`); return; }
+    if(a !== b){ msg(`<div class="alert bad">Kedua kata sandi tidak sama.</div>`); return; }
+    const { error } = await SB.auth.updateUser({ password: a });
+    if(error){ msg(`<div class="alert bad">Gagal: ${esc(error.message)}</div>`); return; }
+    box.style.display = "none"; toast("Kata sandi berhasil diganti.");
+  };
 }
 function fatal(msg){
   const ov = document.getElementById("loadingOv");
