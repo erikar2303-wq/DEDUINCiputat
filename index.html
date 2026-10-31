@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Kertas Kerja Evaluasi Kualifikasi – Perencana Gedung Asrama UIN Jakarta 2026</title>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#fff; --ink:#1d2433; --muted:#5d6678; --line:#dde1e8;
+  --brand:#14532d; --brand2:#166534; --brandSoft:#e8f3ec;
+  --ok:#15803d; --okBg:#dcfce7; --bad:#b91c1c; --badBg:#fee2e2; --warn:#a16207; --warnBg:#fef3c7;
+  --r:10px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+header{background:var(--brand);color:#fff;padding:14px 16px 10px}
+header h1{margin:0;font-size:16px;font-weight:650;letter-spacing:.2px}
+header p{margin:2px 0 0;font-size:12px;opacity:.85}
+nav{position:sticky;top:0;z-index:5;background:var(--brand2);display:flex;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:0 0 auto;background:none;border:0;color:#d7eadc;padding:11px 14px;font:inherit;font-size:13px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+nav button.on{color:#fff;border-bottom-color:#fbbf24;font-weight:600}
+main{max-width:1100px;margin:0 auto;padding:14px 12px 80px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:12px}
+.card h2{font-size:15px;margin:0 0 10px}
+.card h3{font-size:14px;margin:14px 0 8px}
+.hint{color:var(--muted);font-size:12px;margin:4px 0 8px}
+.grid{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:700px){.grid.c2{grid-template-columns:1fr 1fr}.grid.c3{grid-template-columns:1fr 1fr 1fr}.grid.c4{grid-template-columns:repeat(4,1fr)}}
+label.f{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)}
+label.f span.l{font-weight:550}
+input,select,textarea{font:inherit;font-size:14px;color:var(--ink);border:1px solid #c9ced8;border-radius:7px;padding:8px 9px;background:#fff;width:100%;min-width:0}
+textarea{min-height:58px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid #86efac;border-color:var(--brand2)}
+input[type=checkbox]{width:auto}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:13px;padding:4px 0}
+.chk input{margin-top:3px}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--brand2);background:var(--brand2);color:#fff;border-radius:8px;padding:8px 13px;font:inherit;font-size:13px;font-weight:550;cursor:pointer}
+.btn.sec{background:#fff;color:var(--brand2)}
+.btn.dan{background:#fff;color:var(--bad);border-color:#fca5a5}
+.btn.sm{padding:5px 9px;font-size:12px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sp{flex:1}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:10px}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip.on{background:var(--brandSoft);border-color:var(--brand2);color:var(--brand);font-weight:600}
+.b{display:inline-block;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:650;white-space:nowrap}
+.b.ok{background:var(--okBg);color:var(--ok)} .b.bad{background:var(--badBg);color:var(--bad)} .b.na{background:#eef0f4;color:var(--muted)} .b.warn{background:var(--warnBg);color:var(--warn)}
+.item{border:1px solid var(--line);border-radius:9px;padding:10px;margin-bottom:8px;background:#fcfcfd}
+.item .top{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}
+.item .no{flex:0 0 auto;font-size:11px;color:var(--muted);background:#eef0f4;border-radius:5px;padding:2px 6px;margin-top:1px}
+.item .tt{flex:1;font-weight:550;font-size:13px}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.tbl th,.tbl td{border:1px solid var(--line);padding:6px 7px;vertical-align:top;text-align:left}
+.tbl th{background:#f0f2f5;font-weight:600}
+.tbl td.c,.tbl th.c{text-align:center}
+.tbl td.n{text-align:right;font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+.alert{border-radius:9px;padding:10px 12px;font-size:13px;margin-bottom:10px}
+.alert.warn{background:var(--warnBg);color:#713f12;border:1px solid #fde68a}
+.alert.bad{background:var(--badBg);color:#7f1d1d;border:1px solid #fecaca}
+.alert.ok{background:var(--okBg);color:#14532d;border:1px solid #bbf7d0}
+.alert.info{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#111827;color:#fff;padding:10px 16px;border-radius:9px;font-size:13px;z-index:50;max-width:92vw;box-shadow:0 6px 18px rgba(0,0,0,.25);display:none}
+.status{font-size:11px;opacity:.85;margin-top:4px}
+ul.r{margin:4px 0 0;padding-left:18px;font-size:12.5px}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px}
+.kpi div{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 10px}
+.kpi b{display:block;font-size:20px}
+.kpi span{font-size:11.5px;color:var(--muted)}
+.dl{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:700px){.dl{grid-template-columns:1fr 1fr}}
+.dl .card{margin:0}
+
+/* ---- versi bersama: status, overlay, ponsel ---- */
+.status.online{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.status .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block}
+#loadingOv,#dlBox{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;align-items:center;justify-content:center;z-index:100;padding:16px}
+#dlBox{display:none}
+.ovbox{background:#fff;border-radius:12px;padding:18px;max-width:420px;width:100%;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.ovbox p{margin:6px 0}
+.ovbox .row{justify-content:center;margin-top:10px}
+.spin{width:30px;height:30px;border:3px solid #d1fae5;border-top-color:var(--brand2);border-radius:50%;margin:0 auto 10px;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+a.btn{text-decoration:none}
+#loadingOv{background:#e9efea}
+.lnk{background:none;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:1px 8px;font:inherit;font-size:11px;cursor:pointer;margin-left:6px}
+@media(max-width:640px){
+  html,body{font-size:15px}
+  header{padding:10px 12px 8px}
+  header h1{font-size:14px}
+  main{padding:10px 8px 90px}
+  .card{padding:12px 10px}
+  input,select,textarea{font-size:16px;padding:10px}
+  .btn{padding:10px 14px;font-size:14px}
+  .btn.sm{padding:7px 10px;font-size:13px}
+  nav button{padding:12px 12px;font-size:13.5px}
+  .row .btn{flex:1 1 auto;justify-content:center}
+  .scroll{overflow:visible}
+  .tbl,.tbl tbody{display:block;border:0}
+  .tbl tr.hd{display:none}
+  .tbl tr{display:block;border:1px solid var(--line);border-radius:9px;margin-bottom:8px;background:#fff;overflow:hidden}
+  .tbl td{display:block;position:relative;padding:8px 8px 8px 40%;border:0;border-bottom:1px solid #eef0f4;text-align:left!important;min-width:0!important;min-height:34px}
+  .tbl td:last-child{border-bottom:0}
+  .tbl td::before{content:attr(data-label);position:absolute;left:8px;top:8px;width:calc(40% - 16px);font-weight:600;color:var(--muted);font-size:12px;line-height:1.3}
+}
+</style>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+</head>
+<body>
+<div id="loadingOv"><div class="ovbox"><div class="spin"></div><b>Menghubungkan…</b></div></div>
+<header>
+  <h1>Kertas Kerja Evaluasi &amp; Pembuktian Kualifikasi</h1>
+  <p id="hdrPaket">Seleksi Prakualifikasi — Jasa Konsultansi Konstruksi Perencana Gedung Asrama Mahasiswa UIN Syarif Hidayatullah Jakarta TA 2026</p>
+  <div class="status" id="saveStatus">Menghubungkan ke data bersama…</div>
+  <div class="status online" id="onlineBar"></div>
+</header>
+<nav id="tabs"></nav>
+<main id="view"></main>
+<div class="toast" id="toast"></div>
+<input type="file" id="fileImport" accept=".json,application/json" style="display:none">
+<input type="file" id="logoFile" accept="image/png,image/jpeg" style="display:none">
+
+<script>
+"use strict";
+/* =========================================================
+   1. KONSTANTA DARI DOKUMEN KUALIFIKASI
+   No. 002/UKPBJ/10175269000/10/2026, 22 Oktober 2026
+   ========================================================= */
+const TA = 2026;
+const DEFAULT_PAKET = {
+  namaPaket: "Jasa Konsultansi Konstruksi Perencana Pembangunan Gedung Asrama Mahasiswa UIN Syarif Hidayatullah Jakarta Tahun Anggaran 2026",
+  pokja: "Kelompok Kerja Pemilihan Seleksi Jasa Konsultansi Konstruksi Perencana Pembangunan Gedung Asrama Mahasiswa UIN Syarif Hidayatullah Jakarta Tahun Anggaran 2026",
+  instansi: "Kementerian Agama Republik Indonesia",
+  ukpbj: "Unit Kerja Pengadaan Barang/Jasa Kementerian Agama RI",
+  alamatPokja: "Sekretariat UKPBJ Kementerian Agama RI, Jalan Lapangan Banteng Barat No. 3-4, Jakarta Pusat",
+  spse: "https://spse.inaproc.id/kemenag",
+  noDok: "002/UKPBJ/10175269000/10/2026",
+  tglDok: "2026-10-22",
+  kodeTender: "",
+  metode: "Seleksi, Prakualifikasi (Administrasi: Sistem Gugur; Teknis: Pembobotan dengan Ambang Batas)",
+  lokasi: "Jl. Kertamukti No. 4, Pisangan, Kec. Ciputat Timur, Kota Tangerang Selatan, Banten 15419",
+  waktu: "30 (tiga puluh) hari kalender sejak SPMK",
+  sumberDana: "APBN - BLU UIN Syarif Hidayatullah Jakarta Tahun Anggaran 2026",
+  pagu: 2912147000,
+  hps: 2509572360,
+  kualifikasiUsaha: "Besar",
+  batasPemasukan: "",
+  tglEvaluasi: "",
+  noBAEval: "",
+  noUndangan: "",
+  noBAPembuktian: "",
+  tglPembuktian: "",
+  jamPembuktian: "",
+  metodePembuktian: "Tatap Muka",
+  tempatPembuktian: "Sekretariat UKPBJ Kementerian Agama RI, Jalan Lapangan Banteng Barat No. 3-4, Jakarta Pusat",
+  kotaTtd: "Jakarta",
+  satker: "UIN Syarif Hidayatullah Jakarta",
+  kop: "UNIT KERJA PENGADAAN BARANG/JASA (UKPBJ)\nKEMENTERIAN AGAMA REPUBLIK INDONESIA\nSEKRETARIAT JENDERAL\nJalan Lapangan Banteng Barat Nomor 3-4 Jakarta 10710\nTelepon (021) 3811244, 3811642, 3811654, 3811658, 3811779, 3812216 Ext. 415-413\nwebsite: www.kemenag.go.id; lpse.kemenag.go.id",
+  useLogo: true, logo: "", logoW: 204, logoH: 195,
+  fontBA: "Footlight MT Light", fontLamp: "Arial"
+};
+const LOGO_DEFAULT = "data:image/jpeg;base64,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";
+const DEFAULT_PARAM = {
+  awal4: (TA - 4) + "-01-01",     // pengalaman 4 tahun terakhir
+  awal10: (TA - 10) + "-01-01",   // pengalaman 10 tahun terakhir (Bab VIII B.7.a)
+  ambangB: 30, ambangC: 30, ambangTotal: 60,
+  minKinerja: 2,                  // Baik = 2 s.d. <3, Sangat Baik = 3
+  maxKSO: 3, maxLeadShare: 70, maxShortlist: 7, minLulus: 3
+};
+
+/* Persyaratan Administrasi/Legalitas per badan usaha (LDK E.A & Bab IX) */
+const OPTS = {
+  ada:    [["Ada","M"],["Tidak Ada","TM"]],
+  ss:     [["Terverifikasi","M"],["Belum terverifikasi + ada tangkapan layar OSS (menunggu verifikasi)","M"],["Belum terverifikasi, tanpa tangkapan layar OSS","TM"],["Tidak Ada","TM"]],
+  kswp:   [["Valid","M"],["Tidak Valid","TM"],["Tidak Ada","TM"]],
+  cond:   [["Tidak dikuasakan (tidak diperlukan)","M"],["Ada","M"],["Tidak Ada","TM"]],
+  setuju: [["Menyetujui","M"],["Tidak Menyetujui","TM"]],
+  dh:     [["Tidak tercantum","M"],["Tercantum dalam Daftar Hitam","TM"]]
+};
+const ADM = [
+  {k:"nib",   no:"A.1.a", t:"Nomor Induk Berusaha (NIB) yang masih berlaku", opt:"ada", nomor:"Nomor NIB"},
+  {k:"ss1",   no:"A.1.a", t:"Sertifikat Standar KBLI 71101 (KBLI 2020) terverifikasi dan masih berlaku", opt:"ss", nomor:"Nomor Sertifikat Standar", berlaku:true},
+  {k:"ss2",   no:"A.1.a", t:"Sertifikat Standar KBLI 71102 (KBLI 2020) terverifikasi dan masih berlaku", opt:"ss", nomor:"Nomor Sertifikat Standar", berlaku:true},
+  {k:"sbu",   no:"A.1.b", t:"SBU Kualifikasi Usaha Besar, subklasifikasi/layanan AR001 (Jasa Arsitektural Bangunan Gedung Hunian dan Non-Hunian) dan RK001 (Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian)", special:"sbu"},
+  {k:"kswp",  no:"A.2",   t:"Status valid keterangan Wajib Pajak berdasarkan Konfirmasi Status Wajib Pajak (KSWP)", opt:"kswp", nomor:"NPWP / tanggal KSWP"},
+  {k:"spt",   no:"A.2",   t:"Bukti Lapor Pajak (SPT) Tahunan Tahun 2025", opt:"ada", nomor:"Nomor BPE / tanggal lapor"},
+  {k:"akta",  no:"A.3.a", t:"Akta Pendirian Perusahaan dan/atau perubahannya", opt:"ada", extra:[["pNo","Akta pendirian – nomor"],["pTgl","Akta pendirian – tanggal","date"],["pNot","Akta pendirian – notaris"],["uNo","Akta perubahan terakhir – nomor"],["uTgl","Akta perubahan terakhir – tanggal","date"],["uNot","Akta perubahan terakhir – notaris"],["ahu","Pengesahan/pemberitahuan Kemenkumham (AHU)"]]},
+  {k:"kuasa", no:"A.3.b", t:"Surat Kuasa (apabila dikuasakan)", opt:"cond", nomor:"Nomor/tanggal surat kuasa"},
+  {k:"pegtap",no:"A.3.c", t:"Bukti bahwa penerima kuasa merupakan pegawai tetap (apabila dikuasakan)", opt:"cond", nomor:"Jenis bukti"},
+  {k:"ktp",   no:"A.3.d", t:"Kartu Tanda Penduduk (direksi/penerima kuasa)", opt:"ada", nomor:"Nama direktur / NIK"},
+  {k:"pakta", no:"A.4",   t:"Menyetujui Pernyataan Pakta Integritas (huruf a s.d. d) pada SPSE", opt:"setuju"},
+  {k:"pernyataan", no:"A.5", t:"Menyetujui surat pernyataan peserta (huruf a s.d. h) pada SPSE", opt:"setuju"},
+  {k:"dh",    no:"A.5.b", t:"Badan usaha/pengurus tidak tercantum dalam Daftar Hitam (hasil pengecekan Pokja pada portal INAPROC)", opt:"dh"},
+  {k:"alamat",no:"Bab IX",t:"Alamat yang jelas disertai bukti kepemilikan/penguasaan", opt:"ada", nomor:"Alamat kantor"}
+];
+const KSO_CONTENT = [
+  ["a","Mencantumkan nama KSO sesuai dokumen isian kualifikasi"],
+  ["b","Mencantumkan nama perusahaan leadfirm dan anggota KSO"],
+  ["c","Mencantumkan pembagian modal (sharing) setiap perusahaan"],
+  ["d","Mencantumkan nama individu dari leadfirm sebagai pihak yang mewakili KSO"],
+  ["e","Ditandatangani oleh setiap perusahaan yang tergabung"]
+];
+/* Item pembuktian (IKP 19 & Bab VIII huruf F) */
+const PB = [
+  {k:"identitas", t:"Identitas diri wakil peserta (KTP/SIM/Paspor) asli"},
+  {k:"kedudukan", t:"Kedudukan wakil: Direksi yang tercantum dalam Akta, atau Surat Kuasa dari Direksi + Bukti Potong SPT PPh 21 Form 1721/1721-A1 (karyawan tetap)"},
+  {k:"nib",       t:"NIB dan Sertifikat Standar KBLI 71101 & 71102 sesuai isian (cek OSS)"},
+  {k:"sbu",       t:"SBU AR001 & RK001 Kualifikasi Besar sesuai isian (cek LPJK)"},
+  {k:"pajak",     t:"NPWP, KSWP status Valid dan Bukti Lapor SPT Tahunan 2025 sesuai isian"},
+  {k:"akta",      t:"Akta Pendirian/Perubahan Terakhir asli/legalisir dan pengesahan/pemberitahuan Kemenkumham sesuai isian"},
+  {k:"kso",       t:"Asli Surat Perjanjian KSO (apabila KSO)"},
+  {k:"kinerja",   t:"Bukti penilaian kinerja penyedia (SIKaP / perhitungan manual Peraturan LKPP 4/2021)"},
+  {k:"sikap",     t:"Verifikasi data kualifikasi pada SIKaP"}
+];
+const PB_OPTS = ["Sesuai","Tidak Sesuai","Tidak Diperlukan"];
+const EXP_STATUS = ["Penyedia Tunggal","KSO","Subkontrak"];
+const BUKTI = ["Terbukti","Tidak Terbukti","Tidak Ditunjukkan"];
+
+/* =========================================================
+   2. STATE & PENYIMPANAN
+   ========================================================= */
+const LS_KEY = "kk-eval-kualifikasi-uin-asrama-2026";
+function uid(){ return Math.random().toString(36).slice(2,9); }
+function newEntity(nama, kual, share){ return {id:uid(), nama:nama||"", kual:kual||"Besar", share:share??"", npwp:"", alamat:"", adm:{}}; }
+function newPeserta(){
+  return {id:uid(), nama:"", npwp:"", alamat:"", email:"", bentuk:"Tunggal", namaKSO:"",
+    ents:[newEntity("", "Besar", 100)], ksoAda:"", ksoIsi:{}, ksoKet:"",
+    kinerja:"", kinerjaSumber:"SIKaP", kinerjaKet:"", exps:[], catatanEval:"",
+    pb:{hadir:"", wakil:"", jabatan:"", noId:"", statusWakil:"", items:{}, pemalsuan:false, catatan:""}};
+}
+function newExp(){ return {id:uid(), ent:0, nama:"", lingkup:"", subklas:"", lokasi:"", pemberi:"", noKontrak:"", tglKontrak:"", nilai:"", status:"Penyedia Tunggal", share:"", tglBAST:"", jkk:true, sejB:false, sejC:false, referensi:false, bukti:"", ket:""}; }
+function defaultState(){
+  return {v:1, paket:{...DEFAULT_PAKET}, param:{...DEFAULT_PARAM},
+    pokjaAnggota:[{nama:"",nip:"",jabatan:"Ketua"},{nama:"",nip:"",jabatan:"Sekretaris"},{nama:"",nip:"",jabatan:"Anggota"}],
+    peserta:[], ui:{tab:"paket", sel:null}, updatedAt:0};
+}
+let S = defaultState();
+function migrate(o){
+  const d = defaultState();
+  const s = Object.assign(d, o||{});
+  s.paket = Object.assign({...DEFAULT_PAKET}, s.paket||{});
+  s.param = Object.assign({...DEFAULT_PARAM}, s.param||{});
+  s.ui = Object.assign({tab:"paket", sel:null}, s.ui||{});
+  s.peserta = (s.peserta||[]).map(p=>{
+    const n = Object.assign(newPeserta(), p);
+    n.pb = Object.assign(newPeserta().pb, p.pb||{});
+    n.pb.items = n.pb.items||{};
+    n.ents = (n.ents && n.ents.length ? n.ents : [newEntity()]).map(e=>Object.assign(newEntity(), e, {adm:e.adm||{}}));
+    n.exps = (n.exps||[]).map(x=>Object.assign(newExp(), x));
+    return n;
+  });
+  return s;
+}
+/* ===== SINKRONISASI BERSAMA (Supabase) =====
+   - Login: tautan masuk via email (opsional: akun Google), lihat config.js.
+   - Data: tabel meta (paket/parameter/anggota Pokja) dan peserta (satu baris per peserta).
+   - Simpan: hanya isian yang berubah dikirim ke fungsi public.simpan() dan digabung di server.
+   - Realtime: perubahan anggota lain diterima seketika; cadangan pengecekan tiap 20 detik. */
+try{ const u = JSON.parse(localStorage.getItem(LS_KEY+"-ui")||"null"); if(u) S.ui = Object.assign(S.ui, u); }catch(e){}
+let DL = null;
+const CFG = window.KK_CONFIG || {};
+const SY = { base:{}, baseOrder:[], since:null, me:"", nama:"", inflight:false, dirty:false, timer:null, ready:false,
+             pendingRender:false, online:[], err:0, needPoll:false, queue:[] };
+let SB = null;
+function setStatus(t){ const el = document.getElementById("saveStatus"); if(el) el.textContent = t; }
+function metaObj(){ return {paket:S.paket, param:S.param, pokjaAnggota:S.pokjaAnggota}; }
+function isObj(x){ return x!==null && typeof x==="object" && !Array.isArray(x); }
+function diff(a, b, path, ops){
+  if(isObj(a) && isObj(b)){
+    const ks = new Set([...Object.keys(a), ...Object.keys(b)]);
+    ks.forEach(k=>{ if(!(k in b)) ops.push({p:path.concat(k), d:1}); else diff(a[k], b[k], path.concat(k), ops); });
+    return ops;
+  }
+  if(Array.isArray(a) && Array.isArray(b)){
+    const same = a.length===b.length && a.every((x,i)=> !(isObj(x)&&isObj(b[i])&&("id" in x || "id" in b[i])) || x.id===b[i].id);
+    if(same){ a.forEach((x,i)=>diff(x, b[i], path.concat(i), ops)); return ops; }
+    ops.push({p:path, v:b}); return ops;
+  }
+  if(a!==b && JSON.stringify(a)!==JSON.stringify(b)) ops.push({p:path, v:b===undefined? null : b});
+  return ops;
+}
+function applyOps(obj, ops){
+  ops.forEach(op=>{
+    const p = op.p||[]; if(!p.length) return; let o = obj;
+    for(let i=0;i<p.length-1;i++){ const k = p[i]; if(o[k]===null || typeof o[k]!=="object") o[k] = typeof p[i+1]==="number"? [] : {}; o = o[k]; }
+    const last = p[p.length-1];
+    if(op.d){ if(Array.isArray(o)) o.splice(last,1); else delete o[last]; } else o[last] = op.v;
+  });
+  return obj;
+}
+const clone = o => JSON.parse(JSON.stringify(o));
+function summary(p){ try{ const e = evalResult(p); return {nama:pName(p), bentuk:p.bentuk, admin:e.ad, total:e.t.total, hasil:e.hasil}; }catch(e){ return {nama:pName(p)}; } }
+function userEditing(){ const a = document.activeElement; return !!(a && a.closest && a.closest("#view") && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)); }
+function softRender(){ if(userEditing()) SY.pendingRender = true; else render(); }
+document.addEventListener("focusout", ()=>setTimeout(()=>{ if(SY.pendingRender && !userEditing()){ SY.pendingRender = false; render(); } }, 50));
+function bump(ts){ const t = ts? Date.parse(ts) : NaN; if(isFinite(t) && (!SY.sinceMs || t > SY.sinceMs)){ SY.sinceMs = t; SY.since = new Date(t - 1).toISOString(); } }
+
+/* baris server -> rekaman seragam */
+function recP(r){ return {id:r.id, ver:r.ver, urut:r.urut, del: !!(r.del ?? r.dihapus), data: r.data, at: r.at || r.diubah_pada}; }
+function adoptMeta(m){
+  if(!m || !m.data) return false;
+  const local = metaObj();
+  const pending = SY.base.meta ? diff(JSON.parse(SY.base.meta.json), local, [], []) : [];
+  const merged = applyOps(clone(m.data), pending);
+  const mm = migrate(merged); S.paket = mm.paket; S.param = mm.param; S.pokjaAnggota = merged.pokjaAnggota || S.pokjaAnggota;
+  SY.base.meta = {ver:m.ver, json:JSON.stringify(m.data)};
+  bump(m.at || m.diubah_pada);
+  return true;
+}
+function adoptPeserta(r){
+  r = recP(r); bump(r.at);
+  const k = S.peserta.findIndex(p=>p.id===r.id), b = SY.base[r.id];
+  if(b && b.ver >= r.ver && !r.del) return false;
+  if(r.del){
+    if(k<0 && !b) return false;
+    if(k>=0) S.peserta.splice(k,1);
+    delete SY.base[r.id]; return true;
+  }
+  let merged = r.data;
+  if(k>=0 && b){ const pending = diff(JSON.parse(b.json), S.peserta[k], [], []); merged = applyOps(clone(r.data), pending); }
+  const np = migrate({peserta:[merged]}).peserta[0];
+  if(k>=0) S.peserta[k] = np; else S.peserta.push(np);
+  SY.base[r.id] = {ver:r.ver, json:JSON.stringify(r.data), urut:r.urut};
+  return true;
+}
+function reorder(){
+  const u = id => (SY.base[id] && SY.base[id].urut) || 1e9;
+  const pos = new Map(S.peserta.map((p,i)=>[p.id,i]));
+  S.peserta.sort((a,b)=> (u(a.id)-u(b.id)) || (pos.get(a.id)-pos.get(b.id)));
+  SY.baseOrder = S.peserta.filter(p=>SY.base[p.id]).map(p=>p.id);
+}
+function showOnline(){
+  const el = document.getElementById("onlineBar"); if(!el) return;
+  const others = SY.online.filter(x=>x!==SY.me);
+  el.innerHTML = `<span class="dot"></span> ${esc(SY.nama||SY.me)}` + (others.length? ` · juga membuka: ${others.map(esc).join(", ")}` : "") +
+    ` <button class="lnk" id="btnLogout">Keluar</button>`;
+  const b = document.getElementById("btnLogout"); if(b) b.onclick = async ()=>{ await flushNow(); await SB.auth.signOut(); location.reload(); };
+}
+
+function save(){
+  S.updatedAt = Date.now();
+  try{ localStorage.setItem(LS_KEY+"-ui", JSON.stringify(S.ui)); }catch(e){}
+  if(!SY.ready) return;
+  SY.dirty = true; clearTimeout(SY.timer); SY.timer = setTimeout(flush, 1000);
+}
+async function flushNow(){ clearTimeout(SY.timer); while(SY.inflight) await new Promise(r=>setTimeout(r,100)); await flush(); }
+async function flush(){
+  if(!SY.ready || SY.inflight || !SY.dirty) return;
+  SY.dirty = false;
+  const batch = {meta:null, peserta:[], del:[], order:null};
+  if(SY.base.meta){ const ops = diff(JSON.parse(SY.base.meta.json), metaObj(), [], []); if(ops.length) batch.meta = {ops}; }
+  S.peserta.forEach((p,i)=>{
+    const b = SY.base[p.id];
+    if(!b){ batch.peserta.push({id:p.id, full:JSON.stringify(p), urut:i+1, sum:summary(p)}); return; }
+    const ops = diff(JSON.parse(b.json), p, [], []);
+    if(ops.length) batch.peserta.push({id:p.id, ops, sum:summary(p)});
+  });
+  const ids = new Set(S.peserta.map(p=>p.id));
+  Object.keys(SY.base).forEach(id=>{ if(id!=="meta" && !ids.has(id)) batch.del.push(id); });
+  const ord = S.peserta.filter(p=>SY.base[p.id]).map(p=>p.id);
+  if(ord.join("|") !== SY.baseOrder.filter(id=>ids.has(id)).join("|")) batch.order = S.peserta.map(p=>p.id);
+  if(!batch.meta && !batch.peserta.length && !batch.del.length && !batch.order){ setStatus("Semua perubahan tersimpan · " + new Date().toLocaleTimeString("id-ID")); return; }
+  SY.inflight = true; setStatus("Menyimpan…");
+  try{
+    const { data:res, error } = await SB.rpc("simpan", { batch });
+    if(error) throw error;
+    if(res.meta) adoptMeta(res.meta);
+    (res.peserta||[]).forEach(adoptPeserta);
+    reorder(); SY.err = 0;
+    setStatus("Tersimpan bersama · " + new Date().toLocaleTimeString("id-ID"));
+    softRender();
+  }catch(e){
+    SY.dirty = true; SY.err++;
+    setStatus("Gagal menyimpan (" + (e && (e.message||e.code) || "galat") + "). Mencoba lagi…");
+    clearTimeout(SY.timer); SY.timer = setTimeout(flush, Math.min(15000, 2000*SY.err));
+  }finally{ SY.inflight = false; }
+  if(SY.dirty){ clearTimeout(SY.timer); SY.timer = setTimeout(flush, 600); }
+  else if(SY.queue.length || SY.needPoll){ drainQueue(); }
+}
+/* perubahan dari anggota lain */
+function incoming(kind, row){
+  if(!SY.ready || !row) return;
+  if(SY.inflight || SY.dirty){ SY.queue.push([kind,row]); return; }
+  let ch = false;
+  if(kind==="meta"){ if(!SY.base.meta || row.ver !== SY.base.meta.ver) ch = adoptMeta(row); }
+  else ch = adoptPeserta(row);
+  if(ch){ reorder(); softRender(); setStatus("Diperbarui dari anggota lain · " + new Date().toLocaleTimeString("id-ID")); }
+}
+function drainQueue(){ const q = SY.queue.splice(0); q.forEach(([k,r])=>incoming(k,r)); if(SY.needPoll){ SY.needPoll = false; poll(); } }
+async function poll(){
+  if(!SY.ready || SY.inflight || SY.dirty || document.hidden) { SY.needPoll = true; return; }
+  try{
+    let q = SB.from("peserta").select("id,urut,data,ver,dihapus,diubah_pada");
+    if(SY.since) q = q.gt("diubah_pada", SY.since);
+    const { data:rows, error } = await q; if(error) throw error;
+    const { data:m } = await SB.from("meta").select("*").eq("id","meta").maybeSingle();
+    if(SY.inflight || SY.dirty){ SY.needPoll = true; return; }
+    let ch = false;
+    if(m && (!SY.base.meta || m.ver !== SY.base.meta.ver)) ch = adoptMeta(m) || ch;
+    (rows||[]).forEach(r=>{ ch = adoptPeserta(r) || ch; });
+    if(ch){ reorder(); softRender(); setStatus("Diperbarui dari anggota lain · " + new Date().toLocaleTimeString("id-ID")); }
+  }catch(e){ setStatus("Koneksi terputus, mencoba lagi…"); }
+}
+
+/* ---------- login ---------- */
+function loginScreen(msg){
+  const ov = document.getElementById("loadingOv");
+  ov.innerHTML = `<div class="ovbox" style="text-align:left">
+    <b style="font-size:16px">Masuk ke Kertas Kerja Pokja</b>
+    <p class="hint">Khusus anggota Pokja yang terdaftar. Masukkan email Anda; tautan masuk akan dikirim ke email tersebut.</p>
+    ${msg? `<div class="alert info">${msg}</div>`:""}
+    <label class="f"><span class="l">Email</span><input id="lgEmail" type="email" autocomplete="email" placeholder="nama@instansi.go.id"></label>
+    <div class="row" style="margin-top:10px"><button class="btn" id="lgSend">Kirim tautan masuk</button></div>
+    ${CFG.LOGIN_GOOGLE? `<div class="row" style="margin-top:8px"><button class="btn sec" id="lgGoogle">Masuk dengan akun Google</button></div>`:""}
+    <p class="hint" style="margin-top:10px">Buka tautan dari email pada perangkat dan peramban yang sama dengan halaman ini.</p></div>`;
+  const redirect = location.origin + location.pathname;
+  document.getElementById("lgSend").onclick = async ()=>{
+    const email = document.getElementById("lgEmail").value.trim();
+    if(!/^\S+@\S+\.\S+$/.test(email)){ loginScreen("Format email tidak valid."); return; }
+    const { error } = await SB.auth.signInWithOtp({ email, options:{ emailRedirectTo: redirect } });
+    loginScreen(error? "Gagal mengirim tautan: " + esc(error.message) : `Tautan masuk telah dikirim ke <b>${esc(email)}</b>. Periksa kotak masuk/spam, lalu klik tautannya.`);
+  };
+  const g = document.getElementById("lgGoogle");
+  if(g) g.onclick = ()=> SB.auth.signInWithOAuth({ provider:"google", options:{ redirectTo: redirect } });
+}
+function fatal(msg){
+  const ov = document.getElementById("loadingOv");
+  ov.innerHTML = `<div class="ovbox"><b>Tidak dapat membuka kertas kerja</b><p>${msg}</p><div class="row"><button class="btn sec" id="fxOut">Keluar / ganti akun</button><button class="btn" onclick="location.reload()">Muat ulang</button></div></div>`;
+  const b = document.getElementById("fxOut"); if(b) b.onclick = async ()=>{ try{ await SB.auth.signOut(); }catch(e){} location.reload(); };
+}
+async function startShared(){
+  const ov = document.getElementById("loadingOv");
+  ov.innerHTML = `<div class="ovbox"><div class="spin"></div><b>Memuat data bersama Pokja…</b></div>`;
+  const { data:me, error:e1 } = await SB.rpc("saya");
+  if(e1){ fatal("Gagal menghubungi server: " + esc(e1.message)); return; }
+  if(!me.anggota){ fatal(`Akun <b>${esc(me.email)}</b> belum terdaftar sebagai anggota Pokja. Hubungi Ketua/Sekretaris Pokja agar email Anda ditambahkan.`); return; }
+  SY.me = me.email; SY.nama = me.nama ? `${me.nama} (${me.email})` : me.email;
+  const { data:m, error:e2 } = await SB.from("meta").select("*").eq("id","meta").maybeSingle();
+  const { data:rows, error:e3 } = await SB.from("peserta").select("id,urut,data,ver,dihapus,diubah_pada").eq("dihapus", false).order("urut");
+  if(e2 || e3){ fatal("Gagal memuat data: " + esc((e2||e3).message)); return; }
+  const ui = S.ui; S = defaultState(); S.ui = ui;
+  if(m && m.data && Object.keys(m.data).length) adoptMeta(m); else SY.base.meta = {ver:0, json:"{}"};
+  (rows||[]).forEach(adoptPeserta);
+  reorder();
+  SY.ready = true;
+  if(!m || !m.data || !Object.keys(m.data).length) save();     // simpan data paket bawaan pertama kali
+  ov.remove(); render(); showOnline();
+  setStatus("Terhubung · data bersama Pokja");
+  // realtime
+  SB.channel("kk-data")
+    .on("postgres_changes", { event:"*", schema:"public", table:"peserta" }, p=> incoming("peserta", p.new))
+    .on("postgres_changes", { event:"*", schema:"public", table:"meta" }, p=> incoming("meta", p.new))
+    .subscribe(st=>{ if(st==="SUBSCRIBED") poll(); });
+  const pres = SB.channel("kk-online", { config:{ presence:{ key: SY.me } } });
+  pres.on("presence", { event:"sync" }, ()=>{ SY.online = Object.keys(pres.presenceState()); showOnline(); })
+      .subscribe(async st=>{ if(st==="SUBSCRIBED") await pres.track({ at: Date.now() }); });
+  setInterval(poll, 20000);
+  document.addEventListener("visibilitychange", ()=>{ if(!document.hidden) poll(); });
+}
+(async function initShared(){
+  if(!(window.supabase && supabase.createClient)){ fatal("Pustaka Supabase gagal dimuat. Periksa koneksi internet."); return; }
+  if(!CFG.SUPABASE_URL || /xxxx/.test(CFG.SUPABASE_URL) || !CFG.SUPABASE_ANON_KEY){ fatal("config.js belum diisi (SUPABASE_URL dan SUPABASE_ANON_KEY)."); return; }
+  SB = supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY, { auth:{ persistSession:true, autoRefreshToken:true, detectSessionInUrl:true } });
+  let started = false;
+  const go = async (session)=>{ if(session && !started){ started = true; await startShared(); } };
+  SB.auth.onAuthStateChange((ev, session)=>{ if(session) go(session); });
+  const { data } = await SB.auth.getSession();
+  if(data && data.session) go(data.session); else loginScreen("");
+})();
+window.addEventListener("beforeunload", e=>{ if(SY.dirty || SY.inflight){ e.preventDefault(); e.returnValue = ""; } });
+
+
+/* =========================================================
+   3. UTILITAS
+   ========================================================= */
+const BULAN = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+const HARI = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+function esc(s){ return String(s??"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function num(v){ if(v===""||v==null) return NaN; const n = typeof v==="number"? v : parseFloat(String(v).replace(/\./g,"").replace(",", ".")); return isFinite(n)? n : NaN; }
+function numPlain(v){ if(v===""||v==null) return NaN; const n = parseFloat(String(v).replace(",", ".")); return isFinite(n)? n : NaN; }
+function rp(n){ n = num(n); if(!isFinite(n)) return "-"; return "Rp" + n.toLocaleString("id-ID",{minimumFractionDigits:2, maximumFractionDigits:2}); }
+function pd(s){ if(!s) return null; const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s); return m? new Date(Date.UTC(+m[1], +m[2]-1, +m[3])) : null; }
+function tglID(s){ const d = pd(s); return d? d.getUTCDate()+" "+BULAN[d.getUTCMonth()]+" "+d.getUTCFullYear() : "…………"; }
+function tglShort(s){ const d = pd(s); return d? String(d.getUTCDate()).padStart(2,"0")+"-"+String(d.getUTCMonth()+1).padStart(2,"0")+"-"+d.getUTCFullYear() : ""; }
+function terbilang(n){
+  n = Math.floor(n);
+  const s = ["","satu","dua","tiga","empat","lima","enam","tujuh","delapan","sembilan","sepuluh","sebelas"];
+  if(n < 12) return s[n];
+  if(n < 20) return terbilang(n-10) + " belas";
+  if(n < 100) return terbilang(Math.floor(n/10)) + " puluh" + (n%10? " " + terbilang(n%10) : "");
+  if(n < 200) return "seratus" + (n-100? " " + terbilang(n-100) : "");
+  if(n < 1000) return terbilang(Math.floor(n/100)) + " ratus" + (n%100? " " + terbilang(n%100) : "");
+  if(n < 2000) return "seribu" + (n-1000? " " + terbilang(n-1000) : "");
+  if(n < 1e6) return terbilang(Math.floor(n/1000)) + " ribu" + (n%1000? " " + terbilang(n%1000) : "");
+  if(n < 1e9) return terbilang(Math.floor(n/1e6)) + " juta" + (n%1e6? " " + terbilang(n%1e6) : "");
+  return terbilang(Math.floor(n/1e9)) + " miliar" + (n%1e9? " " + terbilang(n%1e9) : "");
+}
+function cap(s){ return s.replace(/\b\w/g, c=>c.toUpperCase()); }
+function getPath(o, path){ return path.split(".").reduce((a,k)=> a==null? a : a[k], o); }
+function setPath(o, path, v){ const ks = path.split("."); let a = o; for(let i=0;i<ks.length-1;i++){ if(a[ks[i]]==null) a[ks[i]] = {}; a = a[ks[i]]; } a[ks[ks.length-1]] = v; }
+function toast(t){ const el = document.getElementById("toast"); el.textContent = t; el.style.display = "block"; clearTimeout(el._t); el._t = setTimeout(()=>el.style.display="none", 3200); }
+function badge(r){
+  const ok = ["M","MEMENUHI","LULUS","Sesuai","Terbukti","Ya"], bad = ["TM","TIDAK MEMENUHI","GUGUR","TIDAK LULUS","Tidak Sesuai","Tidak Terbukti","Tidak"];
+  const c = ok.includes(r)? "ok" : bad.includes(r)? "bad" : (r==="BELUM LENGKAP"||r==="BELUM DINILAI")? "warn" : "na";
+  return `<span class="b ${c}">${esc(r||"-")}</span>`;
+}
+function pName(p){ return p.bentuk==="KSO" ? (p.namaKSO || p.nama || "(KSO tanpa nama)") : (p.nama || "(tanpa nama)"); }
+function eName(p, i){ return p.bentuk==="KSO" ? (p.ents[i]?.nama || ("Anggota " + (i+1))) : (p.nama || "(tanpa nama)"); }
+function ents(p){ return p.bentuk==="KSO" ? p.ents : p.ents.slice(0,1); }
+function batasDate(){ return S.paket.batasPemasukan || (TA + "-12-31"); }
+
+/* =========================================================
+   4. LOGIKA EVALUASI
+   ========================================================= */
+const KUAL_RANK = {Kecil:1, Menengah:2, Besar:3};
+function admItem(p, ei, it){
+  const d = (p.ents[ei].adm[it.k]) || {};
+  if(it.special==="sbu") return sbuEntity(p, ei);
+  let r = "-", note = "";
+  const o = (OPTS[it.opt]||[]).find(x=>x[0]===d.ada);
+  if(o){ r = o[1]; }
+  if(r==="M" && it.berlaku && d.berlaku && d.berlaku < batasDate()){ r = "TM"; note = "Masa berlaku habis sebelum batas akhir pemasukan"; }
+  if(d.hasil==="M"||d.hasil==="TM"){ r = d.hasil; note = note || "Ditetapkan manual oleh Pokja"; }
+  return {r, note};
+}
+function sbuEntity(p, ei){
+  const d = p.ents[ei].adm.sbu || {};
+  let r = "-", note = "";
+  if(d.kual){
+    const valid = !(d.berlaku && d.berlaku < batasDate()) && !(d.berlakuRK && d.berlakuRK < batasDate());
+    if(!valid){ r = "TM"; note = "Masa berlaku SBU habis sebelum batas akhir pemasukan"; }
+    else if(p.bentuk!=="KSO"){
+      if(d.kual!=="Besar"){ r="TM"; note="Kualifikasi SBU bukan Usaha Besar"; }
+      else if(!(d.ar && d.rk)){ r="TM"; note="Tidak memiliki "+[!d.ar&&"AR001",!d.rk&&"RK001"].filter(Boolean).join(" & "); }
+      else r = "M";
+    } else {
+      if(!(d.ar || d.rk)){ r="TM"; note="Anggota KSO wajib memiliki salah satu SBU yang disyaratkan"; }
+      else if(!KUAL_RANK[d.kual] || KUAL_RANK[d.kual] < 2){ r="TM"; note="Kualifikasi Kecil tidak dapat ber-KSO pada paket Usaha Besar"; }
+      else r = "M";
+    }
+  }
+  if(d.hasil==="M"||d.hasil==="TM"){ r = d.hasil; note = note || "Ditetapkan manual oleh Pokja"; }
+  return {r, note};
+}
+function ksoRows(p){
+  if(p.bentuk!=="KSO") return [];
+  const P = S.param, es = p.ents, lead = es[0]||{};
+  const rows = [];
+  const ada = p.ksoAda==="Ada"? "M" : p.ksoAda==="Tidak Ada"? "TM" : "-";
+  rows.push({k:"kso1", no:"A.6", t:"Surat Perjanjian KSO (asli) diunggah", r:ada, note:""});
+  const isiAll = KSO_CONTENT.every(([k])=>p.ksoIsi[k]);
+  const isiAny = KSO_CONTENT.some(([k])=>p.ksoIsi[k]);
+  rows.push({k:"kso2", no:"IKP 3.8", t:"Isi Perjanjian KSO memuat huruf a s.d. e", r: isiAll? "M" : (p.ksoAda? "TM":"-"), note: isiAll? "" : (isiAny||p.ksoAda ? "Belum lengkap: " + KSO_CONTENT.filter(([k])=>!p.ksoIsi[k]).map(x=>x[0]).join(", ") : "")});
+  rows.push({k:"kso3", no:"LDK D", t:"Jumlah anggota KSO paling banyak "+P.maxKSO+" perusahaan", r: es.length<=P.maxKSO && es.length>=2? "M":"TM", note: es.length+" perusahaan"});
+  const shares = es.map(e=>numPlain(e.share));
+  const sum = shares.reduce((a,b)=>a+(isFinite(b)?b:0),0);
+  rows.push({k:"kso4", no:"Bab VI", t:"Total pembagian modal (sharing) = 100%", r: shares.every(isFinite) ? (Math.abs(sum-100)<0.001? "M":"TM") : "-", note:"Total "+sum+"%"});
+  const ls = shares[0], others = shares.slice(1);
+  let r5 = "-", n5 = "";
+  if(isFinite(ls) && others.every(isFinite)){
+    const maj = others.every(x=>ls > x);
+    r5 = (maj && ls <= P.maxLeadShare)? "M" : "TM";
+    n5 = "Leadfirm "+ls+"%" + (!maj? " (bukan porsi terbesar)":"") + (ls>P.maxLeadShare? " (melebihi "+P.maxLeadShare+"%)":"");
+  }
+  rows.push({k:"kso5", no:"IKP 3.12", t:"Leadfirm memiliki porsi modal mayoritas dan paling banyak "+P.maxLeadShare+"%", r:r5, note:n5});
+  const kr = es.map(e=>KUAL_RANK[e.kual]||0);
+  let r6 = "M", n6 = [];
+  if(kr[0]!==3){ r6="TM"; n6.push("Leadfirm harus berkualifikasi Besar"); }
+  if(kr.some(x=>x>kr[0])){ r6="TM"; n6.push("Leadfirm harus setingkat atau lebih tinggi dari anggota"); }
+  if(kr.some(x=>x<2)){ r6="TM"; n6.push("Anggota berkualifikasi Kecil tidak memenuhi IKP 3.11"); }
+  rows.push({k:"kso6", no:"IKP 3.11–3.12", t:"Kualifikasi anggota setingkat, atau Besar dengan Menengah (1 tingkat di bawah); leadfirm setingkat atau lebih tinggi", r:r6, note:n6.join("; ")});
+  // SBU saling melengkapi
+  const sb = es.map(e=>e.adm.sbu||{});
+  let r7 = "-", n7 = "";
+  if(sb.every(d=>d.kual)){
+    const valid = sb.every(d=>!(d.berlaku && d.berlaku < batasDate()));
+    const setara = kr.every(x=>x===kr[0]);
+    if(!valid){ r7="TM"; n7="Ada SBU yang masa berlakunya habis"; }
+    else if(!sb.every(d=>d.ar||d.rk)){ r7="TM"; n7="Setiap anggota wajib memiliki salah satu SBU yang disyaratkan"; }
+    else if(setara){ r7 = (sb.some(d=>d.ar) && sb.some(d=>d.rk))? "M":"TM"; n7 = r7==="M"? "Kualifikasi setara; AR001 & RK001 terpenuhi secara saling melengkapi" : "AR001/RK001 belum terpenuhi gabungan anggota"; }
+    else { r7 = (sb[0].ar && sb[0].rk && sb[0].kual==="Besar")? "M":"TM"; n7 = "Kualifikasi tidak setara: AR001 & RK001 Besar wajib dipenuhi leadfirm"; }
+  }
+  rows.push({k:"kso7", no:"LDK (KSO) 2", t:"SBU yang disyaratkan dipenuhi secara saling melengkapi oleh anggota KSO", r:r7, note:n7});
+  rows.forEach(x=>{ const ov = (p.ksoOv||{})[x.k]; if(ov==="M"||ov==="TM"){ x.r = ov; x.note = x.note || "Ditetapkan manual oleh Pokja"; } });
+  return rows;
+}
+function admRowsAll(p){
+  const out = [];
+  ents(p).forEach((e,ei)=>{
+    ADM.forEach(it=>{ const res = admItem(p, ei, it); out.push({ei, ent:eName(p,ei), it, ...res, d:p.ents[ei].adm[it.k]||{}}); });
+  });
+  ksoRows(p).forEach(x=>out.push({ei:-1, ent:"KSO", it:{k:x.k, no:x.no, t:x.t}, r:x.r, note:x.note, d:{}}));
+  return out;
+}
+function admResult(p){
+  const rows = admRowsAll(p);
+  if(rows.some(x=>x.r==="TM")) return "TIDAK MEMENUHI";
+  if(rows.some(x=>x.r!=="M")) return "BELUM LENGKAP";
+  return "MEMENUHI";
+}
+function admReasons(p){ return admRowsAll(p).filter(x=>x.r==="TM").map(x=>(p.bentuk==="KSO"? x.ent+": " : "") + shortT(x.it.t) + (x.note? " ("+x.note+")":"")); }
+function shortT(t){ return t.length>80? t.slice(0,78)+"…" : t; }
+
+function expWeighted(x){ const n = num(x.nilai); if(!isFinite(n)) return 0; if(x.status==="KSO"){ const s = numPlain(x.share); return isFinite(s)? n*s/100 : 0; } return n; }
+function expFlags(x){
+  const b = x.tglBAST, end = batasDate();
+  const in4 = !!b && b >= S.param.awal4 && b <= end;
+  const in10 = !!b && b >= S.param.awal10 && b <= end;
+  const subOk = x.status!=="Subkontrak" || x.referensi;
+  return {a: !!x.jkk && in4 && subOk, b: !!x.sejB && in10 && subOk, c: !!x.sejC && in10 && subOk, in4, in10, subOk};
+}
+function tierA(n){ return n>=10?20 : n>=5?10 : n>=1?5 : 0; }
+function tierB(n){ return n>=10?30 : n>=5?20 : n>=1?10 : 0; }
+function tierC(n){ return n>=10?40 : n>=5?30 : n>=1?20 : 0; }
+function tierD(k){ return !isFinite(k)? 0 : k>=3?10 : k>=2?5 : 0; }
+function teknis(p, proof){
+  const P = S.param;
+  const xs = p.exps.filter(x=> !proof || x.bukti==="Terbukti");
+  const F = xs.map(x=>({x, f:expFlags(x)}));
+  const a = F.filter(o=>o.f.a).length, b = F.filter(o=>o.f.b).length, c = F.filter(o=>o.f.c).length;
+  let allA = "-";
+  if(p.bentuk==="KSO"){ allA = p.ents.every((e,i)=>F.some(o=>o.f.a && +o.x.ent===i)) ? "Ya" : "Tidak"; }
+  const k = numPlain(p.kinerja);
+  const minA = (a>=1 && allA!=="Tidak")? "M":"TM", minB = b>=1? "M":"TM", minC = c>=1? "M":"TM", minD = (isFinite(k) && k>=P.minKinerja)? "M":"TM";
+  const na = tierA(a), nb = tierB(b), nc = tierC(c), nd = tierD(k);
+  const total = na+nb+nc+nd;
+  const minOk = [minA,minB,minC,minD].every(x=>x==="M");
+  const okB = nb >= P.ambangB, okC = nc >= P.ambangC, okT = total >= P.ambangTotal;
+  const lulus = minOk && okB && okC && okT;
+  const rs = [];
+  if(minA==="TM") rs.push(allA==="Tidak"? "Tidak seluruh anggota KSO memiliki pengalaman Jasa Konsultansi Konstruksi 4 tahun terakhir" : "Tidak memiliki pengalaman Jasa Konsultansi Konstruksi 4 tahun terakhir");
+  if(minB==="TM") rs.push("Tidak memiliki pengalaman pekerjaan sejenis (subklasifikasi/lingkup)");
+  if(minC==="TM") rs.push("Tidak memiliki pengalaman sejenis perencanaan gedung pendidikan 10 tahun terakhir");
+  if(minD==="TM") rs.push("Nilai kinerja penyedia di bawah Baik / tidak ada penilaian");
+  if(minOk && !okB) rs.push("Nilai unsur b ("+nb+") di bawah ambang batas "+P.ambangB);
+  if(minOk && !okC) rs.push("Nilai unsur c ("+nc+") di bawah ambang batas "+P.ambangC);
+  if(minOk && !okT) rs.push("Jumlah nilai ("+total+") di bawah ambang batas "+P.ambangTotal);
+  // nilai kontrak pekerjaan sejenis tertinggi (leadfirm untuk KSO)
+  const top = Math.max(0, ...F.filter(o=>(o.f.b||o.f.c) && +o.x.ent===0).map(o=>expWeighted(o.x)));
+  return {a,b,c,allA,k,minA,minB,minC,minD,na,nb,nc,nd,total,okB,okC,okT,lulus,hasil: lulus? "LULUS":"TIDAK LULUS", reasons:rs, top};
+}
+function evalResult(p){
+  const ad = admResult(p), t = teknis(p,false);
+  const lulus = ad==="MEMENUHI" && t.lulus;
+  return {ad, t, lulus, hasil: lulus? "LULUS" : (ad==="BELUM LENGKAP"? "BELUM LENGKAP" : "GUGUR")};
+}
+function pbItemsFor(p){ return PB.filter(it=> it.k!=="kso" || p.bentuk==="KSO"); }
+function pembuktian(p){
+  const e = evalResult(p);
+  const t = teknis(p, true);
+  const pb = p.pb, rs = [];
+  if(!e.lulus) return {invited:false, hasil:"-", t, reasons:["Tidak lulus evaluasi kualifikasi"]};
+  if(!pb.hadir) return {invited:true, hasil:"BELUM DINILAI", t, reasons:[]};
+  if(pb.hadir==="Tidak Hadir"){ return {invited:true, hasil:"GUGUR", t, reasons:["Tidak hadir/tidak memenuhi undangan pembuktian kualifikasi"]}; }
+  const items = pbItemsFor(p);
+  const blank = items.filter(it=>!pb.items[it.k]);
+  const bad = items.filter(it=>pb.items[it.k]==="Tidak Sesuai");
+  bad.forEach(it=>rs.push("Tidak sesuai: " + shortT(it.t)));
+  if(pb.pemalsuan) rs.push("Ditemukan indikasi pemalsuan dokumen — diusulkan sanksi Daftar Hitam");
+  const unproven = p.exps.filter(x=>!x.bukti);
+  if(!t.lulus && !unproven.length) rs.push("Setelah pembuktian pengalaman: " + (t.reasons.join("; ") || "tidak memenuhi"));
+  let hasil;
+  if(bad.length || pb.pemalsuan) hasil = "GUGUR";
+  else if(blank.length || unproven.length) hasil = "BELUM DINILAI";
+  else hasil = t.lulus? "LULUS" : "GUGUR";
+  return {invited:true, hasil, t, reasons:rs, blank:blank.length, unproven:unproven.length};
+}
+function ranking(){
+  const rows = S.peserta.map(p=>({p, e:evalResult(p), b:pembuktian(p)}));
+  const pass = rows.filter(r=>r.b.hasil==="LULUS");
+  pass.sort((x,y)=> (y.b.t.total - x.b.t.total) || (y.b.t.top - x.b.t.top));
+  pass.forEach((r,i)=>{ r.rank = i+1; r.shortlist = i < S.param.maxShortlist; r.tie = pass.some(o=>o!==r && o.b.t.total===r.b.t.total); });
+  return {rows, pass};
+}
+
+/* =========================================================
+   5. RENDER UI
+   ========================================================= */
+const TABS = [["paket","1. Paket & Pokja"],["peserta","2. Peserta"],["admin","3. Administrasi"],["exp","4. Pengalaman & Kinerja"],["teknis","5. Hasil Evaluasi"],["pb","6. Pembuktian"],["hasil","7. Hasil & Unduh"]];
+function renderTabs(){
+  document.getElementById("tabs").innerHTML = TABS.map(([k,l])=>`<button data-tab="${k}" class="${S.ui.tab===k?"on":""}">${l}</button>`).join("");
+}
+function inp(path, label, opt={}){
+  const v = getPath(S, path) ?? "";
+  const t = opt.type||"text";
+  if(t==="select") return `<label class="f"><span class="l">${label}</span><select data-path="${path}" ${opt.num?'data-num="1"':""}>${(opt.blank!==false?'<option value="">— pilih —</option>':"")}${opt.options.map(o=>{const [val,lab] = Array.isArray(o)? o : [o,o]; return `<option value="${esc(val)}" ${String(v)===String(val)?"selected":""}>${esc(lab)}</option>`;}).join("")}</select></label>`;
+  if(t==="textarea") return `<label class="f"><span class="l">${label}</span><textarea data-path="${path}" placeholder="${esc(opt.ph||"")}">${esc(v)}</textarea></label>`;
+  if(t==="check") return `<label class="chk"><input type="checkbox" data-path="${path}" ${v?"checked":""}><span>${label}</span></label>`;
+  return `<label class="f"><span class="l">${label}</span><input type="${t}" data-path="${path}" value="${esc(v)}" ${opt.money?'data-num="m" inputmode="numeric"':opt.num?'data-num="1" inputmode="decimal"':""} placeholder="${esc(opt.ph||"")}"></label>`;
+}
+function selChips(list, cur){
+  return `<div class="chips">${list.map(p=>`<button class="chip ${p.id===cur?"on":""}" data-sel="${p.id}">${esc(pName(p))}</button>`).join("")}</div>`;
+}
+function curPeserta(list){
+  list = list || S.peserta;
+  let p = list.find(x=>x.id===S.ui.sel);
+  if(!p && list.length){ p = list[0]; S.ui.sel = p.id; }
+  return p;
+}
+function idx(p){ return S.peserta.indexOf(p); }
+
+function vPaket(){
+  const P = "paket.";
+  return `
+  <div class="card"><h2>Identitas Paket (dari Dokumen Kualifikasi)</h2>
+    <div class="grid c2">
+      ${inp(P+"namaPaket","Nama paket",{type:"textarea"})}
+      ${inp(P+"pokja","Pokja Pemilihan",{type:"textarea"})}
+      ${inp(P+"noDok","Nomor Dokumen Kualifikasi")}
+      ${inp(P+"tglDok","Tanggal Dokumen Kualifikasi",{type:"date"})}
+      ${inp(P+"kodeTender","Kode tender SPSE",{ph:"isi dari SPSE"})}
+      ${inp(P+"sumberDana","Sumber dana")}
+      ${inp(P+"pagu","Pagu anggaran (Rp)",{money:true})}
+      ${inp(P+"hps","HPS (Rp)",{money:true})}
+      ${inp(P+"lokasi","Lokasi pekerjaan")}
+      ${inp(P+"waktu","Jangka waktu pelaksanaan")}
+      ${inp(P+"alamatPokja","Alamat Pokja")}
+      ${inp(P+"metode","Metode pemilihan & evaluasi")}
+    </div>
+  </div>
+  <div class="card"><h2>Kop &amp; Format Berita Acara</h2>
+    <div class="grid c2">
+      ${inp(P+"kop","Kop surat (satu baris per baris; 3 baris pertama tebal)",{type:"textarea"})}
+      <div>
+        <div class="row" style="gap:12px;align-items:center">
+          <img src="${esc(S.paket.logo||LOGO_DEFAULT)}" alt="Logo kop" style="height:64px;width:auto;border:1px solid var(--line);border-radius:6px;padding:4px;background:#fff">
+          <div class="row"><button class="btn sec sm" data-act="logoUp">Ganti logo</button>${S.paket.logo?`<button class="btn sec sm" data-act="logoReset">Logo bawaan</button>`:""}</div>
+        </div>
+        ${inp(P+"useLogo","Tampilkan logo pada kop",{type:"check"})}
+        <div class="grid c2">${inp(P+"fontBA","Huruf Berita Acara")}${inp(P+"fontLamp","Huruf Lampiran")}</div>
+        ${inp(P+"satker","Satker (pada Lampiran)")}
+      </div>
+    </div>
+  </div>
+  <div class="card"><h2>Jadwal &amp; Nomor Berita Acara</h2>
+    <div class="grid c3">
+      ${inp(P+"batasPemasukan","Batas akhir pemasukan dokumen kualifikasi",{type:"date"})}
+      ${inp(P+"tglEvaluasi","Tanggal evaluasi kualifikasi",{type:"date"})}
+      ${inp(P+"noBAEval","Nomor BA Hasil Evaluasi Kualifikasi")}
+      ${inp(P+"noUndangan","Nomor undangan pembuktian")}
+      ${inp(P+"noBAPembuktian","Nomor BA Pembuktian Kualifikasi")}
+      ${inp(P+"tglPembuktian","Tanggal pembuktian kualifikasi",{type:"date"})}
+      ${inp(P+"jamPembuktian","Waktu pembuktian",{ph:"mis. 09.00 s.d. 15.00 WIB"})}
+      ${inp(P+"metodePembuktian","Metode pembuktian",{type:"select",options:["Tatap Muka","Daring (video call)"],blank:false})}
+      ${inp(P+"tempatPembuktian","Tempat / media pembuktian")}
+      ${inp(P+"kotaTtd","Kota penandatanganan")}
+    </div>
+    ${!S.paket.batasPemasukan? `<div class="alert warn" style="margin-top:10px">Isi <b>batas akhir pemasukan</b>: dipakai untuk menguji masa berlaku izin/sertifikat (Bab VIII B.2.a) dan batas hitungan pengalaman.</div>`:""}
+  </div>
+  <div class="card"><h2>Parameter Evaluasi (LDK &amp; Bab IX)</h2>
+    <p class="hint">Nilai bawaan sesuai Dokumen Kualifikasi. Ubah hanya bila ada adendum.</p>
+    <div class="grid c4">
+      ${inp("param.awal4","Awal hitungan pengalaman 4 tahun",{type:"date"})}
+      ${inp("param.awal10","Awal hitungan pengalaman 10 tahun",{type:"date"})}
+      ${inp("param.ambangB","Ambang batas unsur b",{num:true})}
+      ${inp("param.ambangC","Ambang batas unsur c",{num:true})}
+      ${inp("param.ambangTotal","Ambang batas jumlah nilai",{num:true})}
+      ${inp("param.minKinerja","Nilai kinerja minimal (Baik)",{num:true})}
+      ${inp("param.maxKSO","Maks. anggota KSO",{num:true})}
+      ${inp("param.maxShortlist","Jumlah Daftar Pendek",{num:true})}
+    </div>
+    <div class="alert info" style="margin-top:10px">Catatan dokumen: ambang batas unsur b (30) sama dengan nilai maksimumnya, sehingga peserta baru lulus jika memiliki ≥10 pengalaman sejenis; unsur c (30) mensyaratkan ≥5 pengalaman perencanaan gedung pendidikan. Kertas kerja menerapkan ketentuan apa adanya (“nilai ≥ ambang batas”).</div>
+  </div>
+  <div class="card"><h2>Anggota Pokja Pemilihan</h2>
+    ${S.pokjaAnggota.map((a,i)=>`
+      <div class="grid c3" style="margin-bottom:8px">
+        ${inp(`pokjaAnggota.${i}.nama`,"Nama")}
+        ${inp(`pokjaAnggota.${i}.nip`,"NIP")}
+        <div class="row" style="align-items:flex-end">${inp(`pokjaAnggota.${i}.jabatan`,"Jabatan dalam Pokja")}<button class="btn dan sm" data-act="delPokja" data-i="${i}">Hapus</button></div>
+      </div>`).join("")}
+    <button class="btn sec sm" data-act="addPokja">+ Tambah anggota</button>
+  </div>`;
+}
+
+function vPeserta(){
+  return `
+  <div class="card"><div class="row"><h2 style="margin:0">Daftar Peserta yang Memasukkan Dokumen Kualifikasi</h2><span class="sp"></span><button class="btn" data-act="addPeserta">+ Tambah peserta</button></div>
+  <p class="hint">Peserta KSO: leadfirm diisi pada baris anggota pertama. Jumlah anggota paling banyak ${S.param.maxKSO} perusahaan.</p></div>
+  ${S.peserta.length? "" : `<div class="alert info">Belum ada peserta. Tekan <b>Tambah peserta</b>, atau buka tab <b>7. Hasil &amp; Unduh</b> untuk memuat data contoh.</div>`}
+  ${S.peserta.map((p,i)=>{
+    const B = `peserta.${i}.`;
+    return `<div class="card">
+      <div class="row"><h3 style="margin:0">Peserta ${i+1}: ${esc(pName(p))}</h3><span class="sp"></span><button class="btn dan sm" data-act="delPeserta" data-i="${i}">Hapus</button></div>
+      <div class="grid c2" style="margin-top:10px">
+        ${inp(B+"bentuk","Bentuk peserta",{type:"select",options:["Tunggal","KSO"],blank:false})}
+        ${p.bentuk==="KSO"? inp(B+"namaKSO","Nama KSO") : inp(B+"nama","Nama badan usaha")}
+        ${inp(B+"npwp", p.bentuk==="KSO"? "NPWP KSO/leadfirm":"NPWP")}
+        ${inp(B+"email","Email / telepon")}
+        ${inp(B+"alamat","Alamat kantor",{type:"textarea"})}
+        ${p.bentuk!=="KSO"? inp(B+"ents.0.kual","Kualifikasi usaha (SBU)",{type:"select",options:["Besar","Menengah","Kecil"],blank:false}) : ""}
+      </div>
+      ${p.bentuk==="KSO"? `<h3>Anggota KSO</h3>
+        ${p.ents.map((e,j)=>`<div class="grid c3" style="margin-bottom:8px">
+          ${inp(`${B}ents.${j}.nama`, j===0? "Leadfirm":"Anggota "+(j+1))}
+          ${inp(`${B}ents.${j}.kual`,"Kualifikasi",{type:"select",options:["Besar","Menengah","Kecil"],blank:false})}
+          <div class="row" style="align-items:flex-end">${inp(`${B}ents.${j}.share`,"Sharing (%)",{num:true})}${j>0?`<button class="btn dan sm" data-act="delEnt" data-i="${i}" data-j="${j}">Hapus</button>`:""}</div>
+          ${inp(`${B}ents.${j}.npwp`,"NPWP")}
+          ${inp(`${B}ents.${j}.alamat`,"Alamat")}
+        </div>`).join("")}
+        <button class="btn sec sm" data-act="addEnt" data-i="${i}">+ Tambah anggota KSO</button>` : ""}
+    </div>`;}).join("")}`;
+}
+
+function vAdmin(){
+  if(!S.peserta.length) return `<div class="alert info">Tambahkan peserta terlebih dahulu.</div>`;
+  const p = curPeserta(), i = idx(p);
+  const res = admResult(p);
+  let h = `<div class="card"><h2>Evaluasi Persyaratan Administrasi/Legalitas — Sistem Gugur</h2>
+    <p class="hint">Isian per persyaratan: kondisi dokumen, data/nomor, masa berlaku. Hasil M/TM terisi otomatis; kolom “Penetapan Pokja” dipakai bila Pokja perlu menetapkan lain (dengan keterangan).</p>
+    ${selChips(S.peserta, p.id)}
+    <div class="row"><b>${esc(pName(p))}</b><span class="sp"></span>${badge(res)}</div>
+    ${res==="TIDAK MEMENUHI"? `<ul class="r">${admReasons(p).map(r=>`<li>${esc(r)}</li>`).join("")}</ul>`:""}
+  </div>`;
+  ents(p).forEach((e,ei)=>{
+    h += `<div class="card"><h2>${p.bentuk==="KSO"? (ei===0?"Leadfirm: ":"Anggota KSO: ") : ""}${esc(eName(p,ei))}</h2>`;
+    ADM.forEach(it=>{
+      const B = `peserta.${i}.ents.${ei}.adm.${it.k}.`;
+      const res = admItem(p, ei, it);
+      if(it.special==="sbu"){
+        h += `<div class="item"><div class="top"><span class="no">${it.no}</span><span class="tt">${esc(it.t)}</span>${badge(res.r)}</div>
+          <div class="grid c3">
+            ${inp(B+"nomor","Nomor SBU")}
+            ${inp(B+"kual","Kualifikasi SBU",{type:"select",options:["Besar","Menengah","Kecil"]})}
+            ${inp(B+"berlaku","Masa berlaku s.d.",{type:"date"})}
+            ${inp(B+"nomorRK","Nomor SBU RK001 (jika sertifikat terpisah)")}
+            ${inp(B+"berlakuRK","Masa berlaku SBU RK001 (jika terpisah)",{type:"date"})}
+          </div>
+          <div class="row">${inp(B+"ar","Memiliki subklasifikasi AR001",{type:"check"})}${inp(B+"rk","Memiliki subklasifikasi RK001",{type:"check"})}</div>
+          <div class="grid c2">${inp(B+"hasil","Penetapan Pokja",{type:"select",options:[["","Otomatis"],["M","M"],["TM","TM"]],blank:false})}${inp(B+"ket","Keterangan")}</div>
+          ${res.note? `<p class="hint">${esc(res.note)}</p>`:""}</div>`;
+        return;
+      }
+      h += `<div class="item"><div class="top"><span class="no">${it.no}</span><span class="tt">${esc(it.t)}</span>${badge(res.r)}</div>
+        <div class="grid ${it.berlaku?"c3":"c2"}">
+          ${inp(B+"ada","Kondisi dokumen",{type:"select",options:OPTS[it.opt].map(o=>o[0])})}
+          ${it.nomor? inp(B+"nomor", it.nomor) : ""}
+          ${it.berlaku? inp(B+"berlaku","Masa berlaku s.d.",{type:"date"}) : ""}
+        </div>
+        ${it.extra? `<div class="grid c3">${it.extra.map(([k,l,ty])=>inp(B+k,l,{type:ty||"text"})).join("")}</div>` : ""}
+        <div class="grid c2">${inp(B+"hasil","Penetapan Pokja",{type:"select",options:[["","Otomatis"],["M","M"],["TM","TM"]],blank:false})}${inp(B+"ket","Keterangan")}</div>
+        ${res.note? `<p class="hint">${esc(res.note)}</p>`:""}</div>`;
+    });
+    h += `</div>`;
+  });
+  if(p.bentuk==="KSO"){
+    const B = `peserta.${i}.`;
+    h += `<div class="card"><h2>Persyaratan Kerja Sama Operasi (KSO)</h2>
+      <div class="grid c2">${inp(B+"ksoAda","Surat Perjanjian KSO",{type:"select",options:["Ada","Tidak Ada"]})}${inp(B+"ksoKet","Nomor/tanggal perjanjian, keterangan")}</div>
+      <h3>Isi perjanjian (IKP 3.8)</h3>
+      ${KSO_CONTENT.map(([k,t])=>inp(`${B}ksoIsi.${k}`, k+". "+t, {type:"check"})).join("")}
+      <h3>Pemeriksaan otomatis</h3>
+      <div class="scroll"><table class="tbl"><tr><th>Ref.</th><th>Ketentuan</th><th class="c">Hasil</th><th>Catatan</th><th>Penetapan Pokja</th></tr>
+      ${ksoRows(p).map(x=>`<tr><td>${x.no}</td><td>${esc(x.t)}</td><td class="c">${badge(x.r)}</td><td>${esc(x.note)}</td><td style="min-width:110px">${inp(`${B}ksoOv.${x.k}`,"",{type:"select",options:[["","Otomatis"],["M","M"],["TM","TM"]],blank:false})}</td></tr>`).join("")}
+      </table></div></div>`;
+  }
+  h += `<div class="card">${inp(`peserta.${i}.catatanEval`,"Catatan evaluasi / klarifikasi / kekurangan data (IKP 18.6 & 18.10)",{type:"textarea"})}</div>`;
+  return h;
+}
+
+function vExp(){
+  if(!S.peserta.length) return `<div class="alert info">Tambahkan peserta terlebih dahulu.</div>`;
+  const p = curPeserta(), i = idx(p), t = teknis(p,false);
+  const B = `peserta.${i}.`;
+  let h = `<div class="card"><h2>Pengalaman Perusahaan &amp; Kinerja</h2>
+    <p class="hint">Masukkan setiap pengalaman yang tercantum pada isian kualifikasi SPSE (diurutkan dari nilai tertinggi). Pengalaman dihitung bila tanggal BAST/PHO berada dalam kurun waktu: 4 tahun (${tglID(S.param.awal4)} s.d. ${tglID(batasDate())}) dan 10 tahun (${tglID(S.param.awal10)} s.d. ${tglID(batasDate())}). Pengalaman subkontrak wajib disertai surat referensi PPK/pemilik pekerjaan.</p>
+    ${selChips(S.peserta, p.id)}
+    <div class="kpi">
+      <div><b>${t.a}</b><span>a. Jasa Konsultansi Konstruksi (4 th) → nilai ${t.na}</span></div>
+      <div><b>${t.b}</b><span>b. Sejenis subklasifikasi/lingkup → nilai ${t.nb}</span></div>
+      <div><b>${t.c}</b><span>c. Sejenis perencanaan gedung pendidikan (10 th) → nilai ${t.nc}</span></div>
+      <div><b>${isFinite(t.k)? t.k : "-"}</b><span>d. Nilai kinerja → nilai ${t.nd}</span></div>
+      <div><b>${t.total}</b><span>Jumlah nilai — ${t.hasil}</span></div>
+    </div>
+    ${p.bentuk==="KSO"? `<p class="hint">KSO: pengalaman 4 tahun wajib dimiliki <b>seluruh</b> anggota (${t.allA==="Ya"?"terpenuhi":"belum terpenuhi"}); pengalaman sejenis saling melengkapi; nilai kontrak sejenis tertinggi memakai milik leadfirm.</p>`:""}
+  </div>
+  <div class="card"><h2>d. Penilaian Kinerja Penyedia</h2>
+    <div class="grid c3">
+      ${inp(B+"kinerja","Nilai kinerja akumulatif 4 tahun (skala 0–3)",{num:true,ph:"mis. 2,75"})}
+      ${inp(B+"kinerjaSumber","Sumber penilaian",{type:"select",options:["SIKaP","Perhitungan manual (Peraturan LKPP 4/2021)","SIKaP + manual","Tidak ada penilaian"]})}
+      ${inp(B+"kinerjaKet","Keterangan")}
+    </div>
+    <p class="hint">3 = Sangat Baik (nilai 10); 2 s.d. &lt;3 = Baik (nilai 5); &lt;2 atau tidak memiliki penilaian = 0 dan tidak memenuhi pengalaman minimal.</p>
+  </div>`;
+  p.exps.forEach((x,j)=>{
+    const E = `${B}exps.${j}.`, f = expFlags(x);
+    h += `<div class="card"><div class="row"><h3 style="margin:0">Pengalaman ${j+1}</h3>
+        ${f.a?'<span class="b ok">dihitung a</span>':""}${f.b?'<span class="b ok">dihitung b</span>':""}${f.c?'<span class="b ok">dihitung c</span>':""}
+        ${!f.in10 && x.tglBAST? '<span class="b bad">di luar 10 tahun</span>':""}${!f.subOk?'<span class="b bad">subkon tanpa referensi</span>':""}
+        <span class="sp"></span><button class="btn dan sm" data-act="delExp" data-i="${i}" data-j="${j}">Hapus</button></div>
+      <div class="grid c3" style="margin-top:8px">
+        ${p.bentuk==="KSO"? inp(E+"ent","Dimiliki oleh",{type:"select",options:p.ents.map((e,k)=>[String(k), (k===0?"Leadfirm: ":"")+(e.nama||("Anggota "+(k+1)))]),blank:false}) : ""}
+        ${inp(E+"nama","Nama paket pekerjaan")}
+        ${inp(E+"lingkup","Ringkasan lingkup pekerjaan")}
+        ${inp(E+"subklas","Klasifikasi/subklasifikasi",{ph:"mis. AR001 / RK001"})}
+        ${inp(E+"lokasi","Lokasi")}
+        ${inp(E+"pemberi","Pemberi tugas / PPK")}
+        ${inp(E+"noKontrak","Nomor & tanggal kontrak")}
+        ${inp(E+"nilai","Nilai kontrak (Rp)",{money:true,ph:"mis. 1250000000"})}
+        ${inp(E+"status","Status peserta",{type:"select",options:EXP_STATUS,blank:false})}
+        ${x.status==="KSO"? inp(E+"share","Porsi sharing (%)",{num:true}) : ""}
+        ${inp(E+"tglBAST","Tanggal BAST/PHO",{type:"date"})}
+      </div>
+      <div class="row" style="margin-top:6px">
+        ${inp(E+"jkk","a. Pekerjaan Jasa Konsultansi Konstruksi",{type:"check"})}
+        ${inp(E+"sejB","b. Sejenis (subklasifikasi AR001/RK001 atau lingkup sejenis)",{type:"check"})}
+        ${inp(E+"sejC","c. Sejenis: perencanaan konstruksi gedung pendidikan",{type:"check"})}
+        ${x.status==="Subkontrak"? inp(E+"referensi","Ada surat referensi PPK/pemilik pekerjaan",{type:"check"}) : ""}
+      </div>
+      <div class="grid c2">${inp(E+"ket","Keterangan evaluator")}<div class="hint" style="align-self:end">Nilai tertimbang: <b>${rp(expWeighted(x))}</b></div></div>
+    </div>`;
+  });
+  h += `<button class="btn" data-act="addExp" data-i="${i}">+ Tambah pengalaman</button>`;
+  return h;
+}
+
+function vTeknis(){
+  if(!S.peserta.length) return `<div class="alert info">Tambahkan peserta terlebih dahulu.</div>`;
+  const rows = S.peserta.map(p=>({p, e:evalResult(p)}));
+  const lulus = rows.filter(r=>r.e.lulus).length;
+  const P = S.param;
+  return `<div class="card"><h2>Rekapitulasi Evaluasi Kualifikasi</h2>
+    <div class="kpi"><div><b>${rows.length}</b><span>Peserta memasukkan dokumen</span></div><div><b>${lulus}</b><span>Lulus evaluasi kualifikasi</span></div><div><b>${rows.length-lulus}</b><span>Gugur / belum lengkap</span></div></div>
+    ${lulus < P.minLulus ? `<div class="alert bad">Peserta lulus evaluasi kualifikasi kurang dari ${P.minLulus} — sesuai IKP 18.14 prakualifikasi dinyatakan gagal.</div>` : `<div class="alert ok">${lulus} peserta lulus evaluasi kualifikasi dan diundang pembuktian kualifikasi.</div>`}
+    <div class="scroll"><table class="tbl">
+      <tr><th rowspan="2">No</th><th rowspan="2">Peserta</th><th rowspan="2" class="c">Administrasi</th><th colspan="4" class="c">Pengalaman minimal (M/TM)</th><th colspan="4" class="c">Nilai unsur</th><th rowspan="2" class="c">Jumlah</th><th rowspan="2" class="c">Teknis</th><th rowspan="2" class="c">Hasil Evaluasi</th></tr>
+      <tr><th class="c">a</th><th class="c">b</th><th class="c">c</th><th class="c">d</th><th class="c">a (20)</th><th class="c">b (30; ≥${P.ambangB})</th><th class="c">c (40; ≥${P.ambangC})</th><th class="c">d (10)</th></tr>
+      ${rows.map((r,i)=>{const t=r.e.t; return `<tr><td class="c">${i+1}</td><td>${esc(pName(r.p))}<div class="hint">${[...admReasons(r.p), ...t.reasons].map(esc).join("<br>")}</div></td><td class="c">${badge(r.e.ad)}</td>
+        <td class="c">${badge(t.minA)}<div class="hint">${t.a}×</div></td><td class="c">${badge(t.minB)}<div class="hint">${t.b}×</div></td><td class="c">${badge(t.minC)}<div class="hint">${t.c}×</div></td><td class="c">${badge(t.minD)}<div class="hint">${isFinite(t.k)?t.k:"-"}</div></td>
+        <td class="c">${t.na}</td><td class="c">${t.nb}</td><td class="c">${t.nc}</td><td class="c">${t.nd}</td><td class="c"><b>${t.total}</b></td><td class="c">${badge(t.hasil)}</td><td class="c">${badge(r.e.hasil)}</td></tr>`;}).join("")}
+    </table></div>
+    <p class="hint">Kriteria (Bab IX): a ≥10 kali = 20; 5–9 = 10; 1–4 = 5 · b ≥10 = 30; 5–9 = 20; 1–4 = 10 · c ≥10 = 40; 5–9 = 30; 1–4 = 20 · d nilai 3 = 10; 2–&lt;3 = 5. Lulus bila seluruh pengalaman minimal M, unsur b ≥ ${P.ambangB}, unsur c ≥ ${P.ambangC} dan jumlah ≥ ${P.ambangTotal}.</p>
+  </div>`;
+}
+
+function vPb(){
+  const inv = S.peserta.filter(p=>evalResult(p).lulus);
+  if(!inv.length) return `<div class="alert info">Belum ada peserta yang lulus evaluasi kualifikasi. Pembuktian hanya dilakukan kepada peserta yang lulus (IKP 19.1).</div>`;
+  const p = curPeserta(inv), i = idx(p), b = pembuktian(p), B = `peserta.${i}.pb.`;
+  let h = `<div class="card"><h2>Pembuktian Kualifikasi</h2>
+    <p class="hint">Mencocokkan isian SPSE dengan dokumen asli (IKP 19; Bab VIII huruf F). ${esc(S.paket.metodePembuktian)} · ${tglID(S.paket.tglPembuktian)}</p>
+    ${selChips(inv, p.id)}
+    <div class="row"><b>${esc(pName(p))}</b><span class="sp"></span>${badge(b.hasil)}</div>
+    ${b.reasons.length? `<ul class="r">${b.reasons.map(r=>`<li>${esc(r)}</li>`).join("")}</ul>`:""}
+    ${b.hasil==="BELUM DINILAI"? `<p class="hint">Lengkapi: ${b.blank? b.blank+" item dokumen":""}${b.blank&&b.unproven?" dan ":""}${b.unproven? b.unproven+" bukti pengalaman":""}${!p.pb.hadir?"kehadiran":""}.</p>`:""}
+  </div>
+  <div class="card"><h2>Kehadiran &amp; Legalitas Wakil</h2>
+    <div class="grid c3">
+      ${inp(B+"hadir","Kehadiran",{type:"select",options:["Hadir","Tidak Hadir"]})}
+      ${inp(B+"wakil","Nama wakil peserta")}
+      ${inp(B+"jabatan","Jabatan")}
+      ${inp(B+"noId","Nomor KTP/SIM/Paspor")}
+      ${inp(B+"noBA","Nomor BA Pembuktian peserta ini",{ph:S.paket.noBAPembuktian||"…/kode tender/bulan/tahun"})}
+      ${inp(B+"statusWakil","Kedudukan wakil",{type:"select",options:["Direksi yang tercantum dalam Akta","Direksi berdasarkan SK pengangkatan (RUPS)","Penerima kuasa (karyawan tetap)"]})}
+    </div>
+  </div>
+  <div class="card"><h2>Kesesuaian Dokumen Asli</h2>
+    ${pbItemsFor(p).map((it,k)=>`<div class="item"><div class="top"><span class="no">${k+1}</span><span class="tt">${esc(it.t)}</span>${badge(p.pb.items[it.k]||"-")}</div>
+      <div class="grid c2">${inp(`${B}items.${it.k}`,"Hasil",{type:"select",options:PB_OPTS})}${inp(`${B}items.${it.k}_ket`,"Keterangan")}</div>
+      <div class="grid c2">${inp(`${B}items.${it.k}_asli`,"Menunjukkan dokumen asli",{type:"select",options:[["","Otomatis (ikut hasil)"],"Ya","Tidak"],blank:false})}${inp(`${B}items.${it.k}_salinan`,"Menyerahkan salinan",{type:"select",options:[["","Otomatis (ikut hasil)"],"Ya","Tidak"],blank:false})}</div></div>`).join("")}
+  </div>
+  <div class="card"><h2>Bukti Pengalaman (Kontrak asli &amp; BAST)</h2>
+    <p class="hint">Bila bukti lebih sedikit dari isian, yang dinilai hanya pengalaman yang terbukti (Bab VIII F.3.b). Nilai teknis setelah pembuktian: <b>${b.t.total}</b> (a ${b.t.na} · b ${b.t.nb} · c ${b.t.nc} · d ${b.t.nd}) — ${badge(b.t.hasil)}</p>
+    ${p.exps.length? `<div class="scroll"><table class="tbl"><tr><th>No</th><th>Pengalaman</th><th class="c">Dihitung</th><th style="min-width:150px">Hasil pembuktian</th></tr>
+      ${p.exps.map((x,j)=>{const f=expFlags(x); return `<tr><td class="c">${j+1}</td><td>${esc(x.nama||"-")}<div class="hint">${esc(x.noKontrak)} · ${rp(x.nilai)} · BAST ${tglShort(x.tglBAST)||"-"}</div></td><td class="c">${[f.a&&"a",f.b&&"b",f.c&&"c"].filter(Boolean).join(", ")||"-"}</td><td>${inp(`peserta.${i}.exps.${j}.bukti`,"",{type:"select",options:BUKTI})}</td></tr>`;}).join("")}
+      </table></div><div class="row" style="margin-top:8px"><button class="btn sec sm" data-act="allBukti" data-i="${i}">Tandai semua “Terbukti”</button></div>` : `<p class="hint">Belum ada pengalaman yang diinput.</p>`}
+  </div>
+  <div class="card">
+    ${inp(B+"pemalsuan","Ditemukan pemalsuan dokumen berdasarkan klarifikasi kepada penerbit (gugur + usulan sanksi Daftar Hitam)",{type:"check"})}
+    ${inp(B+"catatan","Catatan pembuktian (klarifikasi, verifikasi penerbit, kunjungan lapangan)",{type:"textarea"})}
+  </div>`;
+  return h;
+}
+
+function vHasil(){
+  const R = ranking(), P = S.param;
+  const nInv = R.rows.filter(r=>r.e.lulus).length;
+  const pending = R.rows.filter(r=>r.b.hasil==="BELUM DINILAI").length;
+  const gagal = R.pass.length < P.minLulus;
+  return `<div class="card"><h2>Hasil Pembuktian &amp; Calon Daftar Pendek</h2>
+    <div class="kpi"><div><b>${R.rows.length}</b><span>Peserta</span></div><div><b>${nInv}</b><span>Diundang pembuktian</span></div><div><b>${R.pass.length}</b><span>Lulus pembuktian</span></div><div><b>${Math.min(R.pass.length, P.maxShortlist)}</b><span>Daftar pendek</span></div></div>
+    ${pending? `<div class="alert warn">${pending} peserta belum selesai dinilai pada tahap pembuktian.</div>`:""}
+    ${gagal && !pending? `<div class="alert bad">Peserta lulus pembuktian kurang dari ${P.minLulus} — sesuai IKP 19.10 prakualifikasi dinyatakan gagal; tindak lanjut sesuai IKP 23.</div>` : ""}
+    ${!gagal? `<div class="alert ok">${R.pass.length} peserta lulus pembuktian; ${Math.min(R.pass.length,P.maxShortlist)} peserta ditetapkan ke Daftar Pendek (IKP 20.3).</div>`:""}
+    <div class="scroll"><table class="tbl"><tr><th class="c">Peringkat</th><th>Peserta</th><th class="c">Evaluasi</th><th class="c">Pembuktian</th><th class="c">Nilai Teknis</th><th class="n">Nilai Sejenis Tertinggi</th><th class="c">Daftar Pendek</th></tr>
+    ${[...R.pass, ...R.rows.filter(r=>r.b.hasil!=="LULUS")].map(r=>`<tr><td class="c">${r.rank||"-"}</td><td>${esc(pName(r.p))}${r.b.reasons&&r.b.hasil!=="LULUS"?`<div class="hint">${r.b.reasons.map(esc).join("<br>")}</div>`:""}</td><td class="c">${badge(r.e.hasil)}</td><td class="c">${badge(r.b.hasil)}</td><td class="c">${r.b.hasil==="LULUS"? r.b.t.total : "-"}</td><td class="n">${r.b.hasil==="LULUS"? rp(r.b.t.top) : "-"}</td><td class="c">${r.shortlist? badge("Ya") : "-"}</td></tr>`).join("")}
+    </table></div>
+    ${R.pass.some(r=>r.tie)? `<p class="hint">Terdapat nilai teknis yang sama; peringkat ditentukan berdasarkan nilai kontrak pekerjaan sejenis tertinggi (IKP 20.2) dan dicatat dalam Berita Acara.</p>`:""}
+  </div>
+  <div class="dl">
+    <div class="card"><h2>Kertas Kerja (.xlsx)</h2><p class="hint">7 lembar: Info Paket, Peserta, Eval Administrasi, Pengalaman, Eval Teknis (berformula), Pembuktian, Hasil Akhir.</p><button class="btn" data-act="dlXlsx">Unduh Kertas Kerja Excel</button></div>
+    <div class="card"><h2>Berita Acara Pembuktian per Peserta (.docx)</h2><p class="hint">Satu berkas per peserta: BA Pembuktian Kualifikasi (A4 tegak) + Lampiran verifikasi dokumen (A4 mendatar), format Pokja UKPBJ Kemenag.</p>
+      ${R.rows.filter(r=>r.e.lulus).length? `<div style="display:flex;flex-direction:column;gap:6px">${R.rows.filter(r=>r.e.lulus).map(r=>`<div class="row"><span style="flex:1;min-width:0">${esc(pName(r.p))}</span>${badge(r.b.hasil)}<button class="btn sm" data-act="dlBA" data-pid="${r.p.id}">Unduh</button></div>`).join("")}</div>
+      <div class="row" style="margin-top:10px"><button class="btn sec" data-act="dlBAall">Unduh semua (.zip)</button></div>` : `<p class="hint">Belum ada peserta yang lulus evaluasi kualifikasi.</p>`}</div>
+  </div>
+  <div class="card" style="margin-top:12px"><h2>Data</h2>
+    <p class="hint">Data tersimpan otomatis ke database bersama Pokja (Supabase) dan seketika terlihat oleh anggota lain. Riwayat perubahan tercatat di tabel log_perubahan. Cadangan JSON tetap dapat diunduh untuk arsip. Berkas hasil evaluasi per peserta (.json) yang diimpor akan <b>ditambahkan</b> ke daftar peserta tanpa menimpa data lain.</p>
+    <div class="row"><button class="btn sec" data-act="dlJson">Unduh cadangan (.json)</button><button class="btn sec" data-act="impJson">Impor cadangan / hasil evaluasi peserta</button><button class="btn dan" data-act="reset">Kosongkan semua peserta (berlaku untuk seluruh anggota Pokja)</button></div>
+  </div>`;
+}
+
+
+function labelTables(){
+  document.querySelectorAll("#view table.tbl").forEach(t=>{
+    const grid = []; let r = 0;
+    const hrows = [...t.rows].filter(tr=>tr.querySelector("th") && !tr.querySelector("td"));
+    hrows.forEach(tr=>{ tr.classList.add("hd"); grid[r] = grid[r]||[]; let c = 0;
+      [...tr.cells].forEach(th=>{ while(grid[r][c]) c++; const rs = th.rowSpan||1, cs = th.colSpan||1;
+        for(let i=0;i<rs;i++) for(let j=0;j<cs;j++){ grid[r+i] = grid[r+i]||[]; grid[r+i][c+j] = {t:th.textContent.trim(), top:i===0 && rs>1 ? true : false, span:cs>1}; }
+        c += cs; }); r++; });
+    const ncol = Math.max(0, ...grid.map(g=>g.length));
+    const labels = []; for(let c=0;c<ncol;c++){ const parts = []; grid.forEach(g=>{ const x = g[c]; if(x && !parts.includes(x.t)) parts.push(x.t); }); labels[c] = parts.join(" · "); }
+    [...t.rows].forEach(tr=>{ if(tr.classList.contains("hd")) return; let c = 0; [...tr.cells].forEach(td=>{ td.setAttribute("data-label", labels[c]||""); c += td.colSpan||1; }); });
+  });
+}
+function render(){
+  renderTabs();
+  const v = {paket:vPaket, peserta:vPeserta, admin:vAdmin, exp:vExp, teknis:vTeknis, pb:vPb, hasil:vHasil}[S.ui.tab] || vPaket;
+  const y = window.scrollY, ae = document.activeElement, fp = ae && ae.dataset ? ae.dataset.path : null;
+  document.getElementById("view").innerHTML = v(); labelTables();
+  window.scrollTo(0, y);
+  if(fp){ const el = document.querySelector(`[data-path="${fp}"]`); if(el){ try{ el.focus({preventScroll:true}); }catch(e){} } }
+}
+
+/* =========================================================
+   6. EVENT
+   ========================================================= */
+function readVal(el){
+  if(el.type==="checkbox") return el.checked;
+  if(el.dataset.num){ const n = el.dataset.num==="m"? num(el.value) : numPlain(el.value); return el.value===""? "" : (isFinite(n)? n : el.value); }
+  return el.value;
+}
+document.addEventListener("input", e=>{
+  const el = e.target; if(!el.dataset || !el.dataset.path) return;
+  if(el.tagName==="SELECT" || el.type==="checkbox" || el.type==="date") return;
+  setPath(S, el.dataset.path, readVal(el)); save();
+});
+document.addEventListener("change", e=>{
+  const el = e.target; if(!el.dataset || !el.dataset.path) return;
+  let v = readVal(el);
+  if(/\.exps\.\d+\.ent$/.test(el.dataset.path)) v = +v;
+  setPath(S, el.dataset.path, v); save();
+  if(el.tagName==="SELECT" || el.type==="checkbox" || el.type==="date") render(); else setTimeout(render, 0);
+});
+let armed = null;
+document.addEventListener("click", e=>{
+  const t = e.target.closest("button"); if(!t) return;
+  if(t.dataset.tab){ S.ui.tab = t.dataset.tab; save(); render(); window.scrollTo(0,0); return; }
+  if(t.dataset.sel){ S.ui.sel = t.dataset.sel; save(); render(); return; }
+  const a = t.dataset.act; if(!a) return;
+  const i = +t.dataset.i, j = +t.dataset.j;
+  const danger = ["delPeserta","delEnt","delExp","delPokja","reset","demo"];
+  if(danger.includes(a) && armed!==t){
+    armed = t; const old = t.textContent; t.textContent = a==="demo"? "Ganti data saat ini? Tekan lagi" : "Tekan lagi untuk konfirmasi";
+    setTimeout(()=>{ if(armed===t){ armed=null; t.textContent = old; } }, 3000); return;
+  }
+  armed = null;
+  switch(a){
+    case "addPokja": S.pokjaAnggota.push({nama:"",nip:"",jabatan:"Anggota"}); break;
+    case "delPokja": S.pokjaAnggota.splice(i,1); break;
+    case "addPeserta": { const p = newPeserta(); S.peserta.push(p); S.ui.sel = p.id; break; }
+    case "delPeserta": S.peserta.splice(i,1); break;
+    case "addEnt": if(S.peserta[i].ents.length >= S.param.maxKSO){ toast("Jumlah anggota KSO paling banyak "+S.param.maxKSO+" perusahaan (LDK huruf D)."); return; } S.peserta[i].ents.push(newEntity("", "Besar", "")); break;
+    case "delEnt": S.peserta[i].ents.splice(j,1); S.peserta[i].exps.forEach(x=>{ if(+x.ent===j) x.ent=0; else if(+x.ent>j) x.ent=+x.ent-1; }); break;
+    case "addExp": S.peserta[i].exps.push(newExp()); break;
+    case "delExp": S.peserta[i].exps.splice(j,1); break;
+    case "allBukti": S.peserta[i].exps.forEach(x=>{ if(!x.bukti) x.bukti="Terbukti"; }); break;
+    case "dlXlsx": exportXlsx(); return;
+    case "dlBA": exportBA(t.dataset.pid); return;
+    case "dlBAall": exportBAall(); return;
+    case "logoUp": document.getElementById("logoFile").click(); return;
+    case "logoReset": S.paket.logo = ""; S.paket.logoW = 204; S.paket.logoH = 195; break;
+    case "dlJson": saveFile("Cadangan_Kertas_Kerja_Kualifikasi.json", new Blob([JSON.stringify(S,null,1)],{type:"application/json"})); return;
+    case "impJson": document.getElementById("fileImport").click(); return;
+    case "demo": loadDemo(); toast("Data contoh dimuat."); break;
+    case "reset": { const keep = {paket:S.paket, param:S.param, pokja:S.pokjaAnggota}; S = defaultState(); S.paket = keep.paket; S.param = keep.param; S.pokjaAnggota = keep.pokja; S.ui.tab = "hasil"; toast("Data peserta dikosongkan."); break; }
+  }
+  save(); render();
+});
+document.getElementById("logoFile").addEventListener("change", e=>{
+  const f = e.target.files[0]; e.target.value = ""; if(!f) return;
+  if(f.size > 180*1024){ toast("Ukuran logo maksimal 180 KB."); return; }
+  const rd = new FileReader();
+  rd.onload = ()=>{ const img = new Image(); img.onload = ()=>{ S.paket.logo = rd.result; S.paket.logoW = img.naturalWidth; S.paket.logoH = img.naturalHeight; save(); render(); toast("Logo kop diperbarui."); }; img.src = rd.result; };
+  rd.readAsDataURL(f);
+});
+document.getElementById("fileImport").addEventListener("change", async e=>{
+  const f = e.target.files[0]; if(!f) return;
+  try{
+    const o = JSON.parse(await f.text());
+    if(o && o._import==="peserta" && Array.isArray(o.peserta)){
+      // berkas hasil evaluasi peserta: digabung, data lain tidak ditimpa
+      const inc = migrate({peserta:o.peserta}).peserta; let add = 0, upd = 0;
+      inc.forEach(np=>{ const k = S.peserta.findIndex(x=>pName(x).trim().toLowerCase()===pName(np).trim().toLowerCase()); if(k>=0){ np.pb = S.peserta[k].pb.hadir? S.peserta[k].pb : np.pb; S.peserta[k] = np; upd++; } else { S.peserta.push(np); add++; } S.ui.sel = np.id; });
+      Object.entries(o.paket||{}).forEach(([k,v])=>{ if(!S.paket[k]) S.paket[k] = v; });
+      S.ui.tab = "teknis"; save(); render(); toast(`Hasil evaluasi diimpor: ${add} peserta baru, ${upd} diperbarui.`);
+    } else { S = migrate(o); save(); render(); toast("Cadangan berhasil diimpor."); }
+  }
+  catch(err){ toast("Berkas tidak dapat dibaca sebagai cadangan kertas kerja."); }
+  e.target.value = "";
+});
+
+async function saveFile(name, blob){
+  // Unduh langsung; bila diblokir peramban/HP, tampilkan tombol unduh manual.
+  const url = URL.createObjectURL(blob);
+  try{ const a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove(); }catch(e){}
+  let box = document.getElementById("dlBox");
+  if(!box){ box = document.createElement("div"); box.id = "dlBox"; document.body.appendChild(box); }
+  box.innerHTML = `<div class="ovbox"><b>Berkas siap diunduh</b><p>${esc(name)}</p><p class="hint">Jika unduhan belum berjalan otomatis, ketuk tombol di bawah.</p><div class="row"><a class="btn" href="${url}" download="${esc(name)}" target="_blank" rel="noopener">Unduh berkas</a><button class="btn sec" id="dlClose">Tutup</button></div></div>`;
+  box.style.display = "flex";
+  box.querySelector("#dlClose").onclick = ()=>{ box.style.display = "none"; setTimeout(()=>URL.revokeObjectURL(url), 1000); };
+}
+
+/* =========================================================
+   7. ZIP WRITER (stored) — tanpa pustaka eksternal
+   ========================================================= */
+const CRC_T = (()=>{ const t = new Uint32Array(256); for(let n=0;n<256;n++){ let c=n; for(let k=0;k<8;k++) c = c&1? 0xEDB88320^(c>>>1) : c>>>1; t[n]=c>>>0; } return t; })();
+function crc32(b){ let c = 0xFFFFFFFF; for(let i=0;i<b.length;i++) c = CRC_T[(c^b[i])&0xFF]^(c>>>8); return (c^0xFFFFFFFF)>>>0; }
+function zip(files){
+  const enc = new TextEncoder(), parts = [], cen = []; let off = 0;
+  const now = new Date(), dt = ((now.getHours()<<11)|(now.getMinutes()<<5)|(now.getSeconds()>>1)) & 0xFFFF, dd = (((now.getFullYear()-1980)<<9)|((now.getMonth()+1)<<5)|now.getDate()) & 0xFFFF;
+  for(const [name, content] of files){
+    const nb = enc.encode(name), data = typeof content==="string"? enc.encode(content) : content, crc = crc32(data);
+    const h = new DataView(new ArrayBuffer(30));
+    h.setUint32(0,0x04034b50,true); h.setUint16(4,20,true); h.setUint16(6,0x0800,true); h.setUint16(8,0,true);
+    h.setUint16(10,dt,true); h.setUint16(12,dd,true); h.setUint32(14,crc,true); h.setUint32(18,data.length,true); h.setUint32(22,data.length,true);
+    h.setUint16(26,nb.length,true); h.setUint16(28,0,true);
+    parts.push(new Uint8Array(h.buffer), nb, data);
+    const c = new DataView(new ArrayBuffer(46));
+    c.setUint32(0,0x02014b50,true); c.setUint16(4,20,true); c.setUint16(6,20,true); c.setUint16(8,0x0800,true); c.setUint16(10,0,true);
+    c.setUint16(12,dt,true); c.setUint16(14,dd,true); c.setUint32(16,crc,true); c.setUint32(20,data.length,true); c.setUint32(24,data.length,true);
+    c.setUint16(28,nb.length,true); c.setUint16(30,0,true); c.setUint16(32,0,true); c.setUint16(34,0,true); c.setUint16(36,0,true); c.setUint32(38,0,true); c.setUint32(42,off,true);
+    cen.push(new Uint8Array(c.buffer), nb);
+    off += 30 + nb.length + data.length;
+  }
+  const cs = cen.reduce((a,b)=>a+b.length,0);
+  const e = new DataView(new ArrayBuffer(22));
+  e.setUint32(0,0x06054b50,true); e.setUint16(8,files.length,true); e.setUint16(10,files.length,true); e.setUint32(12,cs,true); e.setUint32(16,off,true);
+  return new Blob([...parts, ...cen, new Uint8Array(e.buffer)]);
+}
+function x(s){ return String(s??"").replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,""); }
+
+/* =========================================================
+   8. XLSX WRITER
+   ========================================================= */
+/* style index (cellXfs) */
+const ST = {def:0,title:1,sub:2,hdr:3,txt:4,ctr:5,num:6,date:7,bold:8,note:9,lbl:10,inp:11,inpDate:12,inpNum:13,dec:14,boldCtr:15,boldNum:16};
+function colL(c){ let s=""; c++; while(c>0){ const m=(c-1)%26; s = String.fromCharCode(65+m)+s; c = Math.floor((c-1)/26); } return s; }
+function excelDate(s){ const d = pd(s); return d? (d - Date.UTC(1899,11,30))/86400000 : null; }
+class XSheet{
+  constructor(name){ this.name = name; this.rows = {}; this.merges = []; this.cols = []; this.freeze = null; this.landscape = true; this.maxR = 0; this.maxC = 0; this.cf = null; }
+  set(r,c,v,s,f){ (this.rows[r] = this.rows[r]||{})[c] = {v,s,f}; this.maxR = Math.max(this.maxR,r); this.maxC = Math.max(this.maxC,c); return this; }
+  row(r, c0, vals, s){ vals.forEach((v,k)=>{ if(v && typeof v==="object" && !Array.isArray(v)) this.set(r,c0+k,v.v,v.s??s,v.f); else this.set(r,c0+k,v,s); }); }
+  merge(r1,c1,r2,c2){ this.merges.push(colL(c1)+(r1+1)+":"+colL(c2)+(r2+1)); }
+  ref(r,c,abs){ return abs? "$"+colL(c)+"$"+(r+1) : colL(c)+(r+1); }
+  xml(){
+    let o = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">`;
+    o += `<sheetPr><pageSetUpPr fitToPage="1"/></sheetPr><dimension ref="A1:${colL(this.maxC)}${this.maxR+1}"/>`;
+    o += `<sheetViews><sheetView workbookViewId="0" zoomScale="90">` + (this.freeze? `<pane ySplit="${this.freeze}" topLeftCell="A${this.freeze+1}" activePane="bottomLeft" state="frozen"/>` : "") + `</sheetView></sheetViews>`;
+    o += `<sheetFormatPr defaultRowHeight="15"/>`;
+    if(this.cols.length) o += `<cols>${this.cols.map((w,i)=>`<col min="${i+1}" max="${i+1}" width="${w}" customWidth="1"/>`).join("")}</cols>`;
+    o += `<sheetData>`;
+    Object.keys(this.rows).map(Number).sort((a,b)=>a-b).forEach(r=>{
+      const R = this.rows[r];
+      o += `<row r="${r+1}">`;
+      Object.keys(R).map(Number).sort((a,b)=>a-b).forEach(c=>{
+        const {v,s,f} = R[c], ref = colL(c)+(r+1), sa = s? ` s="${s}"` : "";
+        if(f){
+          if(typeof v==="number") o += `<c r="${ref}"${sa}><f>${x(f)}</f><v>${v}</v></c>`;
+          else o += `<c r="${ref}"${sa} t="str"><f>${x(f)}</f><v>${x(v??"")}</v></c>`;
+        } else if(v===null || v===undefined || v===""){ o += `<c r="${ref}"${sa}/>`; }
+        else if(typeof v==="number" && isFinite(v)) o += `<c r="${ref}"${sa}><v>${v}</v></c>`;
+        else o += `<c r="${ref}"${sa} t="inlineStr"><is><t xml:space="preserve">${x(v)}</t></is></c>`;
+      });
+      o += `</row>`;
+    });
+    o += `</sheetData>`;
+    if(this.merges.length) o += `<mergeCells count="${this.merges.length}">${this.merges.map(m=>`<mergeCell ref="${m}"/>`).join("")}</mergeCells>`;
+    const rng = `A1:${colL(Math.max(this.maxC,1))}${this.maxR+1}`;
+    const okW = ["M","LULUS","MEMENUHI","Sesuai","Terbukti","Ya"], badW = ["TM","GUGUR","TIDAK LULUS","TIDAK MEMENUHI","Tidak Sesuai","Tidak Terbukti","Tidak Hadir"];
+    let pr = 1;
+    o += `<conditionalFormatting sqref="${rng}">` + okW.map(w=>`<cfRule type="cellIs" dxfId="0" priority="${pr++}" operator="equal"><formula>"${x(w)}"</formula></cfRule>`).join("") + badW.map(w=>`<cfRule type="cellIs" dxfId="1" priority="${pr++}" operator="equal"><formula>"${x(w)}"</formula></cfRule>`).join("") + `</conditionalFormatting>`;
+    o += `<pageMargins left="0.4" right="0.4" top="0.5" bottom="0.5" header="0.3" footer="0.3"/>`;
+    o += `<pageSetup paperSize="9" orientation="${this.landscape?"landscape":"portrait"}" fitToWidth="1" fitToHeight="0"/>`;
+    o += `<headerFooter><oddFooter>&amp;L&amp;8${x(this.name)}&amp;R&amp;8Hal. &amp;P / &amp;N</oddFooter></headerFooter>`;
+    o += `</worksheet>`;
+    return o;
+  }
+}
+function stylesXml(){
+  const fonts = [
+    `<font><sz val="10"/><name val="Arial"/></font>`,
+    `<font><b/><sz val="13"/><name val="Arial"/></font>`,
+    `<font><b/><sz val="11"/><name val="Arial"/></font>`,
+    `<font><b/><sz val="10"/><name val="Arial"/></font>`,
+    `<font><i/><sz val="9"/><color rgb="FF555555"/><name val="Arial"/></font>`,
+    `<font><sz val="10"/><color rgb="FF0000FF"/><name val="Arial"/></font>`
+  ];
+  const fills = [`<fill><patternFill patternType="none"/></fill>`,`<fill><patternFill patternType="gray125"/></fill>`,
+    `<fill><patternFill patternType="solid"><fgColor rgb="FFD9E7DD"/><bgColor indexed="64"/></patternFill></fill>`,
+    `<fill><patternFill patternType="solid"><fgColor rgb="FFFFF2CC"/><bgColor indexed="64"/></patternFill></fill>`];
+  const borders = [`<border><left/><right/><top/><bottom/><diagonal/></border>`,
+    `<border><left style="thin"><color rgb="FF999999"/></left><right style="thin"><color rgb="FF999999"/></right><top style="thin"><color rgb="FF999999"/></top><bottom style="thin"><color rgb="FF999999"/></bottom><diagonal/></border>`];
+  const al = (h,v,w)=>`<alignment${h?` horizontal="${h}"`:""} vertical="${v||"top"}"${w?` wrapText="1"`:""}/>`;
+  const xf = (font,fill,border,numFmt,align)=>`<xf numFmtId="${numFmt||0}" fontId="${font}" fillId="${fill}" borderId="${border}" xfId="0"${font?` applyFont="1"`:""}${fill?` applyFill="1"`:""}${border?` applyBorder="1"`:""}${numFmt?` applyNumberFormat="1"`:""} applyAlignment="1">${align||al(null,"top",false)}</xf>`;
+  const cellXfs = [
+    xf(0,0,0,0,al(null,"top",false)),        // 0 def
+    xf(1,0,0,0,al(null,"center",false)),     // 1 title
+    xf(2,0,0,0,al(null,"center",false)),     // 2 sub
+    xf(3,2,1,0,al("center","center",true)),  // 3 hdr
+    xf(0,0,1,0,al(null,"top",true)),         // 4 txt
+    xf(0,0,1,0,al("center","top",true)),     // 5 ctr
+    xf(0,0,1,164,al("right","top",false)),   // 6 num
+    xf(0,0,1,165,al("center","top",false)),  // 7 date
+    xf(3,0,1,0,al(null,"top",true)),         // 8 bold
+    xf(4,0,0,0,al(null,"top",true)),         // 9 note
+    xf(3,0,0,0,al(null,"top",false)),        // 10 lbl
+    xf(5,3,1,0,al(null,"top",true)),         // 11 inp
+    xf(5,3,1,165,al("left","top",false)),    // 12 inpDate
+    xf(5,3,1,164,al("right","top",false)),   // 13 inpNum
+    xf(0,0,1,166,al("center","top",false)),  // 14 dec
+    xf(3,0,1,0,al("center","top",true)),     // 15 boldCtr
+    xf(3,0,1,164,al("right","top",false))    // 16 boldNum
+  ];
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+<numFmts count="3"><numFmt numFmtId="164" formatCode="#,##0;(#,##0);&quot;-&quot;"/><numFmt numFmtId="165" formatCode="dd/mm/yyyy"/><numFmt numFmtId="166" formatCode="0.00"/></numFmts>
+<fonts count="${fonts.length}">${fonts.join("")}</fonts>
+<fills count="${fills.length}">${fills.join("")}</fills>
+<borders count="${borders.length}">${borders.join("")}</borders>
+<cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs>
+<cellXfs count="${cellXfs.length}">${cellXfs.join("")}</cellXfs>
+<cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles>
+<dxfs count="2"><dxf><font><b/><color rgb="FF006100"/></font><fill><patternFill><bgColor rgb="FFC6EFCE"/></patternFill></fill></dxf><dxf><font><b/><color rgb="FF9C0006"/></font><fill><patternFill><bgColor rgb="FFFFC7CE"/></patternFill></fill></dxf></dxfs>
+</styleSheet>`;
+}
+function buildXlsx(sheets){
+  const files = [];
+  files.push(["[Content_Types].xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>${sheets.map((s,i)=>`<Override PartName="/xl/worksheets/sheet${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join("")}<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/><Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/></Types>`]);
+  files.push(["_rels/.rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>`]);
+  files.push(["docProps/core.xml", coreXml("Kertas Kerja Evaluasi Kualifikasi")]);
+  files.push(["docProps/app.xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>Microsoft Excel</Application></Properties>`]);
+  files.push(["xl/workbook.xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><bookViews><workbookView activeTab="0"/></bookViews><sheets>${sheets.map((s,i)=>`<sheet name="${x(s.name)}" sheetId="${i+1}" r:id="rId${i+1}"/>`).join("")}</sheets><calcPr calcId="191029" fullCalcOnLoad="1"/></workbook>`]);
+  files.push(["xl/_rels/workbook.xml.rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${sheets.map((s,i)=>`<Relationship Id="rId${i+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i+1}.xml"/>`).join("")}<Relationship Id="rId${sheets.length+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`]);
+  files.push(["xl/styles.xml", stylesXml()]);
+  sheets.forEach((s,i)=>files.push([`xl/worksheets/sheet${i+1}.xml`, s.xml()]));
+  return zip(files);
+}
+function coreXml(title){
+  const iso = new Date().toISOString().replace(/\.\d+Z$/,"Z");
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${x(title)}</dc:title><dc:creator>${x(S.paket.pokja)}</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">${iso}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${iso}</dcterms:modified></cp:coreProperties>`;
+}
+function q(name){ return "'" + name.replace(/'/g,"''") + "'"; }
+
+function exportXlsx(){
+  try{
+    const blob = makeWorkbook();
+    saveFile("Kertas_Kerja_Evaluasi_Kualifikasi_Perencana_Asrama_UIN_2026.xlsx", blob);
+  }catch(e){ console.error(e); toast("Gagal membuat Excel: " + e.message); }
+}
+function makeWorkbook(){
+  const K = S.paket, P = S.param;
+  const NM = {info:"Info Paket", ps:"Peserta", adm:"Eval Administrasi", exp:"Pengalaman", tek:"Eval Teknis", pb:"Pembuktian", has:"Hasil Akhir"};
+  /* ---- Sheet 1: Info Paket ---- */
+  const s1 = new XSheet(NM.info); s1.cols = [4,46,70]; s1.landscape = false;
+  s1.set(0,0,"KERTAS KERJA EVALUASI KUALIFIKASI",ST.title); s1.merge(0,0,0,2);
+  s1.set(1,0,K.pokja,ST.sub); s1.merge(1,0,1,2);
+  let r = 3;
+  s1.set(r,0,"A. IDENTITAS PAKET",ST.lbl); r++;
+  const info = [["Nama paket",K.namaPaket],["Kode tender",K.kodeTender||"-"],["Instansi",K.instansi],["Pokja Pemilihan",K.pokja],["Alamat Pokja",K.alamatPokja],["Website SPSE",K.spse],["Nomor/Tanggal Dokumen Kualifikasi",K.noDok+" / "+tglID(K.tglDok)],["Metode",K.metode],["Lokasi pekerjaan",K.lokasi],["Jangka waktu pelaksanaan",K.waktu],["Sumber dana",K.sumberDana]];
+  info.forEach(([a,b],k)=>{ s1.set(r,0,k+1,ST.ctr); s1.set(r,1,a,ST.txt); s1.set(r,2,b,ST.txt); r++; });
+  s1.set(r,0,info.length+1,ST.ctr); s1.set(r,1,"Pagu anggaran (Rp)",ST.txt); s1.set(r,2,num(K.pagu),ST.num); r++;
+  s1.set(r,0,info.length+2,ST.ctr); s1.set(r,1,"HPS (Rp)",ST.txt); s1.set(r,2,num(K.hps),ST.num); r++;
+  s1.set(r,0,info.length+3,ST.ctr); s1.set(r,1,"Kualifikasi usaha yang disyaratkan",ST.txt); s1.set(r,2,"Usaha Besar (HPS > Rp2.500.000.000,00 — IKP 3.4; SBU AR001 & RK001)",ST.txt); r++;
+  r++; s1.set(r,0,"B. PARAMETER EVALUASI (sel kuning = dapat diubah; dirujuk oleh rumus)",ST.lbl); r++;
+  const PR = {};
+  const params = [
+    ["batas","Batas akhir pemasukan / batas hitungan pengalaman", excelDate(batasDate()), ST.inpDate, "Bab VIII B.2.a; jadwal SPSE"],
+    ["awal4","Awal hitungan pengalaman 4 tahun terakhir", excelDate(P.awal4), ST.inpDate, "LDK E.B.1"],
+    ["awal10","Awal hitungan pengalaman 10 tahun terakhir", excelDate(P.awal10), ST.inpDate, "Bab VIII B.7.a (dihitung dari 1 Januari)"],
+    ["ambB","Ambang batas nilai unsur b", +P.ambangB, ST.inpNum, "Bab IX 2.b"],
+    ["ambC","Ambang batas nilai unsur c", +P.ambangC, ST.inpNum, "Bab IX 2.b"],
+    ["ambT","Ambang batas jumlah nilai", +P.ambangTotal, ST.inpNum, "Bab IX 2.b"],
+    ["minK","Nilai kinerja minimal (Baik)", +P.minKinerja, ST.inpNum, "LDK E.B.4"],
+    ["minL","Jumlah minimal peserta lulus", +P.minLulus, ST.inpNum, "IKP 18.14 & 19.10"],
+    ["maxS","Jumlah Daftar Pendek", +P.maxShortlist, ST.inpNum, "IKP 20.3"]
+  ];
+  params.forEach(([k,a,v,st,src])=>{ s1.set(r,0,"",ST.ctr); s1.set(r,1,a+"  ["+src+"]",ST.txt); s1.set(r,2,v,st); PR[k] = q(NM.info)+"!"+s1.ref(r,2,true); r++; });
+  r++; s1.set(r,0,"C. ANGGOTA POKJA PEMILIHAN",ST.lbl); r++;
+  s1.row(r,0,["No","Nama / NIP","Jabatan"],ST.hdr); r++;
+  S.pokjaAnggota.forEach((a,k)=>{ s1.set(r,0,k+1,ST.ctr); s1.set(r,1,(a.nama||"………………")+(a.nip?" / NIP "+a.nip:""),ST.txt); s1.set(r,2,a.jabatan,ST.txt); r++; });
+  r++; s1.set(r,0,"Legenda: teks biru berlatar kuning = parameter input; teks hitam = rumus/hasil. Hasil hijau = Memenuhi/Lulus, merah = Tidak Memenuhi/Gugur.",ST.note); s1.merge(r,0,r,2);
+
+  /* ---- Sheet 2: Peserta ---- */
+  const s2 = new XSheet(NM.ps); s2.cols = [5,38,10,46,22,40,24]; s2.freeze = 3;
+  s2.set(0,0,"DAFTAR PESERTA YANG MEMASUKKAN DOKUMEN KUALIFIKASI",ST.title); s2.merge(0,0,0,6);
+  s2.row(2,0,["No","Nama Peserta","Bentuk","Badan Usaha / Anggota KSO (Kualifikasi, Sharing)","NPWP","Alamat","Email/Telepon"],ST.hdr);
+  S.peserta.forEach((p,k)=>{ const rr = 3+k;
+    s2.set(rr,0,k+1,ST.ctr); s2.set(rr,1,pName(p),ST.txt); s2.set(rr,2,p.bentuk,ST.ctr);
+    s2.set(rr,3, p.bentuk==="KSO"? p.ents.map((e,j)=>(j===0?"Leadfirm: ":"Anggota: ")+(e.nama||"-")+" ("+e.kual+", "+(e.share===""?"-":e.share)+"%)").join("\n") : (p.nama+" ("+p.ents[0].kual+")"),ST.txt);
+    s2.set(rr,4,p.npwp,ST.txt); s2.set(rr,5,p.alamat,ST.txt); s2.set(rr,6,p.email,ST.txt); });
+
+  /* ---- Sheet 3: Eval Administrasi ---- */
+  const s3 = new XSheet(NM.adm); s3.cols = [5,6,28,26,8,52,26,30,13,9,34]; s3.freeze = 4;
+  s3.set(0,0,"EVALUASI PERSYARATAN KUALIFIKASI ADMINISTRASI/LEGALITAS (SISTEM GUGUR)",ST.title); s3.merge(0,0,0,10);
+  s3.set(1,0,"Dasar: LDK huruf E.A, Bab VIII huruf B, Bab IX angka 1. Masa berlaku izin/sertifikat diuji terhadap batas akhir pemasukan ("+tglID(batasDate())+").",ST.note); s3.merge(1,0,1,10);
+  s3.row(3,0,["No","No. Peserta","Nama Peserta","Badan Usaha","Ref. LDK","Persyaratan","Kondisi Dokumen (Ada/Tidak Ada)","Data / Nomor","Masa Berlaku","M/TM","Keterangan"],ST.hdr);
+  r = 4; let n = 1;
+  const admStart = r;
+  S.peserta.forEach((p,k)=>{
+    admRowsAll(p).forEach(row=>{
+      const d = row.d;
+      let kond = d.ada||"", data = row.it.extra? row.it.extra.map(([k,l,ty])=>d[k]? l.replace(/^Akta /,"")+": "+(ty==="date"? tglShort(d[k]) : d[k]) : "").filter(Boolean).join("; ") || (d.nomor||"") : (d.nomor||"");
+      if(row.it.special==="sbu"){ kond = d.kual? "Ada — Kualifikasi "+d.kual : ""; data = [d.nomor, (d.ar?"AR001 ✓":"AR001 ✗"), (d.rk?"RK001 ✓":"RK001 ✗")].filter(Boolean).join("; "); }
+      if(row.ei===-1){ kond = row.it.k==="kso1"? (p.ksoAda||"") : ""; data = row.it.k==="kso1"? p.ksoKet : ""; }
+      s3.set(r,0,n++,ST.ctr); s3.set(r,1,k+1,ST.ctr); s3.set(r,2,pName(p),ST.txt); s3.set(r,3,row.ent,ST.txt); s3.set(r,4,row.it.no,ST.ctr);
+      s3.set(r,5,row.it.t,ST.txt); s3.set(r,6,kond,ST.txt); s3.set(r,7,data,ST.txt);
+      const bl = d.berlaku? excelDate(d.berlaku) : null; s3.set(r,8,bl,bl?ST.date:ST.ctr);
+      s3.set(r,9,row.r,ST.boldCtr); s3.set(r,10,[row.note,d.ket].filter(Boolean).join("; "),ST.txt);
+      r++;
+    });
+  });
+  const admEnd = Math.max(r-1, admStart);
+  const admB = q(NM.adm)+"!$B$"+(admStart+1)+":$B$"+(admEnd+1), admJ = q(NM.adm)+"!$J$"+(admStart+1)+":$J$"+(admEnd+1);
+
+  /* ---- Sheet 4: Pengalaman ---- */
+  const s4 = new XSheet(NM.exp); s4.cols = [5,6,26,24,32,28,12,22,30,17,15,8,17,12,8,8,8,9,9,9,14,26]; s4.freeze = 4;
+  s4.set(0,0,"DATA DAN PENILAIAN PENGALAMAN PERUSAHAAN",ST.title); s4.merge(0,0,0,21);
+  s4.set(1,0,"Kolom R–T berformula: pengalaman dihitung bila bertanda “Ya”, tanggal BAST/PHO dalam kurun waktu (Info Paket bagian B), dan—untuk subkontrak—ada surat referensi. Nilai tertimbang KSO = nilai × sharing (Bab VIII B.7.d).",ST.note); s4.merge(1,0,1,21);
+  s4.row(3,0,["No","No. Peserta","Nama Peserta","Dimiliki oleh","Nama Paket Pekerjaan","Ringkasan Lingkup","Subklasifikasi","Pemberi Tugas / PPK","Nomor & Tanggal Kontrak","Nilai Kontrak (Rp)","Status","Sharing (%)","Nilai Tertimbang (Rp)","Tgl BAST/PHO","a. JKK","b. Sejenis","c. Sejenis Gedung Pendidikan","Dihitung a (4 th)","Dihitung b (10 th)","Dihitung c (10 th)","Hasil Pembuktian","Keterangan"],ST.hdr);
+  s4.cols = [5,6,26,24,32,28,12,22,30,17,15,8,17,12,8,8,10,9,9,9,14,26];
+  r = 4; n = 1; const expStart = r;
+  S.peserta.forEach((p,k)=>{
+    p.exps.forEach(xp=>{
+      const f = expFlags(xp), R1 = r+1;
+      s4.set(r,0,n++,ST.ctr); s4.set(r,1,k+1,ST.ctr); s4.set(r,2,pName(p),ST.txt); s4.set(r,3,eName(p,+xp.ent)+(p.bentuk==="KSO"&&+xp.ent===0?" (Leadfirm)":""),ST.txt);
+      s4.set(r,4,xp.nama,ST.txt); s4.set(r,5,xp.lingkup,ST.txt); s4.set(r,6,xp.subklas,ST.ctr); s4.set(r,7,xp.pemberi,ST.txt); s4.set(r,8,xp.noKontrak,ST.txt);
+      const nv = num(xp.nilai); s4.set(r,9,isFinite(nv)?nv:null,ST.num);
+      s4.set(r,10,xp.status + (xp.status==="Subkontrak"? (xp.referensi?" (ada referensi)":" (tanpa referensi)") : ""),ST.ctr);
+      const sh = numPlain(xp.share); s4.set(r,11, xp.status==="KSO" && isFinite(sh)? sh : null, ST.ctr);
+      s4.set(r,12, expWeighted(xp), ST.num, `IF(LEFT(K${R1},3)="KSO",J${R1}*L${R1}/100,J${R1})`);
+      const bd = excelDate(xp.tglBAST); s4.set(r,13,bd,bd?ST.date:ST.ctr);
+      s4.set(r,14,xp.jkk?"Ya":"Tidak",ST.ctr); s4.set(r,15,xp.sejB?"Ya":"Tidak",ST.ctr); s4.set(r,16,xp.sejC?"Ya":"Tidak",ST.ctr);
+      const subOk = `ISERROR(SEARCH("tanpa referensi",K${R1}))`;
+      s4.set(r,17,f.a?1:0,ST.ctr,`IF(AND(O${R1}="Ya",N${R1}>=${PR.awal4},N${R1}<=${PR.batas},${subOk}),1,0)`);
+      s4.set(r,18,f.b?1:0,ST.ctr,`IF(AND(P${R1}="Ya",N${R1}>=${PR.awal10},N${R1}<=${PR.batas},${subOk}),1,0)`);
+      s4.set(r,19,f.c?1:0,ST.ctr,`IF(AND(Q${R1}="Ya",N${R1}>=${PR.awal10},N${R1}<=${PR.batas},${subOk}),1,0)`);
+      s4.set(r,20,xp.bukti||"",ST.ctr); s4.set(r,21,xp.ket,ST.txt);
+      r++;
+    });
+  });
+  const expEnd = Math.max(r-1, expStart);
+  const er = (c)=> q(NM.exp)+"!$"+c+"$"+(expStart+1)+":$"+c+"$"+(expEnd+1);
+  if(n>1){ s4.set(r,8,"Jumlah",ST.bold); s4.set(r,17,null,ST.boldCtr,`SUM(R${expStart+1}:R${expEnd+1})`); s4.set(r,18,null,ST.boldCtr,`SUM(S${expStart+1}:S${expEnd+1})`); s4.set(r,19,null,ST.boldCtr,`SUM(T${expStart+1}:T${expEnd+1})`);
+    const tot = S.peserta.reduce((a,p)=>{ p.exps.forEach(xp=>{ const f=expFlags(xp); a[0]+=f.a; a[1]+=f.b; a[2]+=f.c; }); return a; },[0,0,0]);
+    s4.rows[r][17].v = tot[0]; s4.rows[r][18].v = tot[1]; s4.rows[r][19].v = tot[2]; }
+
+  /* ---- Sheet 5: Eval Teknis ---- */
+  const s5 = new XSheet(NM.tek); s5.cols = [5,30,16,8,10,8,8,9,8,8,8,8,8,8,8,8,9,13,15,18,44]; s5.freeze = 5;
+  s5.set(0,0,"EVALUASI PERSYARATAN KUALIFIKASI TEKNIS (SISTEM PEMBOBOTAN DENGAN AMBANG BATAS)",ST.title); s5.merge(0,0,0,20);
+  s5.set(1,0,"Kriteria Bab IX: a ≥10 kali=20; 5–9=10; 1–4=5 | b ≥10=30; 5–9=20; 1–4=10 | c ≥10=40; 5–9=30; 1–4=20 | d nilai 3=10; 2–<3=5; <2=0. Lulus bila pengalaman minimal a–d = M, nilai b ≥ ambang b, nilai c ≥ ambang c, dan jumlah ≥ ambang jumlah.",ST.note); s5.merge(1,0,1,20);
+  s5.row(3,0,["No","Nama Peserta","Hasil Administrasi","Jumlah Pengalaman","","","","Nilai Kinerja","Pengalaman Minimal (M/TM)","","","","Nilai Unsur","","","","Jumlah Nilai","Hasil Teknis","Hasil Evaluasi Kualifikasi","Nilai Kontrak Sejenis Tertinggi (Rp)","Keterangan"],ST.hdr);
+  s5.row(4,0,["","","","a (4 th)","KSO: semua anggota punya a","b","c","d","a","b","c","d","a","b","c","d","","","","",""],ST.hdr);
+  [[3,0,4,0],[3,1,4,1],[3,2,4,2],[3,3,3,6],[3,8,3,11],[3,12,3,15],[3,16,4,16],[3,17,4,17],[3,18,4,18],[3,19,4,19],[3,20,4,20]].forEach(m=>s5.merge(...m));
+  r = 5;
+  S.peserta.forEach((p,k)=>{
+    const R1 = r+1, e = evalResult(p), t = e.t;
+    s5.set(r,0,k+1,ST.ctr); s5.set(r,1,pName(p),ST.txt);
+    const admTxt = admResult(p)==="MEMENUHI"? "MEMENUHI" : "TIDAK MEMENUHI";
+    s5.set(r,2,admTxt,ST.boldCtr,`IF(AND(COUNTIFS(${admB},A${R1},${admJ},"TM")=0,COUNTIFS(${admB},A${R1},${admJ},"-")=0,COUNTIF(${admB},A${R1})>0),"MEMENUHI","TIDAK MEMENUHI")`);
+    s5.set(r,3,t.a,ST.ctr,`COUNTIFS(${er("B")},A${R1},${er("R")},1)`);
+    s5.set(r,4,t.allA,ST.ctr);
+    s5.set(r,5,t.b,ST.ctr,`COUNTIFS(${er("B")},A${R1},${er("S")},1)`);
+    s5.set(r,6,t.c,ST.ctr,`COUNTIFS(${er("B")},A${R1},${er("T")},1)`);
+    s5.set(r,7,isFinite(t.k)? t.k : null,ST.dec);
+    s5.set(r,8,t.minA,ST.boldCtr,`IF(AND(D${R1}>=1,E${R1}<>"Tidak"),"M","TM")`);
+    s5.set(r,9,t.minB,ST.boldCtr,`IF(F${R1}>=1,"M","TM")`);
+    s5.set(r,10,t.minC,ST.boldCtr,`IF(G${R1}>=1,"M","TM")`);
+    s5.set(r,11,t.minD,ST.boldCtr,`IF(AND(ISNUMBER(H${R1}),H${R1}>=${PR.minK}),"M","TM")`);
+    s5.set(r,12,t.na,ST.ctr,`IF(D${R1}>=10,20,IF(D${R1}>=5,10,IF(D${R1}>=1,5,0)))`);
+    s5.set(r,13,t.nb,ST.ctr,`IF(F${R1}>=10,30,IF(F${R1}>=5,20,IF(F${R1}>=1,10,0)))`);
+    s5.set(r,14,t.nc,ST.ctr,`IF(G${R1}>=10,40,IF(G${R1}>=5,30,IF(G${R1}>=1,20,0)))`);
+    s5.set(r,15,t.nd,ST.ctr,`IF(ISNUMBER(H${R1}),IF(H${R1}>=3,10,IF(H${R1}>=2,5,0)),0)`);
+    s5.set(r,16,t.total,ST.boldCtr,`SUM(M${R1}:P${R1})`);
+    s5.set(r,17,t.hasil,ST.boldCtr,`IF(AND(I${R1}="M",J${R1}="M",K${R1}="M",L${R1}="M",N${R1}>=${PR.ambB},O${R1}>=${PR.ambC},Q${R1}>=${PR.ambT}),"LULUS","TIDAK LULUS")`);
+    s5.set(r,18,e.lulus?"LULUS":"GUGUR",ST.boldCtr,`IF(AND(C${R1}="MEMENUHI",R${R1}="LULUS"),"LULUS","GUGUR")`);
+    s5.set(r,19,t.top,ST.num);
+    s5.set(r,20,[...admReasons(p), ...t.reasons, p.catatanEval].filter(Boolean).join("; "),ST.txt);
+    r++;
+  });
+  const tekEnd = r;
+  if(S.peserta.length){
+    r++; s5.set(r,1,"Jumlah peserta lulus evaluasi",ST.bold); s5.set(r,2,S.peserta.filter(p=>evalResult(p).lulus).length,ST.boldCtr,`COUNTIF(S6:S${tekEnd},"LULUS")`);
+    r++; s5.set(r,1,"Status prakualifikasi (IKP 18.14)",ST.bold);
+    const nl = S.peserta.filter(p=>evalResult(p).lulus).length;
+    s5.set(r,2, nl>=P.minLulus? "DILANJUTKAN PEMBUKTIAN":"PRAKUALIFIKASI GAGAL",ST.boldCtr,`IF(C${r}>=${PR.minL},"DILANJUTKAN PEMBUKTIAN","PRAKUALIFIKASI GAGAL")`); s5.merge(r,2,r,5);
+  }
+
+  /* ---- Sheet 6: Pembuktian ---- */
+  const inv = S.peserta.filter(p=>evalResult(p).lulus);
+  const pbItems = PB;
+  const s6 = new XSheet(NM.pb);
+  const c0 = 7; // kolom awal item PB
+  s6.cols = [5,28,10,22,24,26].concat([16]).concat(pbItems.map(()=>13)).concat([8,8,8,8,8,8,8,8,9,13,10,13,40]);
+  s6.freeze = 5;
+  s6.set(0,0,"PEMBUKTIAN KUALIFIKASI",ST.title); s6.merge(0,0,0,6+pbItems.length+13);
+  s6.set(1,0,"Tanggal: "+tglID(K.tglPembuktian)+" | Metode: "+K.metodePembuktian+" | Tempat/Media: "+K.tempatPembuktian+". Dasar: IKP 19, Bab VIII huruf F. Pengalaman dihitung ulang hanya dari yang “Terbukti” (kontrak asli & BAST).",ST.note); s6.merge(1,0,1,6+pbItems.length+13);
+  const hdr = ["No","Nama Peserta","Kehadiran","Nama Wakil","Jabatan","No. Identitas","Kedudukan Wakil"].concat(pbItems.map(it=>it.t.split(/[:(]/)[0].trim())).concat(["a terbukti","b terbukti","c terbukti","Nilai Kinerja","Nilai a","Nilai b","Nilai c","Nilai d","Jumlah Nilai","Hasil Teknis Setelah Pembuktian","Indikasi Pemalsuan","Hasil Pembuktian","Keterangan"]);
+  s6.row(3,0,hdr,ST.hdr);
+  s6.row(4,0,hdr.map((h,i)=> i>=c0 && i<c0+pbItems.length ? "("+(i-c0+1)+")" : ""),ST.hdr);
+  s6.cols = hdr.map((h,i)=> i===1?28 : i===0?5 : i<c0? 18 : i<c0+pbItems.length? 14 : i===hdr.length-1? 42 : i===hdr.length-4? 14 : 9);
+  for(let c=0;c<hdr.length;c++){ if(!(c>=c0 && c<c0+pbItems.length)) s6.merge(3,c,4,c); }
+  r = 5;
+  const cA = c0+pbItems.length; // kolom a terbukti
+  const L = (c)=>colL(c);
+  inv.forEach((p,k)=>{
+    const R1 = r+1, b = pembuktian(p), t = b.t, no = idx(p)+1;
+    s6.set(r,0,no,ST.ctr); s6.set(r,1,pName(p),ST.txt); s6.set(r,2,p.pb.hadir||"",ST.ctr); s6.set(r,3,p.pb.wakil,ST.txt); s6.set(r,4,p.pb.jabatan,ST.txt); s6.set(r,5,p.pb.noId,ST.txt); s6.set(r,6,p.pb.statusWakil,ST.txt);
+    pbItems.forEach((it,j)=>{ const v = it.k==="kso" && p.bentuk!=="KSO"? "Tidak Diperlukan" : (p.pb.items[it.k]||""); s6.set(r,c0+j,v,ST.ctr); });
+    s6.set(r,cA,t.a,ST.ctr,`COUNTIFS(${er("B")},A${R1},${er("R")},1,${er("U")},"Terbukti")`);
+    s6.set(r,cA+1,t.b,ST.ctr,`COUNTIFS(${er("B")},A${R1},${er("S")},1,${er("U")},"Terbukti")`);
+    s6.set(r,cA+2,t.c,ST.ctr,`COUNTIFS(${er("B")},A${R1},${er("T")},1,${er("U")},"Terbukti")`);
+    s6.set(r,cA+3,isFinite(t.k)?t.k:null,ST.dec);
+    const a_=L(cA)+R1, b_=L(cA+1)+R1, c_=L(cA+2)+R1, d_=L(cA+3)+R1;
+    s6.set(r,cA+4,t.na,ST.ctr,`IF(${a_}>=10,20,IF(${a_}>=5,10,IF(${a_}>=1,5,0)))`);
+    s6.set(r,cA+5,t.nb,ST.ctr,`IF(${b_}>=10,30,IF(${b_}>=5,20,IF(${b_}>=1,10,0)))`);
+    s6.set(r,cA+6,t.nc,ST.ctr,`IF(${c_}>=10,40,IF(${c_}>=5,30,IF(${c_}>=1,20,0)))`);
+    s6.set(r,cA+7,t.nd,ST.ctr,`IF(ISNUMBER(${d_}),IF(${d_}>=3,10,IF(${d_}>=2,5,0)),0)`);
+    s6.set(r,cA+8,t.total,ST.boldCtr,`SUM(${L(cA+4)}${R1}:${L(cA+7)}${R1})`);
+    const allA = p.bentuk==="KSO" ? (t.allA==="Ya") : true;
+    s6.set(r,cA+9,t.hasil,ST.boldCtr,`IF(AND(${a_}>=1,${b_}>=1,${c_}>=1,${allA?"TRUE":"FALSE"},ISNUMBER(${d_}),${d_}>=${PR.minK},${L(cA+5)}${R1}>=${PR.ambB},${L(cA+6)}${R1}>=${PR.ambC},${L(cA+8)}${R1}>=${PR.ambT}),"LULUS","TIDAK LULUS")`);
+    s6.set(r,cA+10,p.pb.pemalsuan?"Ya":"Tidak",ST.ctr);
+    const itR = L(c0)+R1+":"+L(c0+pbItems.length-1)+R1;
+    const hs = b.hasil==="LULUS"? "LULUS" : b.hasil==="GUGUR"? "GUGUR" : "BELUM DINILAI";
+    s6.set(r,cA+11,hs,ST.boldCtr,`IF(C${R1}="","BELUM DINILAI",IF(OR(C${R1}="Tidak Hadir",COUNTIF(${itR},"Tidak Sesuai")>0,${L(cA+10)}${R1}="Ya"),"GUGUR",IF(OR(COUNTBLANK(${itR})>0,COUNTIFS(${er("B")},A${R1},${er("U")},"")>0),"BELUM DINILAI",IF(${L(cA+9)}${R1}="LULUS","LULUS","GUGUR"))))`);
+    s6.set(r,cA+12,[...b.reasons, ...pbItems.filter(it=>p.pb.items[it.k+"_ket"]).map(it=>it.t.split(/[:(]/)[0].trim()+": "+p.pb.items[it.k+"_ket"]), p.pb.catatan].filter(Boolean).join("; "),ST.txt);
+    r++;
+  });
+  if(!inv.length){ s6.set(5,1,"Belum ada peserta yang lulus evaluasi kualifikasi.",ST.note); }
+  r++; s6.set(r,1,"Keterangan kolom (1)–("+pbItems.length+"):",ST.lbl); r++;
+  pbItems.forEach((it,j)=>{ s6.set(r,1,"("+(j+1)+") "+it.t,ST.note); s6.merge(r,1,r,12); r++; });
+
+  /* ---- Sheet 7: Hasil Akhir ---- */
+  const R = ranking();
+  const s7 = new XSheet(NM.has); s7.cols = [10,36,16,16,16,12,20,14,40]; s7.landscape = true;
+  s7.set(0,0,"REKAPITULASI HASIL EVALUASI, PEMBUKTIAN, DAN CALON DAFTAR PENDEK",ST.title); s7.merge(0,0,0,8);
+  s7.set(1,0,K.namaPaket,ST.sub); s7.merge(1,0,1,8);
+  s7.row(3,0,["No","Nama Peserta","Administrasi","Evaluasi Teknis","Hasil Evaluasi Kualifikasi","Pembuktian","Nilai Teknis Setelah Pembuktian","Peringkat","Keterangan"],ST.hdr);
+  r = 4;
+  S.peserta.forEach((p,k)=>{
+    const row = R.rows[k];
+    s7.set(r,0,k+1,ST.ctr); s7.set(r,1,pName(p),ST.txt); s7.set(r,2,row.e.ad,ST.boldCtr); s7.set(r,3,row.e.t.hasil,ST.boldCtr); s7.set(r,4,row.e.lulus?"LULUS":"GUGUR",ST.boldCtr);
+    s7.set(r,5,row.b.invited? row.b.hasil : "Tidak diundang",ST.boldCtr); s7.set(r,6,row.b.hasil==="LULUS"? row.b.t.total : null,ST.ctr); s7.set(r,7,row.rank||"-",ST.ctr);
+    s7.set(r,8,(row.b.hasil==="LULUS"? (row.shortlist?"Masuk Daftar Pendek":"Di luar Daftar Pendek") : [...(row.e.lulus? []:[...admReasons(p), ...row.e.t.reasons]), ...(row.b.invited? row.b.reasons:[])].join("; ")),ST.txt);
+    r++;
+  });
+  r++; s7.set(r,0,"CALON DAFTAR PENDEK (urut peringkat; nilai sama ditentukan berdasarkan nilai kontrak pekerjaan sejenis tertinggi — IKP 20.2)",ST.lbl); s7.merge(r,0,r,8); r++;
+  s7.row(r,0,["Peringkat","Nama Peserta","NPWP","Nilai Teknis","Nilai Sejenis Tertinggi (Rp)","Daftar Pendek","Bentuk"],ST.hdr); r++;
+  R.pass.forEach(rw=>{ s7.set(r,0,rw.rank,ST.ctr); s7.set(r,1,pName(rw.p),ST.txt); s7.set(r,2,rw.p.npwp,ST.txt); s7.set(r,3,rw.b.t.total,ST.ctr); s7.set(r,4,rw.b.t.top,ST.num); s7.set(r,5,rw.shortlist?"Ya":"Tidak",ST.ctr); s7.set(r,6,rw.p.bentuk,ST.ctr); r++; });
+  if(!R.pass.length){ s7.set(r,1,"Belum ada peserta yang lulus pembuktian.",ST.note); r++; }
+  r++;
+  const gagal = R.pass.length < P.minLulus;
+  s7.set(r,0,"KESIMPULAN",ST.lbl); r++;
+  s7.set(r,0, gagal? `Peserta lulus pembuktian kualifikasi berjumlah ${R.pass.length} (kurang dari ${P.minLulus}); sesuai IKP 19.10 prakualifikasi dinyatakan GAGAL dan ditindaklanjuti sesuai IKP 23.` : `${R.pass.length} peserta lulus pembuktian kualifikasi; ${Math.min(R.pass.length,P.maxShortlist)} peserta ditetapkan dalam Daftar Pendek sesuai IKP 20.3.`, ST.txt); s7.merge(r,0,r,8); r+=2;
+  s7.set(r,5,K.kotaTtd+", "+tglID(K.tglPembuktian||K.tglEvaluasi),ST.def); r++;
+  s7.set(r,5,"Pokja Pemilihan",ST.lbl); r++;
+  S.pokjaAnggota.forEach((a,k)=>{ s7.set(r,5,(k+1)+". "+(a.nama||"………………………")+" ("+a.jabatan+")",ST.def); s7.set(r,7,"……………………",ST.def); r++; });
+
+  return buildXlsx([s1,s2,s3,s4,s5,s6,s7]);
+}
+
+/* =========================================================
+   9. DOCX WRITER — BA Pembuktian Kualifikasi PER PESERTA
+   (format mengikuti BA & Lampiran Pokja UKPBJ Kemenag)
+   ========================================================= */
+let DOCFONT = null, IMGID = 0;
+function wr(text, o={}){
+  const f = o.font || DOCFONT;
+  const rp_ = (f?`<w:rFonts w:ascii="${x(f)}" w:hAnsi="${x(f)}" w:eastAsia="${x(f)}" w:cs="${x(f)}"/>`:"") + (o.b?"<w:b/>":"") + (o.i?"<w:i/>":"") + (o.caps?"<w:caps/>":"") + (o.color?`<w:color w:val="${o.color}"/>`:"") + (o.sz?`<w:sz w:val="${o.sz}"/><w:szCs w:val="${o.sz}"/>`:"") + (o.u?'<w:u w:val="single"/>':"");
+  const R0 = rp_? `<w:rPr>${rp_}</w:rPr>` : "";
+  return String(text??"").split("\n").map((t,k)=>(k?`<w:r>${R0}<w:br/></w:r>`:"") + t.split("\t").map((seg,j)=>(j?`<w:r>${R0}<w:tab/></w:r>`:"") + (seg? `<w:r>${R0}<w:t xml:space="preserve">${x(seg)}</w:t></w:r>` : "")).join("")).join("");
+}
+function wp(runs, o={}){
+  runs = runs || "";
+  const ppr = (o.keep?"<w:keepNext/>":"") + (o.pb?"<w:pageBreakBefore/>":"") +
+    (o.bottomBorder?`<w:pBdr><w:bottom w:val="thinThickSmallGap" w:sz="24" w:space="1" w:color="000000"/></w:pBdr>`:"") +
+    (o.tabs? `<w:tabs>${o.tabs.map(t=>`<w:tab w:val="${t[1]||"left"}" w:pos="${t[0]}"/>`).join("")}</w:tabs>` : "") +
+    `<w:spacing w:before="${o.before||0}" w:after="${o.after??100}" w:line="${o.line||264}" w:lineRule="auto"/>` +
+    (o.ind? `<w:ind w:left="${o.ind}" w:hanging="${o.hang||0}"/>` : "") + `<w:jc w:val="${o.align||"both"}"/>` +
+    (o.sect? o.sect : "");
+  return `<w:p><w:pPr>${ppr}</w:pPr>${runs}</w:p>`;
+}
+/* sel tabel: {t, raw, span, vm, b, i, al, fill} */
+function wtable(rows, widths, o={}){
+  const tw = widths.reduce((a,b)=>a+b,0);
+  const bd = o.noBorder? `<w:tblBorders><w:top w:val="nil"/><w:left w:val="nil"/><w:bottom w:val="nil"/><w:right w:val="nil"/><w:insideH w:val="nil"/><w:insideV w:val="nil"/></w:tblBorders>` : `<w:tblBorders><w:top w:val="single" w:sz="4" w:color="000000"/><w:left w:val="single" w:sz="4" w:color="000000"/><w:bottom w:val="single" w:sz="4" w:color="000000"/><w:right w:val="single" w:sz="4" w:color="000000"/><w:insideH w:val="single" w:sz="4" w:color="000000"/><w:insideV w:val="single" w:sz="4" w:color="000000"/></w:tblBorders>`;
+  const mar = o.mar ?? 70;
+  let t = `<w:tbl><w:tblPr><w:tblW w:w="${tw}" w:type="dxa"/>${o.center?'<w:jc w:val="center"/>':""}${bd}<w:tblLayout w:type="fixed"/><w:tblCellMar><w:top w:w="${o.noBorder?0:30}" w:type="dxa"/><w:left w:w="${mar}" w:type="dxa"/><w:bottom w:w="${o.noBorder?0:30}" w:type="dxa"/><w:right w:w="${mar}" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>${widths.map(w=>`<w:gridCol w:w="${w}"/>`).join("")}</w:tblGrid>`;
+  rows.forEach((row,ri)=>{
+    const isH = o.header && ri < (o.headerRows||1);
+    t += `<w:tr><w:trPr>${o.noSplit===false?"":"<w:cantSplit/>"}${isH?"<w:tblHeader/>":""}</w:trPr>`;
+    let ci = 0;
+    row.forEach(cell=>{
+      if(cell==null) cell = "";
+      const c = typeof cell==="object"? cell : {t:cell};
+      const span = c.span||1, w = widths.slice(ci, ci+span).reduce((a,b)=>a+b,0); ci += span;
+      const fill = c.fill || (isH && o.hdrFill ? o.hdrFill : null);
+      const shade = fill? `<w:shd w:val="clear" w:color="auto" w:fill="${fill}"/>` : "";
+      const content = c.raw || String(c.t??"").split("\n\n").map(par=>wp(wr(par,{b:isH||c.b, i:c.i, sz:c.sz||o.sz||20}), {after:0, line:o.line||240, align: c.al || (isH?"center":"left")})).join("");
+      t += `<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/>${span>1?`<w:gridSpan w:val="${span}"/>`:""}${c.vm?`<w:vMerge${c.vm==="restart"?' w:val="restart"':""}/>`:""}${shade}<w:vAlign w:val="${c.va||(isH?"center":"top")}"/></w:tcPr>${content}</w:tc>`;
+    });
+    t += `</w:tr>`;
+  });
+  return t + `</w:tbl>`;
+}
+function b64bytes(dataUrl){
+  const m = /^data:image\/(png|jpe?g);base64,(.*)$/.exec(dataUrl||""); if(!m) return null;
+  const bin = atob(m[2]), u = new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) u[i] = bin.charCodeAt(i);
+  return {ext: m[1]==="png"?"png":"jpeg", bytes:u};
+}
+function wImg(rid, cx, cy){
+  const id = ++IMGID;
+  return `<w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="${cx}" cy="${cy}"/><wp:docPr id="${id}" name="Logo ${id}"/><wp:cNvGraphicFramePr><a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/></wp:cNvGraphicFramePr><a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:nvPicPr><pic:cNvPr id="${id}" name="logo"/><pic:cNvPicPr/></pic:nvPicPr><pic:blipFill><a:blip r:embed="${rid}"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill><pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="${cx}" cy="${cy}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r>`;
+}
+function buildDocx(bodyXml, finalSect, footers, media){
+  const files = [];
+  const ftrOv = footers.map((f,i)=>`<Override PartName="/word/footer${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml"/>`).join("");
+  files.push(["[Content_Types].xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="jpeg" ContentType="image/jpeg"/><Default Extension="png" ContentType="image/png"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/><Override PartName="/word/settings.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml"/>${ftrOv}<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/><Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/></Types>`]);
+  files.push(["_rels/.rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>`]);
+  files.push(["docProps/core.xml", coreXml("Berita Acara Pembuktian Kualifikasi")]);
+  files.push(["docProps/app.xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>Microsoft Office Word</Application></Properties>`]);
+  const rels = [`<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>`,`<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/>`]
+    .concat(footers.map((f,i)=>`<Relationship Id="rIdF${i+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer${i+1}.xml"/>`));
+  if(media) rels.push(`<Relationship Id="rIdImg" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/logo.${media.ext}"/>`);
+  files.push(["word/_rels/document.xml.rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${rels.join("")}</Relationships>`]);
+  files.push(["word/settings.xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:settings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:defaultTabStop w:val="720"/><w:compat><w:compatSetting w:name="compatibilityMode" w:uri="http://schemas.microsoft.com/office/word" w:val="15"/></w:compat></w:settings>`]);
+  files.push(["word/styles.xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial"/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="id-ID"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="100" w:line="264" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/></w:style><w:style w:type="table" w:default="1" w:styleId="TableNormal"><w:name w:val="Normal Table"/><w:tblPr><w:tblInd w:w="0" w:type="dxa"/><w:tblCellMar><w:top w:w="0" w:type="dxa"/><w:left w:w="108" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="108" w:type="dxa"/></w:tblCellMar></w:tblPr></w:style></w:styles>`]);
+  footers.forEach((f,i)=>files.push([`word/footer${i+1}.xml`, `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:ftr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">${f}</w:ftr>`]));
+  if(media) files.push([`word/media/logo.${media.ext}`, media.bytes]);
+  files.push(["word/document.xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"><w:body>${bodyXml}${finalSect}</w:body></w:document>`]);
+  return zip(files);
+}
+function fldRun(instr, sz){ const R = `<w:rPr><w:sz w:val="${sz}"/></w:rPr>`; return `<w:r>${R}<w:fldChar w:fldCharType="begin"/></w:r><w:r>${R}<w:instrText xml:space="preserve"> ${instr} </w:instrText></w:r><w:r>${R}<w:fldChar w:fldCharType="separate"/></w:r><w:r>${R}<w:t>1</w:t></w:r><w:r>${R}<w:fldChar w:fldCharType="end"/></w:r>`; }
+
+/* ---------- status helpers ---------- */
+const PH = {dok:"Sesuai/Tidak Sesuai", asli:"Ya / Tidak", sal:"Ya / Tidak", sah:"Sah / Tidak"};
+const NA = {dok:"-", asli:"-", sal:"-", sah:"-"};
+function stPB(p, k){
+  const it = p.pb.items, h = it[k];
+  if(p.pb.hadir==="Tidak Hadir") return {dok:"Tidak hadir", asli:"-", sal:"-", sah:"Tidak"};
+  if(h==="Tidak Diperlukan") return NA;
+  if(!h) return PH;
+  const ok = h==="Sesuai";
+  return {dok:h, asli: it[k+"_asli"] || (ok?"Ya":"Tidak"), sal: it[k+"_salinan"] || (ok?"Ya":"Tidak"), sah: ok && !p.pb.pemalsuan ? "Sah" : "Tidak"};
+}
+function stAdm(r){ return r==="M"? {dok:"Sesuai", asli:"-", sal:"-", sah:"Sah"} : r==="TM"? {dok:"Tidak Sesuai", asli:"-", sal:"-", sah:"Tidak"} : {dok:PH.dok, asli:"-", sal:"-", sah:PH.sah}; }
+function stExp(p, xp){
+  if(p.pb.hadir==="Tidak Hadir") return {dok:"Tidak hadir", asli:"-", sal:"-", sah:"Tidak"};
+  const b = xp.bukti;
+  if(b==="Terbukti") return {dok:"Sesuai", asli:"Ya", sal:"Ya", sah:"Sah"};
+  if(b==="Tidak Terbukti") return {dok:"Tidak Sesuai", asli:"Ya", sal:"Tidak", sah:"Tidak"};
+  if(b==="Tidak Ditunjukkan") return {dok:"Tidak Sesuai", asli:"Tidak", sal:"Tidak", sah:"Tidak"};
+  return PH;
+}
+function admAll(p, k){ // gabungan hasil admin seluruh badan usaha
+  const it = ADM.find(a=>a.k===k); const rs = ents(p).map((e,ei)=>admItem(p,ei,it).r);
+  return rs.includes("TM")? "TM" : rs.every(r=>r==="M")? "M" : "-";
+}
+/* hasil kolom "PEMBUKTIAN DOKUMEN KUALIFIKASI" pada BA */
+function resPB(p, keys){
+  if(p.pb.hadir==="Tidak Hadir") return "X";
+  const v = keys.map(k=>p.pb.items[k]);
+  if(v.includes("Tidak Sesuai")) return "TS";
+  if(v.every(z=>z==="Tidak Diperlukan")) return "TD";
+  if(v.some(z=>!z)) return "";
+  return "S";
+}
+function resTxt(r, extra){
+  const base = r==="S"? "SESUAI\n\nDengan Dokumen Pada SPSE" : r==="TS"? "TIDAK SESUAI\n\nDengan Dokumen Pada SPSE" : r==="TD"? "TIDAK DIPERLUKAN" : r==="X"? "TIDAK DAPAT DIBUKTIKAN\n\n(peserta tidak hadir)" : "(SESUAI/TIDAK SESUAI)\n\nDengan Dokumen Pada SPSE";
+  return base + (extra? "\n\n" + extra : "");
+}
+function safeName(s){ return String(s||"peserta").replace(/[^\w\- ]+/g,"").trim().replace(/\s+/g,"_").slice(0,60) || "peserta"; }
+function noBA(p){ return p.pb.noBA || S.paket.noBAPembuktian || "……/……………/……/" + TA; }
+function wakilLines(p){
+  if(p.bentuk==="KSO") return p.ents.map(e=>e.nama||"PT ……………………");
+  return [p.nama||"PT ……………………"];
+}
+
+/* ---------- BAGIAN 1: BERITA ACARA (A4 tegak) ---------- */
+function partBA(p, media){
+  const K = S.paket, b = pembuktian(p), t = b.t, sz = 24;
+  DOCFONT = K.fontBA || "Footlight MT Light";
+  const W = 8646;
+  const P_ = (txt, o={})=> wp(wr(txt,{sz:o.sz||sz, b:o.b, i:o.i, u:o.u}), Object.assign({after:120, line:276}, o));
+  let h = "";
+  // KOP
+  const kop = String(K.kop||"").split("\n").filter(s=>s.trim()!=="");
+  const kopP = kop.map((s,i)=> wp(wr(s,{b:i<3, sz: i===1? 28 : i===0? 24 : i===2? 22 : 16}),{align:"center",after:0,line:240})).join("");
+  if(media){
+    const H = 1019175, Wd = Math.round(H * (K.logoW||204)/(K.logoH||195));
+    h += wtable([[{raw: wp(wImg("rIdImg", Wd, H),{align:"center",after:0}), va:"center"}, {raw: kopP, va:"center"}]], [1800, W-1800], {noBorder:true, mar:40});
+  } else h += kopP;
+  h += wp("",{bottomBorder:true, after:240, line:120});
+  // JUDUL
+  h += P_("BERITA ACARA PEMBUKTIAN KUALIFIKASI",{align:"center",after:0,b:true});
+  h += P_("NOMOR: " + noBA(p),{align:"center",after:240});
+  h += P_(K.namaPaket,{b:true});
+  // PEMBUKA
+  const d = pd(K.tglPembuktian);
+  const hari = d? HARI[d.getUTCDay()] : "…………", tgl = d? cap(terbilang(d.getUTCDate())) : "…………", bln = d? BULAN[d.getUTCMonth()] : "…………", thn = d? terbilang(d.getUTCFullYear()) : "…………";
+  const tempat = /Daring/i.test(K.metodePembuktian)? "secara daring melalui " + (K.tempatPembuktian||"video call") : "bertempat di " + (K.tempatPembuktian||"…………");
+  h += P_(`Pada hari ini, ${hari} tanggal ${tgl} bulan ${bln}, tahun ${thn}${K.jamPembuktian? ", pukul "+K.jamPembuktian : ""}, ${tempat}, ${K.pokja} mengundang peserta seleksi sebagai berikut:`);
+  const idRows = [];
+  if(p.bentuk==="KSO"){
+    idRows.push(["KSO",":",pName(p)]);
+    p.ents.forEach((e,i)=>{ idRows.push([(i===0?"Nama Peserta (Leadfirm)":"Nama Peserta (Anggota)"),":",e.nama||"-"],["Alamat",":",e.alamat || (i===0? p.alamat : "") || "-"],["NPWP",":",e.npwp || (i===0? p.npwp : "") || "-"]); });
+  } else idRows.push(["Nama Peserta",":",p.nama||"-"],["Alamat",":",p.alamat||"-"],["NPWP",":",p.npwp||"-"]);
+  h += wtable(idRows.map(r=>r.map(c=>({t:c,sz}))), [2700,300,W-3000], {noBorder:true, mar:0, line:264});
+  h += P_(`Untuk dilakukan Pembuktian Dokumen Kualifikasi yang diunggah/diupload pada SPSE paket Seleksi ${K.namaPaket}. Hal-hal yang dilakukan pembuktian dokumen antara lain:`,{before:200});
+  // TABEL
+  const C = [520,430,4246,2250,1200];
+  const fs = 20;
+  const txt = (lines)=> lines.map(l=>{ const m = /^(\s*)([a-h]\.|\d\)|-)\s+(.*)$/.exec(l); return m? wp(wr(m[2]+"\t"+m[3],{sz:fs}),{after:0,line:240,ind: m[1]? 640 : 320, hang:320}) : wp(wr(l,{sz:fs}),{after:0,line:240}); }).join("");
+  const rows = [];
+  rows.push([{t:"NO"},{t:"DOKUMEN KUALIFIKASI",span:2},{t:"PEMBUKTIAN DOKUMEN KUALIFIKASI",span:2}]);
+  rows.push([{t:"I",b:true,al:"center"},{t:"Persyaratan Kualifikasi Administrasi/Legalitas",b:true,span:4}]);
+  const ssWait = ents(p).some(e=>["ss1","ss2"].some(k=>((e.adm[k]||{}).ada||"").startsWith("Belum terverifikasi + ada")));
+  const admMap = (r)=> p.pb.hadir==="Tidak Hadir"? "X" : r==="M"? "S" : r==="TM"? "TS" : "";
+  const I = [
+    [["Memiliki Nomor Induk Berusaha (NIB) serta Sertifikat Standar terverifikasi KBLI 71101 dan KBLI 71102 (KBLI 2020) yang masih berlaku;"], resPB(p,["nib"])],
+    [["Dalam hal Sertifikat Standar belum terverifikasi, peserta menyampaikan NIB, Sertifikat Standar belum terverifikasi dan tangkapan layar laman OSS yang mencantumkan bahwa Sertifikat Standar sedang menunggu terverifikasi;"], ssWait? resPB(p,["nib"]) : "TD"],
+    [["Memiliki Sertifikat Badan Usaha (SBU) dengan Kualifikasi Usaha Besar serta subklasifikasi/layanan:","a. AR001 (Jasa Arsitektural Bangunan Gedung Hunian dan Non-Hunian); dan","b. RK001 (Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian)."], resPB(p,["sbu"])],
+    [["Mempunyai status valid keterangan Wajib Pajak berdasarkan hasil Konfirmasi Status Wajib Pajak beserta Bukti Lapor Pajak (SPT) Tahun 2025:","- NPWP","- KSWP status Valid","- Bukti Lapor SPT Tahunan 2025"], resPB(p,["pajak"])],
+    [["Secara hukum mempunyai kapasitas untuk mengikatkan diri pada Kontrak yang dibuktikan dengan:","a. Akta Pendirian Perusahaan dan/atau perubahannya;","b. Surat Kuasa apabila dikuasakan;","c. Bukti bahwa yang diberikan kuasa merupakan pegawai tetap (apabila dikuasakan); dan","d. Kartu Tanda Penduduk."], resPB(p,["akta","identitas","kedudukan"])],
+    [["Menyetujui Pernyataan Pakta Integritas meliputi:","a. Tidak akan melakukan praktik korupsi, kolusi, dan/atau nepotisme;","b. Akan melaporkan kepada PA/KPA/APIP jika mengetahui terjadinya praktik Korupsi, Kolusi, dan Nepotisme dalam proses pengadaan ini;","c. Akan mengikuti proses pengadaan secara bersih, transparan, dan profesional untuk memberikan hasil kerja terbaik sesuai ketentuan peraturan perundang-undangan; dan","d. Apabila melanggar hal-hal yang dinyatakan dalam huruf a, b, dan c maka bersedia dikenakan sanksi administratif, sanksi Daftar Hitam, digugat secara perdata dan/atau dilaporkan secara pidana sesuai dengan peraturan perundang-undangan."], admMap(admAll(p,"pakta"))],
+    [["Menyetujui surat pernyataan peserta yang berisi:","a. yang bersangkutan dan manajemennya tidak dalam pengawasan pengadilan, tidak pailit, dan kegiatan usahanya tidak sedang dihentikan;","b. badan usaha tidak sedang dikenakan sanksi daftar hitam;","c. yang bertindak untuk dan atas nama badan usaha tidak sedang dalam menjalani sanksi daftar hitam lain;","d. keikutsertaan yang bersangkutan tidak menimbulkan pertentangan kepentingan;","e. yang bertindak untuk dan atas nama badan usaha tidak sedang dalam menjalani sanksi pidana;","f. pimpinan dan pengurus badan usaha bukan sebagai pegawai Kementerian/Lembaga/Perangkat Daerah atau sebagai pegawai Kementerian/Lembaga/Perangkat Daerah yang sedang mengambil cuti diluar tanggungan Negara;","g. pernyataan lain yang menjadi syarat kualifikasi yang tercantum dalam Dokumen Kualifikasi;","h. data kualifikasi yang diisikan benar, dan jika dikemudian hari ditemukan bahwa data/dokumen yang disampaikan tidak benar dan ada pemalsuan maka direktur utama/pimpinan perusahaan/pimpinan koperasi, atau kepala cabang, dan seluruh anggota Kemitraan bersedia dikenakan sanksi administratif, sanksi pencantuman dalam daftar hitam, gugatan secara perdata, dan/atau pelaporan secara pidana kepada pihak berwenang sesuai dengan ketentuan peraturan perundang-undangan."], admMap(admAll(p,"pernyataan"))],
+    [["Dalam hal Peserta melakukan Kemitraan/KSO harus mempunyai perjanjian Kemitraan/KSO."], p.bentuk==="KSO"? resPB(p,["kso"]) : "TD"],
+    [["Tidak masuk dalam Daftar Hitam."], admMap(admAll(p,"dh"))]
+  ];
+  I.forEach(([lines,r],k)=>rows.push(["",{t:(k+1)+".",al:"center"},{raw:txt(lines)},{t:resTxt(r),span:2,al:"center"}]));
+  rows.push([{t:"II",b:true,al:"center"},{t:"Persyaratan Kualifikasi Teknis",b:true,span:2},{t:"PEMBUKTIAN DOKUMEN KUALIFIKASI",b:true,al:"center"},{t:"Jumlah Pengalaman Setelah Pembuktian",b:true,al:"center"}]);
+  const ready = p.pb.hadir==="Hadir" && !b.unproven;
+  const mm = (v)=> p.pb.hadir==="Tidak Hadir"? "X" : !ready? "" : v==="M"? "S" : "TS";
+  const kso = ksoRows(p);
+  const ksoOk = p.bentuk!=="KSO"? "TD" : !ready? "" : (t.allA!=="Tidak" && !kso.some(r=>r.r==="TM"))? "S" : "TS";
+  const kinR = (()=>{ const a = mm(t.minD), bb = resPB(p,["kinerja"]); return a==="X"||bb==="X"? "X" : (a==="TS"||bb==="TS")? "TS" : (a===""||bb==="")? "" : "S"; })();
+  const allPB = resPB(p, pbItemsFor(p).map(i=>i.k));
+  const nv = (n)=> ready? "NILAI SETELAH PEMBUKTIAN: " + n : "NILAI SETELAH PEMBUKTIAN: ……";
+  const jm = (n)=> ready? String(n) + " pekerjaan" : "";
+  const II = [
+    [["Memiliki pengalaman paling kurang 1 (satu) pekerjaan jasa konsultansi konstruksi dalam kurun waktu 4 (empat) tahun terakhir, baik di lingkungan pemerintah atau swasta termasuk pengalaman subkontrak."], mm(t.minA), nv(t.na), jm(t.a)],
+    [["Memiliki pengalaman mengerjakan pekerjaan sejenis:","a) untuk pekerjaan Usaha Kecil berdasarkan subklasifikasi; atau","b) untuk pekerjaan Usaha Menengah atau Usaha Besar, pekerjaan sejenis berdasarkan subklasifikasi atau berdasarkan lingkup pekerjaan."], mm(t.minB), nv(t.nb), jm(t.b)],
+    [["Memiliki pengalaman mengerjakan pekerjaan sejenis (Jasa Konsultan Perencanaan Konstruksi Pembangunan Gedung Pendidikan) dalam waktu 10 (sepuluh) tahun terakhir."], mm(t.minC), nv(t.nc), jm(t.c)],
+    [["Memiliki rata-rata kinerja penyedia dengan nilai baik atau sangat baik dalam kurun waktu 4 (empat) tahun terakhir secara akumulatif dalam pengalaman pekerjaan Jasa Konsultansi Konstruksi (SIKaP dan/atau perhitungan manual sesuai Peraturan LKPP Nomor 4 Tahun 2021)."], kinR, nv(t.nd), isFinite(t.k)? "Nilai kinerja " + String(t.k).replace(".",",") : ""],
+    [["Dalam hal peserta melakukan KSO, maka:","1) setiap perusahaan yang tergabung dalam KSO harus memenuhi persyaratan kualifikasi administrasi legalitas;","2) persyaratan SBU dilakukan secara saling melengkapi oleh seluruh anggota KSO dan setiap anggota KSO harus memiliki salah satu SBU yang disyaratkan;","3) pengalaman 1 (satu) pekerjaan jasa konsultansi konstruksi dalam 4 (empat) tahun terakhir dimiliki oleh seluruh anggota KSO;","4) pengalaman sejenis dilakukan secara saling melengkapi; dan","5) nilai kontrak pekerjaan sejenis tertinggi yang digunakan adalah milik Lead Firm."], ksoOk, "", ""],
+    [["Data kualifikasi yang diunggah (upload) pada fasilitas pengunggahan lain:","1) Asli Surat Perjanjian KSO;","2) Dokumen Kualifikasi Anggota KSO;","3) KSWP dengan status Valid;","4) Kontrak dan BAST (minimal BAST PHO) yang dijadikan pengalaman;","5) Tangkapan layar laman OSS (bagi Sertifikat Standar yang menunggu verifikasi);","6) Tangkapan layar Penilaian Kinerja Penyedia pada SIKaP / hasil perhitungan kinerja manual; dan","7) Dokumen lain yang dipersyaratkan dalam Dokumen Kualifikasi."], allPB, "", ""],
+    [["Pengalaman tertinggi dengan Nilai Kontrak (pekerjaan sejenis)."], p.pb.hadir==="Tidak Hadir"? "X" : !ready? "" : t.top>0? "S" : "TS", "", ready? rp(t.top) : ""]
+  ];
+  II.forEach(([lines,r,ex,j],k)=>rows.push(["",{t:(k+1)+".",al:"center"},{raw:txt(lines)},{t:resTxt(r,ex),al:"center"},{t:j,al:"center"}]));
+  rows.push(["",{t:"Jumlah nilai teknis kualifikasi setelah pembuktian (ambang batas: unsur b ≥ "+S.param.ambangB+", unsur c ≥ "+S.param.ambangC+", jumlah ≥ "+S.param.ambangTotal+")",b:true,span:2},{t: ready? String(t.total) + " — " + t.hasil : "……",b:true,al:"center",span:2}]);
+  h += wtable(rows, C, {header:true, sz:fs, hdrFill:null, noSplit:false});
+  // KESIMPULAN
+  let kes;
+  if(b.hasil==="LULUS") kes = `Berdasarkan hasil pembuktian dokumen kualifikasi, dokumen kualifikasi ${pName(p)} yang diunggah/diupload pada SPSE paket tersebut di atas telah SESUAI dengan persyaratan kualifikasi, dengan nilai teknis kualifikasi setelah pembuktian sebesar ${t.total}, sehingga peserta dinyatakan LULUS pembuktian kualifikasi.`;
+  else if(b.hasil==="GUGUR") kes = `Berdasarkan hasil pembuktian dokumen kualifikasi, dokumen kualifikasi ${pName(p)} yang diunggah/diupload pada SPSE paket tersebut di atas TIDAK SESUAI dengan persyaratan kualifikasi (${b.reasons.join("; ")}), sehingga peserta dinyatakan GUGUR pada tahap pembuktian kualifikasi.`;
+  else kes = `Berdasarkan hasil pembuktian dokumen kualifikasi, maka dokumen kualifikasi yang diunggah/diupload pada SPSE paket tersebut di atas telah sesuai/tidak sesuai*) dengan persyaratan kualifikasi.`;
+  h += P_(kes,{before:240});
+  if(p.pb.pemalsuan) h += P_("Terhadap peserta ditemukan indikasi pemalsuan dokumen dan diusulkan kepada PA/KPA untuk dikenakan sanksi Daftar Hitam.");
+  if(p.pb.catatan) h += P_("Catatan: " + p.pb.catatan);
+  h += P_("Demikian Berita Acara ini dibuat dengan sebenarnya untuk dipergunakan sebagaimana mestinya. Lampiran Berita Acara merupakan bagian yang tidak terpisahkan dari Berita Acara ini.",{keep:true});
+  h += P_(`${K.kotaTtd}, ${tglID(K.tglPembuktian)}`,{align:"right",keep:true,before:120});
+  // TTD
+  const left = wp(wr("Pokja Pemilihan,",{sz:22,b:true}),{after:200,align:"left"}) + S.pokjaAnggota.map((a,k)=>wp(wr(`${k+1}.\t${a.nama||"……………………………"}\t…………………`,{sz:22}),{after:360,align:"left",ind:320,hang:320,tabs:[[320],[2900]]})).join("");
+  const wl = wakilLines(p);
+  const right = wp(wr("Mengetahui :",{sz:22,b:true}),{after:200,align:"left"}) + wl.map((n,k)=>wp(wr(`${wl.length>1? (k+1)+".\t" : ""}${n}`,{sz:22}),{after:600,align:"left",ind:wl.length>1?320:0,hang:wl.length>1?320:0,tabs:[[320]]})).join("") +
+    wp(wr("(" + (p.pb.wakil||"………………………………") + ")" + (p.pb.jabatan? "\n"+p.pb.jabatan : ""),{sz:22}),{after:0,align:"left"});
+  h += wtable([[{raw:left},{raw:right}]], [4700, W-4700], {noBorder:true, mar:0});
+  const sect = `<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="993" w:right="1559" w:bottom="1276" w:left="1701" w:header="567" w:footer="567" w:gutter="0"/></w:sectPr>`;
+  h += wp("",{after:0, sect});
+  return h;
+}
+
+/* ---------- BAGIAN 2: LAMPIRAN (A4 mendatar) ---------- */
+function partLampiran(p){
+  const K = S.paket, b = pembuktian(p), t = b.t, pb = p.pb;
+  DOCFONT = K.fontLamp || "Arial";
+  const sz = 15, W = 14857;
+  const P_ = (txt, o={})=> wp(wr(txt,{sz:o.sz||17, b:o.b, i:o.i}), Object.assign({after:40, line:240, align:"left"}, o));
+  let h = "";
+  h += P_("Lampiran Berita Acara Pembuktian Kualifikasi",{b:true,sz:20,after:0});
+  h += P_("Nomor: " + noBA(p),{sz:18,after:160});
+  h += wtable([["Kode Tender",":",K.kodeTender||"-"],["Nama Paket",":",K.namaPaket],["Pagu Anggaran",":",rp(K.pagu)],["Nilai Total HPS",":",rp(K.hps)],["Sumber Dana",":",K.sumberDana],["Satker",":",K.satker||"-"]].map(r=>r.map(c=>({t:c,sz:17}))),[2600,250,W-2850],{noBorder:true,mar:0});
+  h += P_("",{after:80});
+  const idr = [["Nama Pelaku Usaha/ PT/ KSO",":",pName(p) + (p.bentuk==="KSO"? " (" + p.ents.map((e,i)=>(i===0?"Leadfirm: ":"Anggota: ")+(e.nama||"-")+(e.share!==""? " "+e.share+"%" : "")).join("; ") + ")" : "")],["NPWP",":",p.npwp||"-"],["Alamat",":",p.alamat||"-"],["Wakil Sah yang Hadir",":",pb.wakil || (pb.hadir==="Tidak Hadir"? "Tidak hadir" : "…………………………………")],["Jabatan",":",pb.jabatan||"…………………………………"]];
+  h += wtable(idr.map((r,i)=>[{t:i===0?"1.":"",sz:17},...r.map(c=>({t:c,sz:17}))]),[400,2600,250,W-3250],{noBorder:true,mar:0});
+  h += P_("",{after:80});
+  const C = [450,5050,4150,1900,1100,1100,1107];
+  const rows = [];
+  rows.push([{t:"No.",vm:"restart"},{t:"Uraian Yang Diverifikasi",vm:"restart"},{t:"Perbandingan Data",span:2},{t:"Verifikasi (Ya/Tidak)",span:2},{t:"Hasil Konfirmasi (Sah/Tidak)",vm:"restart"}]);
+  rows.push([{t:"",vm:"c"},{t:"",vm:"c"},"Form Isian SPSE","Dokumen Asli","Menunjukkan Dokumen Asli","Menyerahkan Salinan",{t:"",vm:"c"}]);
+  const sec = (no, label)=> rows.push([{t:no,b:true,al:"center",fill:"EDEDED"},{t:label,b:true,span:6,fill:"EDEDED"}]);
+  const grp = (no, label, note)=> rows.push([{t:no,b:true,al:"center"},{t:label,b:true},{t:note||"",i:true},"","","",""]);
+  const row = (label, form, st)=> rows.push(["",{t:label},{t:form??""},{t:st.dok,al:"center"},{t:st.asli,al:"center"},{t:st.sal,al:"center"},{t:st.sah,al:"center"}]);
+  sec("A","KUALIFIKASI ADMINISTRASI/ LEGALITAS");
+  // 1 Pengurus
+  const sw = pb.statusWakil||"", isDir = /^Direksi/.test(sw), isKuasa = /kuasa/i.test(sw);
+  grp("1","Pengurus Perusahaan / Wakil Sah yang Hadir:","(menunjukkan Kartu Tanda Penduduk/KTP)");
+  row("a.  Direktur/ Direktur Utama", "", {dok:"",asli:"",sal:"",sah:""});
+  row("     - KTP", isDir? `${pb.wakil||""}${pb.jabatan?" ("+pb.jabatan+")":""}${pb.noId? "; NIK "+pb.noId : ""}` : (sw? "-" : ""), isDir? stPB(p,"identitas") : (sw? NA : PH));
+  row("     - Bukti kedudukan Direksi dalam Akta / SK RUPS", isDir? sw : (sw? "-" : ""), isDir? stPB(p,"kedudukan") : (sw? NA : PH));
+  row("b.  Pegawai Tetap (penerima kuasa)", "", {dok:"",asli:"",sal:"",sah:""});
+  const kuasaNo = ((p.ents[0].adm.kuasa)||{}).nomor || "";
+  row("     - KTP", isKuasa? `${pb.wakil||""}${pb.noId? "; NIK "+pb.noId : ""}` : (sw? "-" : ""), isKuasa? stPB(p,"identitas") : (sw? NA : PH));
+  row("     - Membawa Surat Kuasa", isKuasa? kuasaNo : (sw? "-" : ""), isKuasa? stPB(p,"kedudukan") : (sw? NA : PH));
+  row("     - Bukti Pajak Formulir 1721 A1 / BPJS Ketenagakerjaan", isKuasa? "Karyawan tetap" : (sw? "-" : ""), isKuasa? stPB(p,"kedudukan") : (sw? NA : PH));
+  if(p.bentuk==="KSO") p.ents.slice(1).forEach(e=>{
+    grp("","Pengurus Perusahaan (Anggota KSO: " + (e.nama||"-") + ")","(menunjukkan Kartu Tanda Penduduk/KTP)");
+    row("     - KTP Direktur/ Direktur Utama", ((e.adm.ktp)||{}).nomor||"", stPB(p,"identitas"));
+  });
+  // 2..6 per badan usaha
+  ents(p).forEach((e,ei)=>{
+    const A = e.adm, ak = A.akta||{}, nib = A.nib||{}, s1 = A.ss1||{}, s2 = A.ss2||{}, sb = A.sbu||{}, kw = A.kswp||{}, spt = A.spt||{};
+    if(p.bentuk==="KSO") rows.push(["",{t:(ei===0?"Leadfirm: ":"Anggota KSO: ") + (e.nama||"-"),b:true,i:true,span:6}]);
+    grp(p.bentuk==="KSO"? "" : "2","Landasan Hukum Pendirian Perusahaan :");
+    row("a.  Akta Pendirian Perusahaan","",{dok:"",asli:"",sal:"",sah:""});
+    const sA = stPB(p,"akta");
+    row("     - Nomor", ak.pNo || ak.nomor || "", sA); row("     - Tanggal", tglShort(ak.pTgl), sA); row("     - Nama Notaris", ak.pNot||"", sA);
+    row("b.  Akta Perubahan Terakhir","",{dok:"",asli:"",sal:"",sah:""});
+    row("     - Nomor", ak.uNo||"", sA); row("     - Tanggal", tglShort(ak.uTgl), sA); row("     - Nama Notaris", ak.uNot||"", sA);
+    row("c.  Pengesahan/Pemberitahuan Kementerian Hukum (AHU)", ak.ahu||"", sA);
+    grp(p.bentuk==="KSO"? "" : "3","NIB","(sesuai dengan yang dipersyaratkan dalam Dokumen Kualifikasi)");
+    const sN = stPB(p,"nib");
+    row("a.  Nomor", nib.nomor||"", sN); row("b.  Berlaku Sampai", "Selama menjalankan kegiatan usaha", sN); row("c.  Instansi Pemberi", "Lembaga OSS", sN);
+    grp(p.bentuk==="KSO"? "" : "4","Sertifikat Standar Terverifikasi (KBLI 2020)","(KBLI 71101 dan KBLI 71102)");
+    row("a.  Nomor — KBLI 71101", s1.nomor||"", sN); row("b.  Nomor — KBLI 71102", s2.nomor||"", sN); row("c.  Instansi Pemberi", "Lembaga OSS", sN);
+    row("d.  Status verifikasi / Tangkapan Layar OSS (jika belum terverifikasi)", [s1.ada, s2.ada].filter(Boolean).map((v,i)=>(i?"71102: ":"71101: ")+v).join("; ") || "Terverifikasi / Tidak Terverifikasi", sN);
+    const sS = stPB(p,"sbu");
+    [["AR001","Jasa Arsitektural Bangunan Gedung Hunian dan Non-Hunian",sb.ar,sb.nomor,sb.berlaku],["RK001","Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian",sb.rk,sb.nomorRK||sb.nomor,sb.berlakuRK||sb.berlaku]].forEach(([kode,nama,has,no,bl])=>{
+      grp(p.bentuk==="KSO"? "" : "5","SBU : " + kode + " (B)","(sesuai dengan yang dipersyaratkan dalam Dokumen Kualifikasi)");
+      if(sb.kual && !has){ row("     Tidak memiliki subklasifikasi " + kode, p.bentuk==="KSO"? "Saling melengkapi dalam KSO" : "-", p.bentuk==="KSO"? NA : stPB(p,"sbu")); return; }
+      row("a.  Nomor", no||"", sS); row("b.  Berlaku Sampai", tglShort(bl), sS); row("c.  Instansi Pemberi", "LPJK", sS);
+      row("d.  Kualifikasi", sb.kual? sb.kual : "K / M / B", sS); row("e.  Subbidang Klasifikasi", kode + " — " + nama, sS);
+    });
+    grp(p.bentuk==="KSO"? "" : "6","Perpajakan :");
+    const sP = stPB(p,"pajak");
+    row("a.  NPWP", e.npwp || (ei===0? p.npwp : "") || kw.nomor || "", sP);
+    row("b.  Pajak Tahun Terakhir (Bukti Lapor SPT Tahunan 2025)", spt.nomor || spt.ada || "", sP);
+    row("c.  Konfirmasi Status Wajib Pajak Valid", kw.ada || "Valid / Tidak Valid", sP);
+  });
+  grp("7","KSO (jika ada) :", p.bentuk==="KSO"? "" : "(tuliskan No. & Tgl. Surat Perjanjian KSO)");
+  row("     Mempunyai perjanjian kerja sama operasi (KSO)", p.bentuk==="KSO"? (p.ksoKet||p.ksoAda||"") : "Peserta tunggal — tidak diperlukan", p.bentuk==="KSO"? stPB(p,"kso") : NA);
+  grp("8","Surat Pernyataan :");
+  const sp = stAdm(admAll(p,"pernyataan"));
+  ["Yang bersangkutan dan manajemennya tidak dalam pengawasan pengadilan, tidak pailit, dan kegiatan usahanya tidak sedang dihentikan.","Badan Usaha tidak sedang dikenakan sanksi Daftar Hitam.","Yang bertindak untuk dan atas nama Badan Usaha tidak sedang dalam menjalani sanksi daftar hitam lain.","Keikutsertaan yang bersangkutan tidak menimbulkan pertentangan kepentingan.","Yang bertindak untuk dan atas nama badan usaha tidak sedang dalam menjalani sanksi pidana.","Pimpinan dan pengurus badan usaha bukan sebagai pegawai Kementerian/Lembaga/Perangkat Daerah atau pegawai yang sedang mengambil cuti diluar tanggungan Negara.","Pernyataan lain yang menjadi syarat kualifikasi yang tercantum dalam Dokumen Kualifikasi.","Data kualifikasi yang diisikan benar, dan jika dikemudian hari ditemukan data/dokumen tidak benar dan ada pemalsuan, bersedia dikenakan sanksi administratif, sanksi Daftar Hitam, gugatan perdata, dan/atau pelaporan pidana."].forEach((s,i)=>row(String.fromCharCode(97+i)+")  "+s, "Bagian dari Pakta Integritas/Pernyataan pada SPSE", sp));
+  grp("9","Pakta Integritas dan Daftar Hitam :");
+  row("a.  Menyetujui Pernyataan Pakta Integritas (huruf a s.d. d) pada SPSE", "Disetujui pada SPSE", stAdm(admAll(p,"pakta")));
+  row("b.  Tidak masuk dalam Daftar Hitam (pengecekan portal INAPROC)", "Pernyataan pada SPSE", stAdm(admAll(p,"dh")));
+  // B TEKNIS
+  sec("B","KUALIFIKASI TEKNIS");
+  grp("1","Data Pengalaman Perusahaan :");
+  const cat = (label, f)=>{
+    rows.push(["",{t:label,b:true},{t:"Nama Paket / Nomor Kontrak / Nilai",b:true,al:"center"},{t:"BAST",b:true,al:"center"},"","",""]);
+    const xs = p.exps.filter(xp=>f(expFlags(xp)));
+    if(!xs.length) row("     1.", "", PH);
+    xs.forEach((xp,i)=> row(`     ${i+1}.  ${xp.nama||"-"}${p.bentuk==="KSO"? " ("+eName(p,+xp.ent)+")" : ""}`, `${xp.noKontrak||"-"}; ${rp(xp.nilai)}${xp.status==="KSO"? " (KSO "+(xp.share||"…")+"%)" : xp.status==="Subkontrak"? " (subkontrak)" : ""}\nBAST/PHO: ${tglShort(xp.tglBAST)||"-"}`, stExp(p,xp)));
+  };
+  cat("a.  Kontrak Pekerjaan Jasa Konsultansi Konstruksi (4 tahun terakhir)", f=>f.a);
+  cat("b.  Kontrak Pekerjaan Sejenis (subklasifikasi AR001/RK001 atau lingkup pekerjaan)", f=>f.b);
+  cat("c.  Kontrak Sejenis (10 tahun terakhir) – Jasa Konsultan Perencanaan Konstruksi Pembangunan Gedung Pendidikan", f=>f.c);
+  row("d.  Penilaian Kinerja Penyedia (4 tahun terakhir, akumulatif)", isFinite(numPlain(p.kinerja))? `Nilai ${String(p.kinerja).replace(".",",")} — ${p.kinerjaSumber||""}` : "", stPB(p,"kinerja"));
+  row("e.  Verifikasi data kualifikasi pada SIKaP", "", stPB(p,"sikap"));
+  const topX = p.exps.filter(xp=>{ const f = expFlags(xp); return (f.b||f.c) && +xp.ent===0; }).sort((a,b2)=>expWeighted(b2)-expWeighted(a))[0];
+  grp("2","NPT (Nilai Pengalaman Tertinggi pekerjaan sejenis)" + (p.bentuk==="KSO"? " — Leadfirm" : ""));
+  row("     Nilai / Nama Paket", topX? `${rp(expWeighted(topX))} — ${topX.nama||"-"}` : "", topX? stExp(p, topX) : PH);
+  h += wtable(rows, C, {header:true, headerRows:2, sz, hdrFill:"EDEDED", mar:50, line:228});
+  // KESIMPULAN
+  const kes = b.hasil==="LULUS"? `Dokumen kualifikasi sesuai dengan dokumen asli. Nilai teknis kualifikasi setelah pembuktian ${t.total} (a ${t.na}; b ${t.nb}; c ${t.nc}; d ${t.nd}). Peserta dinyatakan LULUS pembuktian kualifikasi.`
+    : b.hasil==="GUGUR"? `Peserta dinyatakan GUGUR pembuktian kualifikasi: ${b.reasons.join("; ")}.` : "…………………………………………………………………………………………………………";
+  h += wp(wr("KESIMPULAN",{b:true,sz:18}) + wr("\t:  " + kes,{sz:18}),{before:160,after:200,align:"left",tabs:[[1600]],ind:1900,hang:1900});
+  // TTD
+  const wl = wakilLines(p);
+  const left = wp(wr("Wakil Penyedia,",{sz:18}),{after:700,align:"left"}) + wl.map((n,k)=>wp(wr(`${k+1}. ${k===0 && pb.wakil? pb.wakil : "……………………………………"}\n    (${n})`,{sz:18}),{after:500,align:"left"})).join("");
+  const right = wp(wr(`${K.kotaTtd}, ${tglID(K.tglPembuktian)}`,{sz:18}),{after:0,align:"left"}) + wp(wr("Unit Kerja Pengadaan Barang/ Jasa Kementerian Agama RI",{sz:18}),{after:0,align:"left"}) + wp(wr(K.pokja,{sz:18}),{after:300,align:"left"}) +
+    S.pokjaAnggota.map((a,k)=>wp(wr(`${k+1}. ${a.nama||"……………………………"}\t${k+1}. ……………………………`,{sz:18}),{after:260,align:"left",tabs:[[3600]]})).join("");
+  h += wtable([[{raw:left},{raw:right}]],[6857, 8000],{noBorder:true, mar:0, noSplit:false});
+  return h;
+}
+function makeBAPeserta(p){
+  IMGID = 0;
+  const K = S.paket;
+  const media = K.useLogo===false? null : b64bytes(K.logo || LOGO_DEFAULT);
+  const body = partBA(p, media) + partLampiran(p);
+  DOCFONT = null;
+  const ftr = `<w:p><w:pPr><w:spacing w:after="0"/><w:jc w:val="center"/></w:pPr><w:r><w:rPr><w:sz w:val="15"/></w:rPr><w:t xml:space="preserve">Hal </w:t></w:r>${fldRun("PAGE",15)}<w:r><w:rPr><w:sz w:val="15"/></w:rPr><w:t xml:space="preserve"> of </w:t></w:r>${fldRun("SECTIONPAGES",15)}</w:p>`;
+  const finalSect = `<w:sectPr><w:footerReference w:type="default" r:id="rIdF1"/><w:pgSz w:w="16840" w:h="11910" w:orient="landscape"/><w:pgMar w:top="1000" w:right="1133" w:bottom="640" w:left="850" w:header="0" w:footer="442" w:gutter="0"/><w:pgNumType w:start="1"/></w:sectPr>`;
+  return buildDocx(body, finalSect, [ftr], media);
+}
+function exportBA(pid){
+  const p = S.peserta.find(z=>z.id===pid); if(!p) return;
+  try{ saveFile("BA_Pembuktian_Kualifikasi_" + safeName(pName(p)) + ".docx", makeBAPeserta(p)); }
+  catch(e){ console.error(e); toast("Gagal membuat Berita Acara: " + e.message); }
+}
+async function exportBAall(){
+  const inv = S.peserta.filter(p=>evalResult(p).lulus);
+  if(!inv.length){ toast("Belum ada peserta yang diundang pembuktian."); return; }
+  try{
+    const files = [];
+    for(let i=0;i<inv.length;i++){ const blob = makeBAPeserta(inv[i]); files.push([`${String(i+1).padStart(2,"0")}_BA_Pembuktian_${safeName(pName(inv[i]))}.docx`, new Uint8Array(await blob.arrayBuffer())]); }
+    saveFile("BA_Pembuktian_Kualifikasi_Per_Peserta.zip", zip(files));
+  }catch(e){ console.error(e); toast("Gagal membuat berkas: " + e.message); }
+}
+
+/* =========================================================
+   10. DATA CONTOH (fiktif, untuk uji coba)
+   ========================================================= */
+function loadDemo(){
+  const keep = {paket:S.paket, pokja:S.pokjaAnggota};
+  S = defaultState();
+  S.paket = Object.assign({...DEFAULT_PAKET}, keep.paket, {
+    batasPemasukan: keep.paket.batasPemasukan || "2026-11-05", tglEvaluasi: keep.paket.tglEvaluasi || "2026-11-09",
+    tglPembuktian: keep.paket.tglPembuktian || "2026-11-12", jamPembuktian: keep.paket.jamPembuktian || "09.00 s.d. 15.00 WIB",
+    noBAEval: keep.paket.noBAEval || "BA.01/POKJA-ASRAMA/XI/2026", noUndangan: keep.paket.noUndangan || "UND.01/POKJA-ASRAMA/XI/2026", noBAPembuktian: keep.paket.noBAPembuktian || "BA.02/POKJA-ASRAMA/XI/2026"});
+  S.pokjaAnggota = keep.pokja.some(a=>a.nama)? keep.pokja : [{nama:"[Nama Ketua Pokja]",nip:"",jabatan:"Ketua"},{nama:"[Nama Sekretaris Pokja]",nip:"",jabatan:"Sekretaris"},{nama:"[Nama Anggota Pokja]",nip:"",jabatan:"Anggota"}];
+  const okAdm = ()=>({nib:{ada:"Ada",nomor:"9120000000001"}, ss1:{ada:"Terverifikasi",nomor:"SS-71101-0001",berlaku:"2030-12-31"}, ss2:{ada:"Terverifikasi",nomor:"SS-71102-0001",berlaku:"2030-12-31"},
+    sbu:{nomor:"SBU-0001",kual:"Besar",ar:true,rk:true,berlaku:"2028-06-30"}, kswp:{ada:"Valid",nomor:"01.000.000.0-000.000"}, spt:{ada:"Ada",nomor:"BPE-2025-0001"}, akta:{ada:"Ada",pNo:"12",pTgl:"2010-03-01",pNot:"[Nama Notaris]",uNo:"5",uTgl:"2024-02-01",uNot:"[Nama Notaris]",ahu:"AHU-0000000.AH.01.02.Tahun 2024"},
+    kuasa:{ada:"Tidak dikuasakan (tidak diperlukan)"}, pegtap:{ada:"Tidak dikuasakan (tidak diperlukan)"}, ktp:{ada:"Ada",nomor:"[Nama Direktur] / 3170000000000001"}, pakta:{ada:"Menyetujui"}, pernyataan:{ada:"Menyetujui"}, dh:{ada:"Tidak tercantum"}, alamat:{ada:"Ada"}});
+  const mk = (nama, n10, nEdu, n4, kin)=>{
+    const p = newPeserta(); p.nama = nama; p.npwp = "00.000.000.0-000.000"; p.alamat = "Alamat contoh"; p.ents[0].nama = nama; p.ents[0].adm = okAdm(); p.kinerja = kin;
+    for(let k=0;k<n10;k++){ const e = newExp(); e.nama = "Contoh Perencanaan Gedung " + (k+1); e.subklas = "AR001"; e.noKontrak = "KTR/"+(k+1)+"/2023"; e.nilai = 900000000 + k*150000000; e.tglBAST = (2017 + (k%9)) + "-11-15"; e.jkk = true; e.sejB = true; e.sejC = k < nEdu; e.bukti = ""; p.exps.push(e); }
+    for(let k=0;k<n4;k++){ const e = newExp(); e.nama = "Contoh Jasa Konsultansi Lain " + (k+1); e.subklas = "RE101"; e.nilai = 400000000; e.tglBAST = "2024-08-20"; e.jkk = true; p.exps.push(e); }
+    return p;
+  };
+  const A = mk("PT Contoh Satu Konsultan", 12, 7, 2, 3);
+  const B = mk("PT Contoh Dua Rekayasa", 11, 5, 0, 2.6);
+  const C = mk("PT Contoh Tiga Arsitek", 10, 6, 1, 2.8);
+  const D = mk("PT Contoh Empat Desain", 6, 3, 1, 2.4);   // gugur teknis
+  const E = newPeserta(); E.bentuk = "KSO"; E.namaKSO = "KSO Contoh Lima – Enam"; E.npwp = "00.000.000.0-000.001";
+  E.ents = [newEntity("PT Contoh Lima Konsultan","Besar",60), newEntity("PT Contoh Enam Teknik","Besar",40)];
+  E.ents[0].adm = okAdm(); E.ents[1].adm = okAdm(); E.ents[1].adm.sbu = {nomor:"SBU-0002",kual:"Besar",ar:false,rk:true,berlaku:"2027-03-01"};
+  E.ksoAda = "Ada"; KSO_CONTENT.forEach(([k])=>E.ksoIsi[k]=true); E.kinerja = 2.9;
+  for(let k=0;k<10;k++){ const e = newExp(); e.ent = k<7?0:1; e.nama = "Contoh Perencanaan Kampus " + (k+1); e.subklas = "AR001"; e.nilai = 1200000000 + k*100000000; e.tglBAST = (2018 + (k%8)) + "-10-01"; e.jkk = true; e.sejB = true; e.sejC = k<6; if(k===2){ e.status="KSO"; e.share=55; } p_push(E,e); }
+  const e2 = newExp(); e2.ent = 1; e2.nama = "Contoh Konsultansi Anggota KSO"; e2.nilai = 500000000; e2.tglBAST = "2025-02-10"; e2.jkk = true; p_push(E,e2);
+  const e3 = newExp(); e3.ent = 0; e3.nama = "Contoh Konsultansi Leadfirm"; e3.nilai = 650000000; e3.tglBAST = "2023-09-10"; e3.jkk = true; p_push(E,e3);
+  S.peserta = [A,B,C,D,E];
+  // pembuktian contoh
+  [A,B,C,E].forEach(p=>{ p.pb.hadir = "Hadir"; p.pb.wakil = "[Nama Direktur]"; p.pb.jabatan = "Direktur Utama"; p.pb.noId = "3170000000000001"; p.pb.statusWakil = "Direksi yang tercantum dalam Akta";
+    pbItemsFor(p).forEach(it=>p.pb.items[it.k] = "Sesuai"); p.exps.forEach(xp=>xp.bukti = "Terbukti"); });
+  C.exps[0].bukti = "Tidak Ditunjukkan"; C.pb.catatan = "Kontrak asli pengalaman 1 tidak dapat ditunjukkan.";
+  S.ui = {tab:"hasil", sel:A.id};
+}
+function p_push(p,e){ p.exps.push(e); }
+
+render();
+</script>
+</body>
+</html>
