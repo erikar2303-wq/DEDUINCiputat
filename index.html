@@ -5,106 +5,169 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Kertas Kerja Evaluasi Kualifikasi – Perencana Gedung Asrama UIN Jakarta 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f6f8; --card:#fff; --ink:#1d2433; --muted:#5d6678; --line:#dde1e8;
-  --brand:#14532d; --brand2:#166534; --brandSoft:#e8f3ec;
-  --ok:#15803d; --okBg:#dcfce7; --bad:#b91c1c; --badBg:#fee2e2; --warn:#a16207; --warnBg:#fef3c7;
-  --r:10px;
+  --bg:#eef2ee; --card:#fff; --ink:#17251f; --muted:#5b6b63; --line:#d9e2dc; --line2:#e8eee9;
+  --brand:#0d4a37; --brand2:#13654b; --brandDeep:#08311f; --brandSoft:#e4f0e9;
+  --brass:#b8892b; --brassSoft:#f6ecd4; --brassInk:#7a5a14;
+  --ok:#17744a; --okBg:#e0f2e7; --bad:#b4232a; --badBg:#fbe5e5; --warn:#8a5a00; --warnBg:#fbf0d6;
+  --r:14px;
+  --sh:0 1px 2px rgba(13,74,55,.06),0 6px 18px -10px rgba(13,74,55,.18);
+  --ff:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 }
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-header{background:var(--brand);color:#fff;padding:14px 16px 10px}
-header h1{margin:0;font-size:16px;font-weight:650;letter-spacing:.2px}
-header p{margin:2px 0 0;font-size:12px;opacity:.85}
-nav{position:sticky;top:0;z-index:5;background:var(--brand2);display:flex;overflow-x:auto;scrollbar-width:none}
-nav::-webkit-scrollbar{display:none}
-nav button{flex:0 0 auto;background:none;border:0;color:#d7eadc;padding:11px 14px;font:inherit;font-size:13px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
-nav button.on{color:#fff;border-bottom-color:#fbbf24;font-weight:600}
-main{max-width:1100px;margin:0 auto;padding:14px 12px 80px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:12px}
-.card h2{font-size:15px;margin:0 0 10px}
-.card h3{font-size:14px;margin:14px 0 8px}
-.hint{color:var(--muted);font-size:12px;margin:4px 0 8px}
-.grid{display:grid;gap:10px;grid-template-columns:1fr}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--ff);-webkit-font-smoothing:antialiased}
+body{background:
+  radial-gradient(1200px 300px at 100% -80px,rgba(184,137,43,.10),transparent 70%),var(--bg)}
+::selection{background:var(--brassSoft)}
+/* ---- header: pita berkas dengan motif bintang delapan ---- */
+header{position:relative;overflow:hidden;color:#fff;padding:20px 18px 18px;
+  background:
+   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23d9b45a' stroke-opacity='.16' stroke-width='1'%3E%3Cpath d='M28 6l6.4 15.6L50 28l-15.6 6.4L28 50l-6.4-15.6L6 28l15.6-6.4z'/%3E%3Crect x='14' y='14' width='28' height='28' transform='rotate(45 28 28)'/%3E%3Crect x='14' y='14' width='28' height='28'/%3E%3C/g%3E%3C/svg%3E") 0 0/56px 56px,
+   linear-gradient(120deg,var(--brandDeep),var(--brand) 55%,#11583f)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--brass),#e3c27a 40%,var(--brass))}
+.hwrap{max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;position:relative}
+.emb{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(227,194,122,.45);display:grid;place-items:center}
+.emb svg{width:30px;height:30px}
+.htxt{min-width:0;flex:1}
+header h1{margin:0;font-size:19px;font-weight:800;letter-spacing:-.2px;line-height:1.25}
+header h1 small{display:block;font-size:12px;font-weight:600;color:#e3c27a;letter-spacing:.2px;margin-bottom:2px}
+header p{margin:4px 0 0;font-size:12.5px;color:rgba(255,255,255,.78);max-width:78ch}
+.status{font-size:11.5px;color:rgba(255,255,255,.72);margin-top:6px}
+/* ---- nav: langkah kerja 1–7 ---- */
+nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(8px);-webkit-backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line);box-shadow:0 4px 14px -10px rgba(13,74,55,.35)}
+nav .nin{max-width:1100px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:8px 10px}
+nav .nin::-webkit-scrollbar{display:none}
+nav button{flex:0 0 auto;display:flex;align-items:center;gap:8px;background:none;border:1px solid transparent;color:var(--muted);padding:6px 12px 6px 6px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
+nav button .sn{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:800;background:var(--line2);color:var(--brand);font-variant-numeric:tabular-nums}
+@media(hover:hover){nav button:not(.on):hover{background:var(--brandSoft);color:var(--brand)}}
+nav button.on{background:var(--brand);color:#fff;box-shadow:0 4px 12px -6px rgba(13,74,55,.7)}
+nav button.on .sn{background:var(--brass);color:#fff}
+nav button.cfg .sn{background:var(--brassSoft);color:var(--brassInk)}
+nav button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:18px 14px 90px}
+/* ---- kartu ---- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px;box-shadow:var(--sh)}
+.card h2{font-size:16px;font-weight:800;letter-spacing:-.2px;margin:0 0 12px;color:var(--brandDeep);display:flex;align-items:center;gap:10px}
+.card h2::before{content:"";flex:0 0 auto;width:4px;height:18px;border-radius:2px;background:linear-gradient(var(--brass),#e3c27a)}
+.card h3{font-size:14px;font-weight:700;margin:16px 0 8px;color:var(--brand)}
+.hint{color:var(--muted);font-size:12.5px;margin:4px 0 8px}
+.grid{display:grid;gap:12px;grid-template-columns:1fr}
 @media(min-width:700px){.grid.c2{grid-template-columns:1fr 1fr}.grid.c3{grid-template-columns:1fr 1fr 1fr}.grid.c4{grid-template-columns:repeat(4,1fr)}}
-label.f{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)}
-label.f span.l{font-weight:550}
-input,select,textarea{font:inherit;font-size:14px;color:var(--ink);border:1px solid #c9ced8;border-radius:7px;padding:8px 9px;background:#fff;width:100%;min-width:0}
-textarea{min-height:58px;resize:vertical}
-input:focus,select:focus,textarea:focus{outline:2px solid #86efac;border-color:var(--brand2)}
-input[type=checkbox]{width:auto}
-.chk{display:flex;gap:8px;align-items:flex-start;font-size:13px;padding:4px 0}
-.chk input{margin-top:3px}
-.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--brand2);background:var(--brand2);color:#fff;border-radius:8px;padding:8px 13px;font:inherit;font-size:13px;font-weight:550;cursor:pointer}
-.btn.sec{background:#fff;color:var(--brand2)}
-.btn.dan{background:#fff;color:var(--bad);border-color:#fca5a5}
-.btn.sm{padding:5px 9px;font-size:12px}
+/* ---- formulir ---- */
+label.f{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+label.f span.l{font-weight:650;color:#3e4f47}
+input,select,textarea{font:inherit;font-size:14px;color:var(--ink);border:1px solid #cbd6cf;border-radius:9px;padding:9px 10px;background:#fbfcfb;width:100%;min-width:0;transition:border-color .15s,box-shadow .15s,background .15s}
+input:hover,select:hover,textarea:hover{border-color:#a9bbb0}
+textarea{min-height:60px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--brand2);background:#fff;box-shadow:0 0 0 3px rgba(19,101,75,.16)}
+input[type=checkbox]{width:17px;height:17px;accent-color:var(--brand2);padding:0}
+.chk{display:flex;gap:9px;align-items:flex-start;font-size:13px;padding:5px 0}
+.chk input{margin-top:2px;flex:0 0 auto}
+/* ---- tombol ---- */
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--brand);background:var(--brand);color:#fff;border-radius:10px;padding:9px 15px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.15) inset,0 4px 10px -6px rgba(13,74,55,.8);transition:transform .08s,background .15s,box-shadow .15s}
+.btn:hover{background:var(--brand2)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.btn.sec{background:#fff;color:var(--brand);border-color:#b9cdc1;box-shadow:none}
+.btn.sec:hover{background:var(--brandSoft);border-color:var(--brand2)}
+.btn.dan{background:#fff;color:var(--bad);border-color:#efb4b4;box-shadow:none}
+.btn.dan:hover{background:var(--badBg)}
+.btn.sm{padding:5px 10px;font-size:12px;border-radius:8px}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .sp{flex:1}
-.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:10px}
-.chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.chip.on{background:var(--brandSoft);border-color:var(--brand2);color:var(--brand);font-weight:600}
-.b{display:inline-block;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:650;white-space:nowrap}
-.b.ok{background:var(--okBg);color:var(--ok)} .b.bad{background:var(--badBg);color:var(--bad)} .b.na{background:#eef0f4;color:var(--muted)} .b.warn{background:var(--warnBg);color:var(--warn)}
-.item{border:1px solid var(--line);border-radius:9px;padding:10px;margin-bottom:8px;background:#fcfcfd}
-.item .top{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}
-.item .no{flex:0 0 auto;font-size:11px;color:var(--muted);background:#eef0f4;border-radius:5px;padding:2px 6px;margin-top:1px}
-.item .tt{flex:1;font-weight:550;font-size:13px}
-.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
-.tbl th,.tbl td{border:1px solid var(--line);padding:6px 7px;vertical-align:top;text-align:left}
-.tbl th{background:#f0f2f5;font-weight:600}
+/* ---- pemilih peserta ---- */
+.chips{display:flex;gap:6px;overflow-x:auto;padding:2px 2px 6px;margin-bottom:12px;scrollbar-width:thin}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;color:#3e4f47;cursor:pointer;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s,border-color .15s}
+@media(hover:hover){.chip:hover{border-color:var(--brand2)}}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 4px 12px -6px rgba(13,74,55,.7)}
+/* ---- lencana & stempel hasil ---- */
+.b{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700;white-space:nowrap;line-height:1.6}
+.b.ok{background:var(--okBg);color:var(--ok)} .b.bad{background:var(--badBg);color:var(--bad)} .b.na{background:#edf1ee;color:var(--muted)} .b.warn{background:var(--warnBg);color:var(--warn)}
+.b.st{border-radius:5px;background:transparent;border:2px solid currentColor;box-shadow:0 0 0 2px #fff inset,0 0 0 3px currentColor inset;padding:3px 10px;letter-spacing:1.2px;font-weight:800;font-size:11.5px;transform:rotate(-2.5deg)}
+.b.st.ok{color:var(--ok);background:rgba(23,116,74,.05)}
+.b.st.bad{color:var(--bad);background:rgba(180,35,42,.05)}
+/* ---- butir persyaratan ---- */
+.item{border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px;background:linear-gradient(#fff,#fbfcfb)}
+.item .top{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
+.item .no{flex:0 0 auto;font-size:11px;font-weight:800;color:var(--brassInk);background:var(--brassSoft);border-radius:6px;padding:2px 7px;margin-top:1px}
+.item .tt{flex:1;font-weight:650;font-size:13px}
+/* ---- tabel ---- */
+.scroll{overflow-x:auto;border-radius:12px}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tbl th,.tbl td{border-right:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:8px 9px;vertical-align:top;text-align:left}
+.tbl tr>*:last-child{border-right:0}
+.tbl tr:last-child>td{border-bottom:0}
+.tbl th{background:var(--brand);color:#fff;font-weight:700;border-color:rgba(255,255,255,.12);font-size:12px}
+.tbl tr:nth-child(even)>td{background:#f7faf8}
+.tbl tr:hover>td{background:#eef6f1}
 .tbl td.c,.tbl th.c{text-align:center}
-.tbl td.n{text-align:right;font-variant-numeric:tabular-nums}
-.scroll{overflow-x:auto}
-.alert{border-radius:9px;padding:10px 12px;font-size:13px;margin-bottom:10px}
-.alert.warn{background:var(--warnBg);color:#713f12;border:1px solid #fde68a}
-.alert.bad{background:var(--badBg);color:#7f1d1d;border:1px solid #fecaca}
-.alert.ok{background:var(--okBg);color:#14532d;border:1px solid #bbf7d0}
-.alert.info{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe}
-.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#111827;color:#fff;padding:10px 16px;border-radius:9px;font-size:13px;z-index:50;max-width:92vw;box-shadow:0 6px 18px rgba(0,0,0,.25);display:none}
-.status{font-size:11px;opacity:.85;margin-top:4px}
+.tbl td.n,.tbl th.n{text-align:right;font-variant-numeric:tabular-nums}
+/* ---- pemberitahuan ---- */
+.alert{border-radius:12px;padding:11px 14px;font-size:13px;margin-bottom:12px;border:1px solid;border-left-width:4px}
+.alert.warn{background:var(--warnBg);color:#5f3e00;border-color:#efd79a;border-left-color:#d39b1f}
+.alert.bad{background:var(--badBg);color:#7c161b;border-color:#f2c3c3;border-left-color:var(--bad)}
+.alert.ok{background:var(--okBg);color:#0e4d30;border-color:#bfe3cc;border-left-color:var(--ok)}
+.alert.info{background:#eaf2f7;color:#173b55;border-color:#c7dbe8;border-left-color:#2f6f99}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--brandDeep);color:#fff;padding:11px 18px;border-radius:12px;font-size:13px;font-weight:600;z-index:50;max-width:92vw;box-shadow:0 10px 30px -8px rgba(8,49,31,.6);border:1px solid rgba(227,194,122,.4);display:none}
 ul.r{margin:4px 0 0;padding-left:18px;font-size:12.5px}
-.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px}
-.kpi div{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 10px}
-.kpi b{display:block;font-size:20px}
-.kpi span{font-size:11.5px;color:var(--muted)}
-.dl{display:grid;gap:10px;grid-template-columns:1fr}
+/* ---- angka ringkas ---- */
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px}
+.kpi div{position:relative;background:linear-gradient(160deg,#fff,#f5f9f6);border:1px solid var(--line);border-radius:12px;padding:12px 14px;overflow:hidden}
+.kpi div::after{content:"";position:absolute;right:-14px;top:-14px;width:54px;height:54px;border-radius:50%;background:var(--brassSoft);opacity:.7}
+.kpi b{display:block;font-size:28px;font-weight:800;color:var(--brand);line-height:1.1;font-variant-numeric:tabular-nums;position:relative;z-index:1}
+.kpi span{font-size:12px;color:var(--muted);font-weight:600;position:relative;z-index:1}
+.kpi div:last-child{background:linear-gradient(160deg,var(--brand),var(--brandDeep));border-color:var(--brand)}
+.kpi div:last-child b{color:#e3c27a}.kpi div:last-child span{color:rgba(255,255,255,.8)}
+.kpi div:last-child::after{background:rgba(227,194,122,.18)}
+.dl{display:grid;gap:14px;grid-template-columns:1fr}
 @media(min-width:700px){.dl{grid-template-columns:1fr 1fr}}
 .dl .card{margin:0}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media(min-width:960px){nav .nin{max-width:1240px;justify-content:center;gap:2px}nav button{padding:5px 11px 5px 5px;font-size:12.5px;gap:7px}}
+@media(max-width:640px){header{padding:14px 14px 14px}.emb{display:none}header h1{font-size:16.5px}header h1 small{font-size:11px}header p{font-size:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}nav .nin{padding:7px 8px}}
+@media print{header,nav{position:static}nav{display:none}}
 
 /* ---- versi bersama: status, overlay, ponsel ---- */
 .status.online{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.status .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block}
-#loadingOv,#dlBox{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;align-items:center;justify-content:center;z-index:100;padding:16px}
+.status .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block;box-shadow:0 0 0 3px rgba(74,222,128,.25)}
+#loadingOv,#dlBox{position:fixed;inset:0;background:rgba(8,49,31,.55);display:flex;align-items:center;justify-content:center;z-index:100;padding:16px}
 #dlBox{display:none}
-.ovbox{background:#fff;border-radius:12px;padding:18px;max-width:420px;width:100%;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.ovbox{background:#fff;border-radius:18px;padding:22px;max-width:420px;width:100%;text-align:center;box-shadow:0 24px 60px -20px rgba(8,49,31,.55);border-top:4px solid var(--brass)}
+.ovbox>b:first-child{display:block;font-size:17px;font-weight:800;color:var(--brandDeep);margin-bottom:4px}
 .ovbox p{margin:6px 0}
 .ovbox .row{justify-content:center;margin-top:10px}
-.spin{width:30px;height:30px;border:3px solid #d1fae5;border-top-color:var(--brand2);border-radius:50%;margin:0 auto 10px;animation:sp 1s linear infinite}
+.spin{width:34px;height:34px;border:3px solid var(--brassSoft);border-top-color:var(--brand2);border-radius:50%;margin:0 auto 10px;animation:sp 1s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
 a.btn{text-decoration:none}
-#loadingOv{background:#e9efea}
-#pwBox{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:110;padding:16px}
-.lnk{background:none;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:1px 8px;font:inherit;font-size:11px;cursor:pointer;margin-left:6px}
+#loadingOv{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23d9b45a' stroke-opacity='.16' stroke-width='1'%3E%3Cpath d='M28 6l6.4 15.6L50 28l-15.6 6.4L28 50l-6.4-15.6L6 28l15.6-6.4z'/%3E%3Crect x='14' y='14' width='28' height='28' transform='rotate(45 28 28)'/%3E%3Crect x='14' y='14' width='28' height='28'/%3E%3C/g%3E%3C/svg%3E") 0 0/56px 56px,linear-gradient(120deg,var(--brandDeep),var(--brand))}
+#admBox{position:fixed;inset:0;background:rgba(8,49,31,.55);display:none;align-items:center;justify-content:center;z-index:110;padding:16px}
+#admBox .ovbox{max-width:520px}
+.tabs2{display:flex;gap:4px;margin:10px 0;border-bottom:1px solid var(--line)}
+.tabb{flex:1;background:none;border:0;border-bottom:3px solid transparent;padding:8px 6px;font:inherit;font-size:13.5px;color:var(--muted);cursor:pointer}
+.tabb.on{color:var(--brand);border-bottom-color:var(--brass);font-weight:650}
+#pwBox{position:fixed;inset:0;background:rgba(8,49,31,.55);display:none;align-items:center;justify-content:center;z-index:110;padding:16px}
+.lnk{background:rgba(255,255,255,.08);border:1px solid rgba(227,194,122,.55);color:#fff;border-radius:999px;padding:2px 10px;font-weight:600;font:inherit;font-size:11px;cursor:pointer;margin-left:6px}
 @media(max-width:640px){
   html,body{font-size:15px}
-  header{padding:10px 12px 8px}
-  header h1{font-size:14px}
+  header{padding:14px 12px 14px}
   main{padding:10px 8px 90px}
-  .card{padding:12px 10px}
+  .card{padding:14px 12px}
   input,select,textarea{font-size:16px;padding:10px}
   .btn{padding:10px 14px;font-size:14px}
   .btn.sm{padding:7px 10px;font-size:13px}
-  nav button{padding:12px 12px;font-size:13.5px}
+  nav button{padding:7px 12px 7px 6px;font-size:13.5px}
   .row .btn{flex:1 1 auto;justify-content:center}
   .scroll{overflow:visible}
-  .tbl,.tbl tbody{display:block;border:0}
+  .tbl,.tbl tbody{display:block;border:0;border-radius:0;overflow:visible}
+  .tbl tr:nth-child(even)>td,.tbl tr:hover>td{background:#fff}
   .tbl tr.hd{display:none}
-  .tbl tr{display:block;border:1px solid var(--line);border-radius:9px;margin-bottom:8px;background:#fff;overflow:hidden}
-  .tbl td{display:block;position:relative;padding:8px 8px 8px 40%;border:0;border-bottom:1px solid #eef0f4;text-align:left!important;min-width:0!important;min-height:34px}
-  .tbl td:last-child{border-bottom:0}
+  .tbl tr{display:block;border:1px solid var(--line);border-left:4px solid var(--brand2);border-radius:12px;margin-bottom:10px;background:#fff;overflow:hidden;box-shadow:var(--sh)}
+  .tbl td{display:block;position:relative;padding:8px 8px 8px 40%;border:0!important;border-bottom:1px solid var(--line2)!important;text-align:left!important;min-width:0!important;min-height:34px}
+  .tbl td:last-child{border-bottom:0!important}
   .tbl td::before{content:attr(data-label);position:absolute;left:8px;top:8px;width:calc(40% - 16px);font-weight:600;color:var(--muted);font-size:12px;line-height:1.3}
 }
 </style>
@@ -122,15 +185,21 @@ window.KK_CONFIG_EMBED = {
 <body>
 <div id="loadingOv"><div class="ovbox"><div class="spin"></div><b>Menghubungkan…</b></div></div>
 <header>
-  <h1>Kertas Kerja Evaluasi &amp; Pembuktian Kualifikasi</h1>
+ <div class="hwrap">
+  <div class="emb" aria-hidden="true"><svg viewBox="0 0 32 32"><g fill="none" stroke="#e3c27a" stroke-width="1.6" stroke-linejoin="round"><rect x="7" y="7" width="18" height="18"/><rect x="7" y="7" width="18" height="18" transform="rotate(45 16 16)"/></g><path d="M11.5 16.4l3 3 6-6.6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="htxt">
+  <h1><small>Pokja Pemilihan · UKPBJ Kementerian Agama RI</small>Kertas Kerja Evaluasi &amp; Pembuktian Kualifikasi</h1>
   <p id="hdrPaket">Seleksi Prakualifikasi — Jasa Konsultansi Konstruksi Perencana Gedung Asrama Mahasiswa UIN Syarif Hidayatullah Jakarta TA 2026</p>
   <div class="status" id="saveStatus">Menghubungkan ke data bersama…</div>
   <div class="status online" id="onlineBar"></div>
+  </div>
+ </div>
 </header>
 <nav id="tabs"></nav>
 <main id="view"></main>
 <div class="toast" id="toast"></div>
 <input type="file" id="fileImport" accept=".json,application/json" style="display:none">
+<input type="file" id="cfgImport" accept=".json,application/json" style="display:none">
 <input type="file" id="logoFile" accept="image/png,image/jpeg" style="display:none">
 
 <script>
@@ -173,13 +242,48 @@ const DEFAULT_PAKET = {
   fontBA: "Footlight MT Light", fontLamp: "Arial"
 };
 const LOGO_DEFAULT = "data:image/jpeg;base64,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";
-const DEFAULT_PARAM = {
-  awal4: (TA - 4) + "-01-01",     // pengalaman 4 tahun terakhir
-  awal10: (TA - 10) + "-01-01",   // pengalaman 10 tahun terakhir (Bab VIII B.7.a)
-  ambangB: 30, ambangC: 30, ambangTotal: 60,
-  minKinerja: 2,                  // Baik = 2 s.d. <3, Sangat Baik = 3
-  maxKSO: 3, maxLeadShare: 70, maxShortlist: 7, minLulus: 3
+/* ---- Pengaturan evaluasi (dapat diubah di tab "Pengaturan Evaluasi"; disimpan bersama data paket) ---- */
+const DEFAULT_UNSUR = {
+  a:{aktif:true, label:"Pengalaman pekerjaan Jasa Konsultansi Konstruksi", periode:4, awal:"", wajib:true, ambang:0, satuan:"pekerjaan",
+     tiers:[{min:10,nilai:20},{min:5,nilai:10},{min:1,nilai:5}],
+     uraian:"Memiliki pengalaman paling kurang 1 (satu) pekerjaan jasa konsultansi konstruksi dalam kurun waktu 4 (empat) tahun terakhir, baik di lingkungan pemerintah atau swasta termasuk pengalaman subkontrak."},
+  b:{aktif:true, label:"Pengalaman pekerjaan sejenis (subklasifikasi/lingkup pekerjaan)", periode:10, awal:"", wajib:true, ambang:30, satuan:"pekerjaan",
+     tiers:[{min:10,nilai:30},{min:5,nilai:20},{min:1,nilai:10}],
+     uraian:"Memiliki pengalaman mengerjakan pekerjaan sejenis:\na) untuk pekerjaan Usaha Kecil berdasarkan subklasifikasi; atau\nb) untuk pekerjaan Usaha Menengah atau Usaha Besar, pekerjaan sejenis berdasarkan subklasifikasi atau berdasarkan lingkup pekerjaan."},
+  c:{aktif:true, label:"Pengalaman sejenis: perencanaan konstruksi gedung pendidikan", periode:10, awal:"", wajib:true, ambang:30, satuan:"pekerjaan",
+     tiers:[{min:10,nilai:40},{min:5,nilai:30},{min:1,nilai:20}],
+     uraian:"Memiliki pengalaman mengerjakan pekerjaan sejenis (Jasa Konsultan Perencanaan Konstruksi Pembangunan Gedung Pendidikan) dalam waktu 10 (sepuluh) tahun terakhir."},
+  d:{aktif:true, label:"Nilai kinerja penyedia", min:2, wajib:true, ambang:0, satuan:"nilai",
+     tiers:[{min:3,nilai:10},{min:2,nilai:5}],
+     uraian:"Memiliki rata-rata kinerja penyedia dengan nilai baik atau sangat baik dalam kurun waktu 4 (empat) tahun terakhir secara akumulatif dalam pengalaman pekerjaan Jasa Konsultansi Konstruksi (SIKaP dan/atau perhitungan manual sesuai Peraturan LKPP Nomor 4 Tahun 2021)."}
 };
+const DEFAULT_SBU = [
+  {kode:"AR001", nama:"Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian"},
+  {kode:"RK001", nama:"Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian"}
+];
+const DEFAULT_PARAM = {
+  tahun: TA,                       // tahun anggaran (dasar hitungan periode pengalaman)
+  unsur: DEFAULT_UNSUR,
+  sbuList: DEFAULT_SBU, sbuMode: "semua",       // "semua" = seluruh subklasifikasi wajib; "salah satu" = cukup salah satu
+  kbliList: ["71101","71102"], tahunSPT: TA - 1,
+  ambangTotal: 60, maxShortlist: 7, minLulus: 3,
+  ksoBoleh: true, maxKSO: 3, maxLeadShare: 70, ksoSemuaA: true,
+  admCfg: null, pbCfg: null                     // null = daftar standar
+};
+const cloneJ = o => JSON.parse(JSON.stringify(o));
+function TAh(){ return +S.param.tahun || TA; }
+function U(k){ return S.param.unsur[k]; }
+function uAwal(k){ const u = U(k); return u.awal || ((TAh() - (+u.periode || 10)) + "-01-01"); }
+function uTiers(k){ return (U(k).tiers||[]).map(t=>({min:numPlain(t.min), nilai:numPlain(t.nilai)})).filter(t=>isFinite(t.min)&&isFinite(t.nilai)).sort((a,b)=>b.min-a.min); }
+function tierVal(k, n){ if(!U(k).aktif || !isFinite(n)) return 0; for(const t of uTiers(k)) if(n >= t.min) return t.nilai; return 0; }
+function uMax(k){ return U(k).aktif? Math.max(0, ...uTiers(k).map(t=>t.nilai)) : 0; }
+function uAmb(k){ const v = numPlain(U(k).ambang); return U(k).aktif && isFinite(v)? v : 0; }
+function tierTxt(k){ const u = U(k); if(!u.aktif) return k+": tidak dinilai"; const ts = uTiers(k);
+  return k+" "+ts.map((t,i)=> (k==="d"? "nilai ≥"+String(t.min).replace(".",",") : "≥"+t.min+(i===0?" "+(u.satuan||""):""))+" = "+t.nilai).join("; ") + (uAmb(k)? " (ambang ≥"+uAmb(k)+")" : ""); }
+function sbuList(){ return (S.param.sbuList||[]).filter(x=>x && x.kode); }
+function sbuHas(d, kode){ if(d && d.sub && kode in d.sub) return !!d.sub[kode]; if(kode==="AR001") return !!(d&&d.ar); if(kode==="RK001") return !!(d&&d.rk); return false; }
+function sbuTxt(joiner){ const L = sbuList(); return L.map(x=>x.kode+" ("+x.nama+")").join(joiner || (S.param.sbuMode==="salah satu"? " atau " : " dan ")); }
+function kbliTxt(sep){ return (S.param.kbliList||[]).filter(Boolean).map(k=>"KBLI "+k).join(sep||" dan "); }
 
 /* Persyaratan Administrasi/Legalitas per badan usaha (LDK E.A & Bab IX) */
 const OPTS = {
@@ -206,6 +310,45 @@ const ADM = [
   {k:"dh",    no:"A.5.b", t:"Badan usaha/pengurus tidak tercantum dalam Daftar Hitam (hasil pengecekan Pokja pada portal INAPROC)", opt:"dh"},
   {k:"alamat",no:"Bab IX",t:"Alamat yang jelas disertai bukti kepemilikan/penguasaan", opt:"ada", nomor:"Alamat kantor"}
 ];
+/* daftar persyaratan administrasi sesuai pengaturan */
+const OPT_LABEL = {ada:"Ada / Tidak Ada", ss:"Sertifikat Standar (terverifikasi)", kswp:"Valid / Tidak Valid", cond:"Bila dikuasakan", setuju:"Menyetujui / Tidak", dh:"Daftar Hitam"};
+function admStd(){
+  const L = [];
+  ADM.forEach(it=>{
+    if(it.k==="ss1"){ (S.param.kbliList||[]).filter(Boolean).forEach((kb,i)=> L.push({...it, k:"ss"+(i+1), t:"Sertifikat Standar KBLI "+kb+" (KBLI 2020) terverifikasi dan masih berlaku", kbli:kb})); return; }
+    if(it.k==="ss2") return;
+    if(it.k==="sbu"){ L.push({...it, t:"SBU Kualifikasi Usaha "+(S.paket.kualifikasiUsaha||"Besar")+", subklasifikasi/layanan "+sbuTxt()}); return; }
+    if(it.k==="spt"){ L.push({...it, t:"Bukti Lapor Pajak (SPT) Tahunan Tahun "+(S.param.tahunSPT||TAh()-1)}); return; }
+    L.push({...it});
+  });
+  return L;
+}
+function ADMX(){
+  const std = admStd(), cfg = S.param.admCfg;
+  if(!Array.isArray(cfg) || !cfg.length) return std;
+  const byK = Object.fromEntries(std.map(x=>[x.k,x]));
+  const out = cfg.map(c=>{
+    const base = byK[c.k];
+    if(base){ return {...base, no: c.no ?? base.no, t: (c.t && !base.special && !base.kbli && c.k!=="spt")? c.t : base.t, aktif: c.aktif!==false}; }
+    return {k:c.k, no:c.no||"", t:c.t||"(persyaratan tambahan)", opt: OPT_LABEL[c.opt]? c.opt : "ada", nomor:"Nomor / keterangan", custom:true, aktif:c.aktif!==false};
+  });
+  std.forEach(x=>{ if(!cfg.some(c=>c.k===x.k)) out.push({...x, aktif:true}); });   // KBLI baru dsb.
+  return out;
+}
+function ADMA(){ return ADMX().filter(x=>x.aktif!==false); }
+function pbStd(){
+  return PB.map(it=> it.k==="nib"? {...it, t:"NIB dan Sertifikat Standar "+kbliTxt(" & ")+" sesuai isian (cek OSS)"} :
+                 it.k==="sbu"? {...it, t:"SBU "+sbuList().map(x=>x.kode).join(" & ")+" Kualifikasi "+(S.paket.kualifikasiUsaha||"Besar")+" sesuai isian (cek LPJK)"} :
+                 it.k==="pajak"? {...it, t:"NPWP, KSWP status Valid dan Bukti Lapor SPT Tahunan "+(S.param.tahunSPT||TAh()-1)+" sesuai isian"} : {...it});
+}
+function PBX(){
+  const std = pbStd(), cfg = S.param.pbCfg;
+  if(!Array.isArray(cfg) || !cfg.length) return std;
+  const byK = Object.fromEntries(std.map(x=>[x.k,x]));
+  const out = cfg.map(c=> byK[c.k]? {...byK[c.k], t: (c.t && !["nib","sbu","pajak"].includes(c.k))? c.t : byK[c.k].t, aktif:c.aktif!==false} : {k:c.k, t:c.t||"(item tambahan)", custom:true, aktif:c.aktif!==false});
+  std.forEach(x=>{ if(!cfg.some(c=>c.k===x.k)) out.push({...x, aktif:true}); });
+  return out;
+}
 const KSO_CONTENT = [
   ["a","Mencantumkan nama KSO sesuai dokumen isian kualifikasi"],
   ["b","Mencantumkan nama perusahaan leadfirm dan anggota KSO"],
@@ -243,7 +386,7 @@ function newPeserta(){
 }
 function newExp(){ return {id:uid(), ent:0, nama:"", lingkup:"", subklas:"", lokasi:"", pemberi:"", noKontrak:"", tglKontrak:"", nilai:"", status:"Penyedia Tunggal", share:"", tglBAST:"", jkk:true, sejB:false, sejC:false, referensi:false, bukti:"", ket:""}; }
 function defaultState(){
-  return {v:1, paket:{...DEFAULT_PAKET}, param:{...DEFAULT_PARAM},
+  return {v:1, paket:{...DEFAULT_PAKET}, param:cloneJ(DEFAULT_PARAM),
     pokjaAnggota:[{nama:"",nip:"",jabatan:"Ketua"},{nama:"",nip:"",jabatan:"Sekretaris"},{nama:"",nip:"",jabatan:"Anggota"}],
     peserta:[], ui:{tab:"paket", sel:null}, updatedAt:0};
 }
@@ -252,13 +395,28 @@ function migrate(o){
   const d = defaultState();
   const s = Object.assign(d, o||{});
   s.paket = Object.assign({...DEFAULT_PAKET}, s.paket||{});
-  s.param = Object.assign({...DEFAULT_PARAM}, s.param||{});
+  const op = s.param||{};
+  s.param = Object.assign(cloneJ(DEFAULT_PARAM), op);
+  // migrasi dari versi lama (ambangB/ambangC/minKinerja/awal4/awal10)
+  const un = cloneJ(DEFAULT_UNSUR);
+  Object.keys(un).forEach(k=>{ un[k] = Object.assign(un[k], (op.unsur||{})[k]||{}); });
+  if(!op.unsur){
+    if(op.ambangB!=null) un.b.ambang = op.ambangB; if(op.ambangC!=null) un.c.ambang = op.ambangC; if(op.minKinerja!=null) un.d.min = op.minKinerja;
+    if(op.awal4 && op.awal4 !== (TA-4)+"-01-01") un.a.awal = op.awal4;
+    if(op.awal10 && op.awal10 !== (TA-10)+"-01-01"){ un.b.awal = op.awal10; un.c.awal = op.awal10; }
+  }
+  s.param.unsur = un;
+  ["awal4","awal10","ambangB","ambangC","minKinerja"].forEach(k=>delete s.param[k]);
+  if(!Array.isArray(s.param.sbuList) || !s.param.sbuList.length) s.param.sbuList = cloneJ(DEFAULT_SBU);
+  if(!Array.isArray(s.param.kbliList)) s.param.kbliList = ["71101","71102"];
   s.ui = Object.assign({tab:"paket", sel:null}, s.ui||{});
   s.peserta = (s.peserta||[]).map(p=>{
     const n = Object.assign(newPeserta(), p);
     n.pb = Object.assign(newPeserta().pb, p.pb||{});
     n.pb.items = n.pb.items||{};
-    n.ents = (n.ents && n.ents.length ? n.ents : [newEntity()]).map(e=>Object.assign(newEntity(), e, {adm:e.adm||{}}));
+    n.ents = (n.ents && n.ents.length ? n.ents : [newEntity()]).map(e=>{ const x = Object.assign(newEntity(), e, {adm:e.adm||{}});
+      const sb = x.adm.sbu; if(sb && !sb.sub && (sb.ar!=null || sb.rk!=null)) sb.sub = {AR001:!!sb.ar, RK001:!!sb.rk};
+      return x; });
     n.exps = (n.exps||[]).map(x=>Object.assign(newExp(), x));
     return n;
   });
@@ -311,13 +469,15 @@ function bump(ts){ const t = ts? Date.parse(ts) : NaN; if(isFinite(t) && (!SY.si
 
 /* baris server -> rekaman seragam */
 function recP(r){ return {id:r.id, ver:r.ver, urut:r.urut, del: !!(r.del ?? r.dihapus), data: r.data, at: r.at || r.diubah_pada}; }
+function normMeta(d){ const mm = migrate(d||{}); return {paket:mm.paket, param:mm.param, pokjaAnggota:(d&&d.pokjaAnggota)||mm.pokjaAnggota}; }
+function normP(d){ return migrate({peserta:[d]}).peserta[0]; }
 function adoptMeta(m){
   if(!m || !m.data) return false;
-  const local = metaObj();
+  const srv = normMeta(m.data), local = metaObj();
   const pending = SY.base.meta ? diff(JSON.parse(SY.base.meta.json), local, [], []) : [];
-  const merged = applyOps(clone(m.data), pending);
+  const merged = applyOps(clone(srv), pending);
   const mm = migrate(merged); S.paket = mm.paket; S.param = mm.param; S.pokjaAnggota = merged.pokjaAnggota || S.pokjaAnggota;
-  SY.base.meta = {ver:m.ver, json:JSON.stringify(m.data)};
+  SY.base.meta = {ver:m.ver, json:JSON.stringify(srv)};
   bump(m.at || m.diubah_pada);
   return true;
 }
@@ -330,11 +490,12 @@ function adoptPeserta(r){
     if(k>=0) S.peserta.splice(k,1);
     delete SY.base[r.id]; return true;
   }
-  let merged = r.data;
-  if(k>=0 && b){ const pending = diff(JSON.parse(b.json), S.peserta[k], [], []); merged = applyOps(clone(r.data), pending); }
-  const np = migrate({peserta:[merged]}).peserta[0];
+  const srv = normP(r.data);
+  let merged = srv;
+  if(k>=0 && b){ const pending = diff(JSON.parse(b.json), S.peserta[k], [], []); merged = applyOps(clone(srv), pending); }
+  const np = normP(merged);
   if(k>=0) S.peserta[k] = np; else S.peserta.push(np);
-  SY.base[r.id] = {ver:r.ver, json:JSON.stringify(r.data), urut:r.urut};
+  SY.base[r.id] = {ver:r.ver, json:JSON.stringify(srv), urut:r.urut};
   return true;
 }
 function reorder(){
@@ -347,7 +508,8 @@ function showOnline(){
   const el = document.getElementById("onlineBar"); if(!el) return;
   const others = SY.online.filter(x=>x!==SY.me);
   el.innerHTML = `<span class="dot"></span> ${esc(SY.nama||SY.me)}` + (others.length? ` · juga membuka: ${others.map(esc).join(", ")}` : "") +
-    ` <button class="lnk" id="btnPw">Ganti sandi</button><button class="lnk" id="btnLogout">Keluar</button>`;
+    ` ${SY.admin? `<button class="lnk" id="btnAdm">Anggota${SY.pending? ` (${SY.pending} menunggu)`:""}</button>`:""}<button class="lnk" id="btnPw">Ganti sandi</button><button class="lnk" id="btnLogout">Keluar</button>`;
+  const ba = document.getElementById("btnAdm"); if(ba) ba.onclick = openAdmin;
   const bp = document.getElementById("btnPw"); if(bp) bp.onclick = changePassword;
   const b = document.getElementById("btnLogout"); if(b) b.onclick = async ()=>{ await flushNow(); await SB.auth.signOut(); location.reload(); };
 }
@@ -417,38 +579,105 @@ async function poll(){
   }catch(e){ setStatus("Koneksi terputus, mencoba lagi…"); }
 }
 
-/* ---------- login (email + kata sandi) ---------- */
-function loginScreen(msg, emailVal){
+/* ---------- login & pendaftaran mandiri (email + kata sandi) ---------- */
+const JABATAN = ["Ketua","Sekretaris","Anggota"];
+function authErr(m){
+  return /invalid login credentials/i.test(m)? "Email atau kata sandi salah." :
+         /already registered|already exists/i.test(m)? "Email ini sudah terdaftar. Silakan gunakan tab <b>Masuk</b>." :
+         /email not confirmed/i.test(m)? "Akun belum dikonfirmasi. Admin perlu mematikan <b>Confirm email</b> di Supabase (Authentication › Providers › Email)." :
+         /password should be|weak/i.test(m)? "Kata sandi terlalu lemah — minimal 8 karakter, gabungan huruf dan angka." :
+         /signups not allowed|signup is disabled/i.test(m)? "Pendaftaran akun sedang ditutup oleh admin." :
+         "Gagal: " + esc(m);
+}
+function loginScreen(msg, emailVal, mode){
+  mode = mode || "masuk";
   const ov = document.getElementById("loadingOv");
+  const tab = (k,l)=>`<button type="button" class="tabb ${mode===k?"on":""}" data-mode="${k}">${l}</button>`;
   ov.innerHTML = `<div class="ovbox" style="text-align:left">
-    <b style="font-size:16px">Masuk ke Kertas Kerja Pokja</b>
-    <p class="hint">Khusus anggota Pokja yang terdaftar. Gunakan email dan kata sandi yang diberikan Ketua/Sekretaris Pokja.</p>
-    ${msg? `<div class="alert ${/berhasil/i.test(msg)?"ok":"bad"}">${msg}</div>`:""}
+    <b style="font-size:16px">Kertas Kerja Pokja</b>
+    <div class="tabs2">${tab("masuk","Masuk")}${tab("daftar","Daftar akun baru")}</div>
+    ${msg? `<div class="alert ${/berhasil|dibuat/i.test(msg)?"ok":"bad"}">${msg}</div>`:""}
     <form id="lgForm" autocomplete="on">
-      <label class="f"><span class="l">Email</span><input id="lgEmail" type="email" autocomplete="username" placeholder="nama@instansi.go.id" value="${esc(emailVal||"")}" required></label>
-      <label class="f" style="margin-top:8px"><span class="l">Kata sandi</span>
-        <div style="display:flex;gap:6px"><input id="lgPass" type="password" autocomplete="current-password" required style="flex:1"><button type="button" class="btn sec sm" id="lgShow">Lihat</button></div></label>
-      <div class="row" style="margin-top:12px"><button class="btn" id="lgBtn" type="submit" style="flex:1;justify-content:center">Masuk</button></div>
+      ${mode==="daftar"? `<label class="f"><span class="l">Nama lengkap</span><input id="rgNama" autocomplete="name" required></label>
+      <label class="f" style="margin-top:8px"><span class="l">Jabatan dalam Pokja</span><select id="rgJab">${JABATAN.map(j=>`<option ${j==="Anggota"?"selected":""}>${j}</option>`).join("")}</select></label>`:""}
+      <label class="f" style="margin-top:8px"><span class="l">Email</span><input id="lgEmail" type="email" autocomplete="username" placeholder="nama@instansi.go.id" value="${esc(emailVal||"")}" required></label>
+      <label class="f" style="margin-top:8px"><span class="l">Kata sandi${mode==="daftar"?" (min. 8 karakter)":""}</span>
+        <div style="display:flex;gap:6px"><input id="lgPass" type="password" autocomplete="${mode==="daftar"?"new-password":"current-password"}" required style="flex:1"><button type="button" class="btn sec sm" id="lgShow">Lihat</button></div></label>
+      ${mode==="daftar"? `<label class="f" style="margin-top:8px"><span class="l">Ulangi kata sandi</span><input id="lgPass2" type="password" autocomplete="new-password" required></label>`:""}
+      <div class="row" style="margin-top:12px"><button class="btn" id="lgBtn" type="submit" style="flex:1;justify-content:center">${mode==="daftar"?"Daftar":"Masuk"}</button></div>
     </form>
-    ${CFG.LOGIN_GOOGLE? `<div class="row" style="margin-top:8px"><button class="btn sec" id="lgGoogle" style="flex:1;justify-content:center">Masuk dengan akun Google</button></div>`:""}
-    <p class="hint" style="margin-top:10px">Lupa kata sandi? Hubungi Ketua/Sekretaris Pokja untuk mengatur ulang. Setelah masuk, Anda tidak perlu masuk lagi di perangkat ini sampai menekan <b>Keluar</b>.</p></div>`;
+    ${CFG.LOGIN_GOOGLE && mode==="masuk"? `<div class="row" style="margin-top:8px"><button class="btn sec" id="lgGoogle" style="flex:1;justify-content:center">Masuk dengan akun Google</button></div>`:""}
+    <p class="hint" style="margin-top:10px">${mode==="daftar"? "Setelah mendaftar, akun Anda <b>menunggu persetujuan</b> Ketua/Sekretaris Pokja sebelum dapat membuka kertas kerja." :
+      "Belum punya akun? Pilih <b>Daftar akun baru</b>. Lupa kata sandi? Hubungi Ketua/Sekretaris Pokja. Setelah masuk, Anda tidak perlu masuk lagi di perangkat ini sampai menekan <b>Keluar</b>."}</p></div>`;
+  ov.querySelectorAll(".tabb").forEach(b=> b.onclick = ()=> loginScreen("", document.getElementById("lgEmail").value, b.dataset.mode));
   const em = document.getElementById("lgEmail"), pw = document.getElementById("lgPass");
-  (emailVal? pw : em).focus();
+  (mode==="daftar"? document.getElementById("rgNama") : (emailVal? pw : em)).focus();
   document.getElementById("lgShow").onclick = ()=>{ pw.type = pw.type==="password"? "text" : "password"; };
   document.getElementById("lgForm").onsubmit = async (ev)=>{
     ev.preventDefault();
-    const btn = document.getElementById("lgBtn"); btn.disabled = true; btn.textContent = "Memeriksa…";
+    const btn = document.getElementById("lgBtn"); btn.disabled = true; btn.textContent = "Memproses…";
     const email = em.value.trim().toLowerCase(), password = pw.value;
-    const { error } = await SB.auth.signInWithPassword({ email, password });
-    if(error){
-      const m = /invalid login credentials/i.test(error.message)? "Email atau kata sandi salah." :
-                /email not confirmed/i.test(error.message)? "Akun belum dikonfirmasi. Minta Ketua/Sekretaris mencentang <b>Auto Confirm User</b> saat membuat akun." :
-                "Gagal masuk: " + esc(error.message);
-      loginScreen(m, email);
+    if(mode==="masuk"){
+      const { error } = await SB.auth.signInWithPassword({ email, password });
+      if(error) loginScreen(authErr(error.message), email, "masuk");
+      return;
     }
+    const nama = document.getElementById("rgNama").value.trim(), jabatan = document.getElementById("rgJab").value;
+    if(password.length < 8){ loginScreen("Kata sandi minimal 8 karakter.", email, "daftar"); return; }
+    if(password !== document.getElementById("lgPass2").value){ loginScreen("Kedua kata sandi tidak sama.", email, "daftar"); return; }
+    try{ localStorage.setItem(LS_KEY+"-reg", JSON.stringify({email, nama, jabatan})); }catch(e){}
+    const { data, error } = await SB.auth.signUp({ email, password, options:{ data:{ nama, jabatan } } });
+    if(error){ loginScreen(authErr(error.message), email, "daftar"); return; }
+    if(!data.session){
+      if(data.user && Array.isArray(data.user.identities) && data.user.identities.length===0){ loginScreen(authErr("already registered"), email, "masuk"); return; }
+      loginScreen("Akun dibuat, tetapi Supabase masih meminta konfirmasi email. Admin perlu mematikan <b>Confirm email</b> (Authentication › Providers › Email), lalu Anda dapat <b>Masuk</b>.", email, "masuk");
+    }
+    // bila sesi langsung terbentuk, onAuthStateChange akan melanjutkan ke startShared()
   };
   const g = document.getElementById("lgGoogle");
   if(g) g.onclick = ()=> SB.auth.signInWithOAuth({ provider:"google", options:{ redirectTo: location.origin + location.pathname } });
+}
+function waitingScreen(me){
+  const ov = document.getElementById("loadingOv");
+  ov.innerHTML = `<div class="ovbox"><b>Menunggu persetujuan</b>
+    <p>Akun <b>${esc(me.email)}</b>${me.nama? " ("+esc(me.nama)+")":""} sudah terdaftar dan sedang menunggu persetujuan Ketua/Sekretaris Pokja.</p>
+    <p class="hint">Sampaikan kepada admin Pokja bahwa Anda sudah mendaftar. Halaman ini akan terbuka otomatis setelah disetujui.</p>
+    <div class="row"><button class="btn sec" id="wtOut">Keluar</button><button class="btn" id="wtChk">Periksa lagi</button></div></div>`;
+  document.getElementById("wtOut").onclick = async ()=>{ await SB.auth.signOut(); location.reload(); };
+  document.getElementById("wtChk").onclick = ()=> startShared();
+  clearTimeout(SY.waitT); SY.waitT = setTimeout(()=> startShared(true), 20000);
+}
+/* panel admin: persetujuan anggota */
+async function refreshPending(){
+  if(!SY.admin) return;
+  const { data, error } = await SB.rpc("daftar_anggota"); if(error) return;
+  SY.users = data || []; SY.pending = SY.users.filter(u=>!u.aktif && u.daftar_sendiri && !u.disetujui_oleh).length;
+  showOnline(); if(document.getElementById("admBox")?.style.display==="flex") renderAdmin();
+}
+function renderAdmin(){
+  const box = document.getElementById("admBox");
+  const row = u=>`<div class="item" style="text-align:left"><div class="top"><div class="tt">${esc(u.nama||"(tanpa nama)")} <span class="hint">· ${esc(u.jabatan||"")}</span><div class="hint">${esc(u.email)}</div></div>
+      ${u.aktif? `<span class="b ok">${u.admin?"Admin":"Aktif"}</span>` : `<span class="b warn">${u.disetujui_oleh?"Nonaktif":"Menunggu"}</span>`}</div>
+      <div class="row">${u.email===SY.me? `<span class="hint">Akun Anda</span>` : u.aktif? `<button class="btn sec sm" data-u="${esc(u.email)}" data-a="0" data-d="0">Nonaktifkan</button>
+        <button class="btn sec sm" data-u="${esc(u.email)}" data-a="1" data-d="${u.admin?0:1}">${u.admin?"Cabut admin":"Jadikan admin"}</button>`
+        : `<button class="btn sm" data-u="${esc(u.email)}" data-a="1" data-d="0">Setujui</button>`}</div></div>`;
+  const users = SY.users||[];
+  box.innerHTML = `<div class="ovbox" style="text-align:left;max-height:88vh;overflow:auto"><b>Anggota & persetujuan</b>
+    <p class="hint">Setujui hanya anggota Pokja sesuai SK. Pendaftar yang belum disetujui tidak dapat melihat data.</p>
+    <div id="admMsg"></div>${users.map(row).join("") || `<p class="hint">Belum ada pengguna.</p>`}
+    <div class="row" style="margin-top:8px"><button class="btn sec" id="admClose">Tutup</button></div></div>`;
+  box.querySelector("#admClose").onclick = ()=>{ box.style.display = "none"; };
+  box.querySelectorAll("button[data-u]").forEach(b=> b.onclick = async ()=>{
+    b.disabled = true;
+    const { data, error } = await SB.rpc("atur_anggota", { p_email:b.dataset.u, p_aktif:b.dataset.a==="1", p_admin:b.dataset.d==="1" });
+    if(error){ box.querySelector("#admMsg").innerHTML = `<div class="alert bad">${esc(error.message)}</div>`; b.disabled = false; return; }
+    SY.users = data; SY.pending = SY.users.filter(u=>!u.aktif && u.daftar_sendiri && !u.disetujui_oleh).length; renderAdmin(); showOnline(); toast("Data anggota diperbarui.");
+  });
+}
+function openAdmin(){
+  let box = document.getElementById("admBox");
+  if(!box){ box = document.createElement("div"); box.id = "admBox"; document.body.appendChild(box); }
+  box.style.display = "flex"; renderAdmin(); refreshPending();
 }
 /* ganti kata sandi sendiri */
 function changePassword(){
@@ -477,12 +706,22 @@ function fatal(msg){
   ov.innerHTML = `<div class="ovbox"><b>Tidak dapat membuka kertas kerja</b><p>${msg}</p><div class="row"><button class="btn sec" id="fxOut">Keluar / ganti akun</button><button class="btn" onclick="location.reload()">Muat ulang</button></div></div>`;
   const b = document.getElementById("fxOut"); if(b) b.onclick = async ()=>{ try{ await SB.auth.signOut(); }catch(e){} location.reload(); };
 }
-async function startShared(){
+async function startShared(quiet){
+  if(SY.ready) return;
   const ov = document.getElementById("loadingOv");
-  ov.innerHTML = `<div class="ovbox"><div class="spin"></div><b>Memuat data bersama Pokja…</b></div>`;
-  const { data:me, error:e1 } = await SB.rpc("saya");
+  if(!quiet) ov.innerHTML = `<div class="ovbox"><div class="spin"></div><b>Memuat data bersama Pokja…</b></div>`;
+  let { data:me, error:e1 } = await SB.rpc("saya");
   if(e1){ fatal("Gagal menghubungi server: " + esc(e1.message)); return; }
-  if(!me.anggota){ fatal(`Akun <b>${esc(me.email)}</b> belum terdaftar sebagai anggota Pokja. Hubungi Ketua/Sekretaris Pokja agar email Anda ditambahkan.`); return; }
+  if(!me.terdaftar){
+    // pendaftaran mandiri: ajukan akses memakai nama/jabatan yang diisi saat daftar
+    let reg = {}; try{ reg = JSON.parse(localStorage.getItem(LS_KEY+"-reg")||"{}"); }catch(e){}
+    const { data:sess } = await SB.auth.getSession(); const md = (sess && sess.session && sess.session.user && sess.session.user.user_metadata) || {};
+    const r = await SB.rpc("daftar_saya", { p_nama: md.nama || reg.nama || "", p_jabatan: md.jabatan || reg.jabatan || "Anggota" });
+    if(r.error){ fatal("Gagal mendaftar: " + esc(r.error.message)); return; }
+    me = r.data;
+  }
+  if(!me.anggota){ waitingScreen(me); return; }
+  clearTimeout(SY.waitT); SY.admin = !!me.admin;
   SY.me = me.email; SY.nama = me.nama ? `${me.nama} (${me.email})` : me.email;
   const { data:m, error:e2 } = await SB.from("meta").select("*").eq("id","meta").maybeSingle();
   const { data:rows, error:e3 } = await SB.from("peserta").select("id,urut,data,ver,dihapus,diubah_pada").eq("dihapus", false).order("urut");
@@ -504,6 +743,7 @@ async function startShared(){
   pres.on("presence", { event:"sync" }, ()=>{ SY.online = Object.keys(pres.presenceState()); showOnline(); })
       .subscribe(async st=>{ if(st==="SUBSCRIBED") await pres.track({ at: Date.now() }); });
   setInterval(poll, 20000);
+  if(SY.admin){ refreshPending(); setInterval(refreshPending, 30000); }
   document.addEventListener("visibilitychange", ()=>{ if(!document.hidden) poll(); });
 }
 (async function initShared(){
@@ -557,12 +797,13 @@ function toast(t){ const el = document.getElementById("toast"); el.textContent =
 function badge(r){
   const ok = ["M","MEMENUHI","LULUS","Sesuai","Terbukti","Ya"], bad = ["TM","TIDAK MEMENUHI","GUGUR","TIDAK LULUS","Tidak Sesuai","Tidak Terbukti","Tidak"];
   const c = ok.includes(r)? "ok" : bad.includes(r)? "bad" : (r==="BELUM LENGKAP"||r==="BELUM DINILAI")? "warn" : "na";
-  return `<span class="b ${c}">${esc(r||"-")}</span>`;
+  const st = ["LULUS","GUGUR","TIDAK LULUS"].includes(r)? " st" : "";
+  return `<span class="b ${c}${st}">${esc(r||"-")}</span>`;
 }
 function pName(p){ return p.bentuk==="KSO" ? (p.namaKSO || p.nama || "(KSO tanpa nama)") : (p.nama || "(tanpa nama)"); }
 function eName(p, i){ return p.bentuk==="KSO" ? (p.ents[i]?.nama || ("Anggota " + (i+1))) : (p.nama || "(tanpa nama)"); }
 function ents(p){ return p.bentuk==="KSO" ? p.ents : p.ents.slice(0,1); }
-function batasDate(){ return S.paket.batasPemasukan || (TA + "-12-31"); }
+function batasDate(){ return S.paket.batasPemasukan || (TAh() + "-12-31"); }
 
 /* =========================================================
    4. LOGIKA EVALUASI
@@ -580,17 +821,20 @@ function admItem(p, ei, it){
 }
 function sbuEntity(p, ei){
   const d = p.ents[ei].adm.sbu || {};
+  const L = sbuList(), req = S.paket.kualifikasiUsaha || "Besar", R = KUAL_RANK[req] || 3, satu = S.param.sbuMode==="salah satu";
   let r = "-", note = "";
   if(d.kual){
     const valid = !(d.berlaku && d.berlaku < batasDate()) && !(d.berlakuRK && d.berlakuRK < batasDate());
     if(!valid){ r = "TM"; note = "Masa berlaku SBU habis sebelum batas akhir pemasukan"; }
     else if(p.bentuk!=="KSO"){
-      if(d.kual!=="Besar"){ r="TM"; note="Kualifikasi SBU bukan Usaha Besar"; }
-      else if(!(d.ar && d.rk)){ r="TM"; note="Tidak memiliki "+[!d.ar&&"AR001",!d.rk&&"RK001"].filter(Boolean).join(" & "); }
+      const miss = L.filter(x=>!sbuHas(d, x.kode)).map(x=>x.kode);
+      if(d.kual!==req){ r="TM"; note="Kualifikasi SBU bukan Usaha "+req; }
+      else if(satu? miss.length===L.length : miss.length){ r="TM"; note = satu? "Tidak memiliki salah satu subklasifikasi "+L.map(x=>x.kode).join("/") : "Tidak memiliki "+miss.join(" & "); }
       else r = "M";
     } else {
-      if(!(d.ar || d.rk)){ r="TM"; note="Anggota KSO wajib memiliki salah satu SBU yang disyaratkan"; }
-      else if(!KUAL_RANK[d.kual] || KUAL_RANK[d.kual] < 2){ r="TM"; note="Kualifikasi Kecil tidak dapat ber-KSO pada paket Usaha Besar"; }
+      const kr = KUAL_RANK[d.kual] || 0;
+      if(!L.some(x=>sbuHas(d, x.kode))){ r="TM"; note="Anggota KSO wajib memiliki salah satu SBU yang disyaratkan"; }
+      else if(kr < Math.max(1, R-1) || kr > R){ r="TM"; note="Kualifikasi anggota KSO tidak sesuai untuk paket Usaha "+req; }
       else r = "M";
     }
   }
@@ -599,8 +843,10 @@ function sbuEntity(p, ei){
 }
 function ksoRows(p){
   if(p.bentuk!=="KSO") return [];
-  const P = S.param, es = p.ents, lead = es[0]||{};
+  const P = S.param, es = p.ents;
+  const req = S.paket.kualifikasiUsaha || "Besar", R = KUAL_RANK[req] || 3, satu = P.sbuMode==="salah satu", L = sbuList();
   const rows = [];
+  if(P.ksoBoleh===false) rows.push({k:"kso0", no:"LDK", t:"Peserta berbentuk KSO/kemitraan diperkenankan pada paket ini", r:"TM", note:"Pengaturan paket: KSO tidak diperkenankan"});
   const ada = p.ksoAda==="Ada"? "M" : p.ksoAda==="Tidak Ada"? "TM" : "-";
   rows.push({k:"kso1", no:"A.6", t:"Surat Perjanjian KSO (asli) diunggah", r:ada, note:""});
   const isiAll = KSO_CONTENT.every(([k])=>p.ksoIsi[k]);
@@ -620,20 +866,22 @@ function ksoRows(p){
   rows.push({k:"kso5", no:"IKP 3.12", t:"Leadfirm memiliki porsi modal mayoritas dan paling banyak "+P.maxLeadShare+"%", r:r5, note:n5});
   const kr = es.map(e=>KUAL_RANK[e.kual]||0);
   let r6 = "M", n6 = [];
-  if(kr[0]!==3){ r6="TM"; n6.push("Leadfirm harus berkualifikasi Besar"); }
+  if(kr[0]!==R){ r6="TM"; n6.push("Leadfirm harus berkualifikasi "+req); }
   if(kr.some(x=>x>kr[0])){ r6="TM"; n6.push("Leadfirm harus setingkat atau lebih tinggi dari anggota"); }
-  if(kr.some(x=>x<2)){ r6="TM"; n6.push("Anggota berkualifikasi Kecil tidak memenuhi IKP 3.11"); }
-  rows.push({k:"kso6", no:"IKP 3.11–3.12", t:"Kualifikasi anggota setingkat, atau Besar dengan Menengah (1 tingkat di bawah); leadfirm setingkat atau lebih tinggi", r:r6, note:n6.join("; ")});
-  // SBU saling melengkapi
+  if(kr.some(x=>x < Math.max(1, R-1))){ r6="TM"; n6.push("Anggota lebih dari 1 tingkat di bawah kualifikasi paket (IKP 3.11)"); }
+  rows.push({k:"kso6", no:"IKP 3.11–3.12", t:"Kualifikasi anggota setingkat, atau 1 tingkat di bawah kualifikasi paket (Usaha "+req+"); leadfirm berkualifikasi "+req, r:r6, note:n6.join("; ")});
   const sb = es.map(e=>e.adm.sbu||{});
   let r7 = "-", n7 = "";
   if(sb.every(d=>d.kual)){
     const valid = sb.every(d=>!(d.berlaku && d.berlaku < batasDate()));
     const setara = kr.every(x=>x===kr[0]);
+    const has = d=> L.some(x=>sbuHas(d,x.kode));
+    const cover = satu? L.some(x=>sb.some(d=>sbuHas(d,x.kode))) : L.every(x=>sb.some(d=>sbuHas(d,x.kode)));
+    const leadAll = satu? has(sb[0]) : L.every(x=>sbuHas(sb[0],x.kode));
     if(!valid){ r7="TM"; n7="Ada SBU yang masa berlakunya habis"; }
-    else if(!sb.every(d=>d.ar||d.rk)){ r7="TM"; n7="Setiap anggota wajib memiliki salah satu SBU yang disyaratkan"; }
-    else if(setara){ r7 = (sb.some(d=>d.ar) && sb.some(d=>d.rk))? "M":"TM"; n7 = r7==="M"? "Kualifikasi setara; AR001 & RK001 terpenuhi secara saling melengkapi" : "AR001/RK001 belum terpenuhi gabungan anggota"; }
-    else { r7 = (sb[0].ar && sb[0].rk && sb[0].kual==="Besar")? "M":"TM"; n7 = "Kualifikasi tidak setara: AR001 & RK001 Besar wajib dipenuhi leadfirm"; }
+    else if(!sb.every(has)){ r7="TM"; n7="Setiap anggota wajib memiliki salah satu SBU yang disyaratkan"; }
+    else if(setara){ r7 = cover? "M":"TM"; n7 = cover? "Kualifikasi setara; "+L.map(x=>x.kode).join(" & ")+" terpenuhi secara saling melengkapi" : "Subklasifikasi yang disyaratkan belum terpenuhi gabungan anggota"; }
+    else { r7 = (leadAll && sb[0].kual===req)? "M":"TM"; n7 = "Kualifikasi tidak setara: "+L.map(x=>x.kode).join(" & ")+" "+req+" wajib dipenuhi leadfirm"; }
   }
   rows.push({k:"kso7", no:"LDK (KSO) 2", t:"SBU yang disyaratkan dipenuhi secara saling melengkapi oleh anggota KSO", r:r7, note:n7});
   rows.forEach(x=>{ const ov = (p.ksoOv||{})[x.k]; if(ov==="M"||ov==="TM"){ x.r = ov; x.note = x.note || "Ditetapkan manual oleh Pokja"; } });
@@ -642,7 +890,7 @@ function ksoRows(p){
 function admRowsAll(p){
   const out = [];
   ents(p).forEach((e,ei)=>{
-    ADM.forEach(it=>{ const res = admItem(p, ei, it); out.push({ei, ent:eName(p,ei), it, ...res, d:p.ents[ei].adm[it.k]||{}}); });
+    ADMA().forEach(it=>{ const res = admItem(p, ei, it); out.push({ei, ent:eName(p,ei), it, ...res, d:p.ents[ei].adm[it.k]||{}}); });
   });
   ksoRows(p).forEach(x=>out.push({ei:-1, ent:"KSO", it:{k:x.k, no:x.no, t:x.t}, r:x.r, note:x.note, d:{}}));
   return out;
@@ -659,47 +907,46 @@ function shortT(t){ return t.length>80? t.slice(0,78)+"…" : t; }
 function expWeighted(x){ const n = num(x.nilai); if(!isFinite(n)) return 0; if(x.status==="KSO"){ const s = numPlain(x.share); return isFinite(s)? n*s/100 : 0; } return n; }
 function expFlags(x){
   const b = x.tglBAST, end = batasDate();
-  const in4 = !!b && b >= S.param.awal4 && b <= end;
-  const in10 = !!b && b >= S.param.awal10 && b <= end;
+  const inA = !!b && b >= uAwal("a") && b <= end, inB = !!b && b >= uAwal("b") && b <= end, inC = !!b && b >= uAwal("c") && b <= end;
+  const in4 = inA, in10 = inB || inC;
   const subOk = x.status!=="Subkontrak" || x.referensi;
-  return {a: !!x.jkk && in4 && subOk, b: !!x.sejB && in10 && subOk, c: !!x.sejC && in10 && subOk, in4, in10, subOk};
+  return {a: U("a").aktif && !!x.jkk && inA && subOk, b: U("b").aktif && !!x.sejB && inB && subOk, c: U("c").aktif && !!x.sejC && inC && subOk, in4, in10, subOk};
 }
-function tierA(n){ return n>=10?20 : n>=5?10 : n>=1?5 : 0; }
-function tierB(n){ return n>=10?30 : n>=5?20 : n>=1?10 : 0; }
-function tierC(n){ return n>=10?40 : n>=5?30 : n>=1?20 : 0; }
-function tierD(k){ return !isFinite(k)? 0 : k>=3?10 : k>=2?5 : 0; }
+function tierA(n){ return tierVal("a", n); }
+function tierB(n){ return tierVal("b", n); }
+function tierC(n){ return tierVal("c", n); }
+function tierD(k){ return tierVal("d", k); }
 function teknis(p, proof){
-  const P = S.param;
+  const P = S.param, Ua = U("a"), Ub = U("b"), Uc = U("c"), Ud = U("d");
   const xs = p.exps.filter(x=> !proof || x.bukti==="Terbukti");
   const F = xs.map(x=>({x, f:expFlags(x)}));
   const a = F.filter(o=>o.f.a).length, b = F.filter(o=>o.f.b).length, c = F.filter(o=>o.f.c).length;
   let allA = "-";
-  if(p.bentuk==="KSO"){ allA = p.ents.every((e,i)=>F.some(o=>o.f.a && +o.x.ent===i)) ? "Ya" : "Tidak"; }
-  const k = numPlain(p.kinerja);
-  const minA = (a>=1 && allA!=="Tidak")? "M":"TM", minB = b>=1? "M":"TM", minC = c>=1? "M":"TM", minD = (isFinite(k) && k>=P.minKinerja)? "M":"TM";
+  if(p.bentuk==="KSO" && Ua.aktif && P.ksoSemuaA!==false){ allA = p.ents.every((e,i)=>F.some(o=>o.f.a && +o.x.ent===i)) ? "Ya" : "Tidak"; }
+  const k = numPlain(p.kinerja), kMin = numPlain(Ud.min);
+  const req = (u, ok)=> (!u.aktif || !u.wajib)? "M" : ok? "M" : "TM";
+  const minA = req(Ua, a>=1 && allA!=="Tidak"), minB = req(Ub, b>=1), minC = req(Uc, c>=1), minD = req(Ud, isFinite(k) && (!isFinite(kMin) || k>=kMin));
   const na = tierA(a), nb = tierB(b), nc = tierC(c), nd = tierD(k);
   const total = na+nb+nc+nd;
   const minOk = [minA,minB,minC,minD].every(x=>x==="M");
-  const okB = nb >= P.ambangB, okC = nc >= P.ambangC, okT = total >= P.ambangTotal;
-  const lulus = minOk && okB && okC && okT;
+  const okA = na >= uAmb("a"), okB = nb >= uAmb("b"), okC = nc >= uAmb("c"), okD = nd >= uAmb("d"), okT = total >= (numPlain(P.ambangTotal)||0);
+  const lulus = minOk && okA && okB && okC && okD && okT;
   const rs = [];
-  if(minA==="TM") rs.push(allA==="Tidak"? "Tidak seluruh anggota KSO memiliki pengalaman Jasa Konsultansi Konstruksi 4 tahun terakhir" : "Tidak memiliki pengalaman Jasa Konsultansi Konstruksi 4 tahun terakhir");
-  if(minB==="TM") rs.push("Tidak memiliki pengalaman pekerjaan sejenis (subklasifikasi/lingkup)");
-  if(minC==="TM") rs.push("Tidak memiliki pengalaman sejenis perencanaan gedung pendidikan 10 tahun terakhir");
-  if(minD==="TM") rs.push("Nilai kinerja penyedia di bawah Baik / tidak ada penilaian");
-  if(minOk && !okB) rs.push("Nilai unsur b ("+nb+") di bawah ambang batas "+P.ambangB);
-  if(minOk && !okC) rs.push("Nilai unsur c ("+nc+") di bawah ambang batas "+P.ambangC);
+  if(minA==="TM") rs.push(allA==="Tidak"? "Tidak seluruh anggota KSO memiliki "+Ua.label.toLowerCase() : "Tidak memiliki "+Ua.label.toLowerCase());
+  if(minB==="TM") rs.push("Tidak memiliki "+Ub.label.toLowerCase());
+  if(minC==="TM") rs.push("Tidak memiliki "+Uc.label.toLowerCase());
+  if(minD==="TM") rs.push(Ud.label+" di bawah "+(isFinite(kMin)? String(kMin).replace(".",",") : "batas")+" / tidak ada penilaian");
+  [["a",na,okA],["b",nb,okB],["c",nc,okC],["d",nd,okD]].forEach(([u,n,ok])=>{ if(minOk && !ok) rs.push("Nilai unsur "+u+" ("+n+") di bawah ambang batas "+uAmb(u)); });
   if(minOk && !okT) rs.push("Jumlah nilai ("+total+") di bawah ambang batas "+P.ambangTotal);
-  // nilai kontrak pekerjaan sejenis tertinggi (leadfirm untuk KSO)
   const top = Math.max(0, ...F.filter(o=>(o.f.b||o.f.c) && +o.x.ent===0).map(o=>expWeighted(o.x)));
-  return {a,b,c,allA,k,minA,minB,minC,minD,na,nb,nc,nd,total,okB,okC,okT,lulus,hasil: lulus? "LULUS":"TIDAK LULUS", reasons:rs, top};
+  return {a,b,c,allA,k,minA,minB,minC,minD,na,nb,nc,nd,total,okA,okB,okC,okD,okT,lulus,hasil: lulus? "LULUS":"TIDAK LULUS", reasons:rs, top};
 }
 function evalResult(p){
   const ad = admResult(p), t = teknis(p,false);
   const lulus = ad==="MEMENUHI" && t.lulus;
   return {ad, t, lulus, hasil: lulus? "LULUS" : (ad==="BELUM LENGKAP"? "BELUM LENGKAP" : "GUGUR")};
 }
-function pbItemsFor(p){ return PB.filter(it=> it.k!=="kso" || p.bentuk==="KSO"); }
+function pbItemsFor(p){ return PBX().filter(it=> it.aktif!==false && (it.k!=="kso" || p.bentuk==="KSO")); }
 function pembuktian(p){
   const e = evalResult(p);
   const t = teknis(p, true);
@@ -731,9 +978,10 @@ function ranking(){
 /* =========================================================
    5. RENDER UI
    ========================================================= */
-const TABS = [["paket","1. Paket & Pokja"],["peserta","2. Peserta"],["admin","3. Administrasi"],["exp","4. Pengalaman & Kinerja"],["teknis","5. Hasil Evaluasi"],["pb","6. Pembuktian"],["hasil","7. Hasil & Unduh"]];
+const TABS = [["paket","1. Paket & Pokja"],["atur","⚙ Pengaturan Evaluasi"],["peserta","2. Peserta"],["admin","3. Administrasi"],["exp","4. Pengalaman & Kinerja"],["teknis","5. Hasil Evaluasi"],["pb","6. Pembuktian"],["hasil","7. Hasil & Unduh"]];
 function renderTabs(){
-  document.getElementById("tabs").innerHTML = TABS.map(([k,l])=>`<button data-tab="${k}" class="${S.ui.tab===k?"on":""}">${l}</button>`).join("");
+  document.getElementById("tabs").innerHTML = `<div class="nin">${TABS.map(([k,l])=>{ const m = /^(\d+)\.\s*(.*)$/.exec(l); const cfg = !m; const num = m? m[1] : "⚙", txt = m? m[2] : l.replace(/^⚙\s*/,""); return `<button data-tab="${k}" class="${S.ui.tab===k?"on":""}${cfg?" cfg":""}" ${S.ui.tab===k?'aria-current="step"':""}><span class="sn">${num}</span>${esc(txt)}</button>`; }).join("")}</div>`;
+  const on = document.querySelector("#tabs button.on"); if(on && on.scrollIntoView){ try{ on.scrollIntoView({block:"nearest",inline:"center"}); }catch(e){} }
 }
 function inp(path, label, opt={}){
   const v = getPath(S, path) ?? "";
@@ -802,19 +1050,9 @@ function vPaket(){
     </div>
     ${!S.paket.batasPemasukan? `<div class="alert warn" style="margin-top:10px">Isi <b>batas akhir pemasukan</b>: dipakai untuk menguji masa berlaku izin/sertifikat (Bab VIII B.2.a) dan batas hitungan pengalaman.</div>`:""}
   </div>
-  <div class="card"><h2>Parameter Evaluasi (LDK &amp; Bab IX)</h2>
-    <p class="hint">Nilai bawaan sesuai Dokumen Kualifikasi. Ubah hanya bila ada adendum.</p>
-    <div class="grid c4">
-      ${inp("param.awal4","Awal hitungan pengalaman 4 tahun",{type:"date"})}
-      ${inp("param.awal10","Awal hitungan pengalaman 10 tahun",{type:"date"})}
-      ${inp("param.ambangB","Ambang batas unsur b",{num:true})}
-      ${inp("param.ambangC","Ambang batas unsur c",{num:true})}
-      ${inp("param.ambangTotal","Ambang batas jumlah nilai",{num:true})}
-      ${inp("param.minKinerja","Nilai kinerja minimal (Baik)",{num:true})}
-      ${inp("param.maxKSO","Maks. anggota KSO",{num:true})}
-      ${inp("param.maxShortlist","Jumlah Daftar Pendek",{num:true})}
-    </div>
-    <div class="alert info" style="margin-top:10px">Catatan dokumen: ambang batas unsur b (30) sama dengan nilai maksimumnya, sehingga peserta baru lulus jika memiliki ≥10 pengalaman sejenis; unsur c (30) mensyaratkan ≥5 pengalaman perencanaan gedung pendidikan. Kertas kerja menerapkan ketentuan apa adanya (“nilai ≥ ambang batas”).</div>
+  <div class="card"><h2>Persyaratan &amp; Penilaian</h2>
+    <p class="hint">Kualifikasi usaha <b>${esc(S.paket.kualifikasiUsaha||"Besar")}</b> · SBU ${esc(sbuList().map(x=>x.kode).join(S.param.sbuMode==="salah satu"?" / ":" & "))} · ${["a","b","c","d"].map(k=>esc(tierTxt(k))).join(" · ")} · jumlah ≥ ${esc(S.param.ambangTotal)}.</p>
+    <button class="btn sec sm" data-tab="atur">Buka ⚙ Pengaturan Evaluasi</button>
   </div>
   <div class="card"><h2>Anggota Pokja Pemilihan</h2>
     ${S.pokjaAnggota.map((a,i)=>`
@@ -856,6 +1094,75 @@ function vPeserta(){
     </div>`;}).join("")}`;
 }
 
+
+function vAtur(){
+  const P = S.param;
+  const unsurCard = (k)=>{
+    const u = P.unsur[k], B = `param.unsur.${k}.`;
+    const tiers = (u.tiers||[]).map((t,j)=>`<div class="row" style="gap:6px;margin-bottom:4px">
+        <span class="hint" style="min-width:70px">${k==="d"? "nilai ≥" : "jumlah ≥"}</span>${inp(`${B}tiers.${j}.min`,"",{num:true})}
+        <span class="hint">→ skor</span>${inp(`${B}tiers.${j}.nilai`,"",{num:true})}
+        <button class="btn dan sm" data-act="delTier" data-u="${k}" data-j="${j}">✕</button></div>`).join("");
+    return `<div class="item"><div class="top"><span class="no">Unsur ${k}</span><span class="tt">${esc(u.label)}</span>${u.aktif? `<span class="b ok">maks ${uMax(k)}</span>` : `<span class="b na">tidak dinilai</span>`}</div>
+      <div class="row">${inp(B+"aktif","Unsur ini dinilai",{type:"check"})}${inp(B+"wajib","Wajib memenuhi minimal (bila tidak → gugur)",{type:"check"})}</div>
+      <div class="grid c3">
+        ${inp(B+"label","Nama unsur")}
+        ${k!=="d"? inp(B+"periode","Periode pengalaman (tahun terakhir)",{num:true}) : inp(B+"min","Nilai kinerja minimal (Baik = 2)",{num:true})}
+        ${k!=="d"? inp(B+"awal","Awal hitungan (kosongkan = 1 Jan "+(TAh()-(+u.periode||10))+")",{type:"date"}) : inp(B+"satuan","Satuan",{ph:"nilai"})}
+        ${inp(B+"ambang","Ambang batas nilai unsur (0 = tanpa ambang)",{num:true})}
+      </div>
+      <div style="margin-top:6px"><span class="hint">Tabel skor (dari jumlah/nilai tertinggi):</span>${tiers}
+        <button class="btn sec sm" data-act="addTier" data-u="${k}">+ Tambah tingkat</button></div>
+      ${inp(B+"uraian","Uraian persyaratan (dipakai pada Berita Acara)",{type:"textarea"})}
+    </div>`;
+  };
+  const adm = ADMX(), cfgA = Array.isArray(P.admCfg) && P.admCfg.length;
+  const admList = adm.map((it,i)=>`<div class="item"><div class="top"><span class="no">${esc(it.no||"-")}</span><span class="tt">${esc(it.t)}</span>${it.aktif===false? `<span class="b na">tidak dipakai</span>`:`<span class="b ok">dipakai</span>`}</div>
+      ${cfgA? `<div class="grid c3">${inp(`param.admCfg.${i}.no`,"Ref.")}${(it.special||it.kbli||it.k==="spt")? `<p class="hint">Uraian otomatis dari pengaturan SBU/KBLI/tahun SPT.</p>` : inp(`param.admCfg.${i}.t`,"Uraian persyaratan",{type:"textarea"})}
+        ${it.custom? inp(`param.admCfg.${i}.opt`,"Jenis isian",{type:"select",options:Object.entries(OPT_LABEL),blank:false}) : ""}</div>
+        <div class="row">${inp(`param.admCfg.${i}.aktif`,"Dipakai pada paket ini",{type:"check"})}${it.custom? `<button class="btn dan sm" data-act="admDel" data-i="${i}">Hapus</button>`:""}</div>` : ""}</div>`).join("");
+  const pb = PBX(), cfgP = Array.isArray(P.pbCfg) && P.pbCfg.length;
+  const pbList = pb.map((it,i)=>`<div class="item"><div class="top"><span class="tt">${esc(it.t)}</span>${it.aktif===false? `<span class="b na">tidak dipakai</span>`:`<span class="b ok">dipakai</span>`}</div>
+      ${cfgP? `${["nib","sbu","pajak"].includes(it.k)? "" : inp(`param.pbCfg.${i}.t`,"Uraian item pembuktian",{type:"textarea"})}
+        <div class="row">${inp(`param.pbCfg.${i}.aktif`,"Dipakai",{type:"check"})}${it.custom? `<button class="btn dan sm" data-act="pbDel" data-i="${i}">Hapus</button>`:""}</div>` : ""}</div>`).join("");
+  return `
+  <div class="alert info">Pengaturan ini berlaku untuk <b>paket ini</b> dan langsung dipakai pada evaluasi, Kertas Kerja Excel, serta Berita Acara. Sesuaikan dengan Lembar Data Kualifikasi (LDK) & Bab IX dokumen paket. Simpan sebagai <b>template</b> untuk dipakai pada paket berikutnya.</div>
+  <div class="card"><h2>Template pengaturan</h2>
+    <div class="row"><button class="btn sec" data-act="cfgDl">Unduh pengaturan (.json)</button><button class="btn sec" data-act="cfgImp">Muat pengaturan dari berkas</button><button class="btn sec" data-act="cfgStd">Kembalikan ke standar</button><button class="btn dan" data-act="paketBaru">Mulai paket baru…</button></div>
+    <p class="hint">"Mulai paket baru" mengunduh cadangan otomatis, lalu mengosongkan daftar peserta dan identitas paket (nama, nomor, jadwal, pagu/HPS). Pengaturan evaluasi, kop, dan anggota Pokja tetap dipertahankan.</p>
+  </div>
+  <div class="card"><h2>1. Kualifikasi usaha &amp; perizinan</h2>
+    <div class="grid c3">
+      ${inp("param.tahun","Tahun anggaran",{num:true})}
+      ${inp("paket.kualifikasiUsaha","Kualifikasi usaha yang disyaratkan",{type:"select",options:["Kecil","Menengah","Besar"],blank:false})}
+      ${inp("param.tahunSPT","Tahun SPT Tahunan yang disyaratkan",{num:true})}
+    </div>
+    <h3>Subklasifikasi SBU yang disyaratkan</h3>
+    ${(P.sbuList||[]).map((x,i)=>`<div class="grid c3" style="margin-bottom:6px">${inp(`param.sbuList.${i}.kode`,"Kode",{ph:"mis. AR001"})}${inp(`param.sbuList.${i}.nama`,"Nama subklasifikasi/layanan")}<div class="row" style="align-items:flex-end"><button class="btn dan sm" data-act="delSbu" data-i="${i}">Hapus</button></div></div>`).join("")}
+    <div class="row"><button class="btn sec sm" data-act="addSbu">+ Tambah subklasifikasi</button>${inp("param.sbuMode","Ketentuan",{type:"select",options:[["semua","Seluruh subklasifikasi wajib dimiliki"],["salah satu","Cukup salah satu subklasifikasi"]],blank:false})}</div>
+    <h3>KBLI Sertifikat Standar</h3>
+    <div class="row">${(P.kbliList||[]).map((k,i)=>`<div class="row" style="gap:4px">${inp(`param.kbliList.${i}`,"KBLI "+(i+1),{ph:"71101"})}<button class="btn dan sm" data-act="delKbli" data-i="${i}">✕</button></div>`).join("")}<button class="btn sec sm" data-act="addKbli">+ KBLI</button></div>
+  </div>
+  <div class="card"><h2>2. Kemitraan / KSO</h2>
+    <div class="row">${inp("param.ksoBoleh","Peserta berbentuk KSO diperkenankan",{type:"check"})}${inp("param.ksoSemuaA","Setiap anggota KSO wajib memiliki pengalaman unsur a",{type:"check"})}</div>
+    <div class="grid c3">${inp("param.maxKSO","Maks. jumlah anggota KSO",{num:true})}${inp("param.maxLeadShare","Maks. porsi leadfirm (%)",{num:true})}</div>
+  </div>
+  <div class="card"><h2>3. Penilaian teknis (pembobotan dengan ambang batas)</h2>
+    ${["a","b","c","d"].map(unsurCard).join("")}
+    <div class="grid c3">${inp("param.ambangTotal","Ambang batas jumlah nilai",{num:true})}${inp("param.minLulus","Minimal peserta lulus (selain itu prakualifikasi gagal)",{num:true})}${inp("param.maxShortlist","Jumlah Daftar Pendek",{num:true})}</div>
+    <p class="hint">Nilai maksimum saat ini: ${["a","b","c","d"].reduce((x,k)=>x+uMax(k),0)}. Pastikan ambang batas tidak melebihi nilai maksimum.</p>
+  </div>
+  <div class="card"><h2>4. Persyaratan administrasi/legalitas</h2>
+    ${cfgA? "" : `<p class="hint">Saat ini memakai daftar standar. Tekan <b>Sesuaikan daftar</b> untuk mengubah uraian, menonaktifkan, atau menambah persyaratan.</p>`}
+    ${admList}
+    <div class="row">${cfgA? `<button class="btn sec sm" data-act="admAdd">+ Tambah persyaratan</button><button class="btn sec sm" data-act="admReset">Kembali ke daftar standar</button>` : `<button class="btn sec sm" data-act="admEdit">Sesuaikan daftar</button>`}</div>
+  </div>
+  <div class="card"><h2>5. Item pembuktian kualifikasi</h2>
+    ${pbList}
+    <div class="row">${cfgP? `<button class="btn sec sm" data-act="pbAdd">+ Tambah item</button><button class="btn sec sm" data-act="pbReset">Kembali ke daftar standar</button>` : `<button class="btn sec sm" data-act="pbEdit">Sesuaikan daftar</button>`}</div>
+  </div>`;
+}
+
 function vAdmin(){
   if(!S.peserta.length) return `<div class="alert info">Tambahkan peserta terlebih dahulu.</div>`;
   const p = curPeserta(), i = idx(p);
@@ -868,19 +1175,19 @@ function vAdmin(){
   </div>`;
   ents(p).forEach((e,ei)=>{
     h += `<div class="card"><h2>${p.bentuk==="KSO"? (ei===0?"Leadfirm: ":"Anggota KSO: ") : ""}${esc(eName(p,ei))}</h2>`;
-    ADM.forEach(it=>{
+    ADMA().forEach(it=>{
       const B = `peserta.${i}.ents.${ei}.adm.${it.k}.`;
       const res = admItem(p, ei, it);
       if(it.special==="sbu"){
         h += `<div class="item"><div class="top"><span class="no">${it.no}</span><span class="tt">${esc(it.t)}</span>${badge(res.r)}</div>
           <div class="grid c3">
             ${inp(B+"nomor","Nomor SBU")}
-            ${inp(B+"kual","Kualifikasi SBU",{type:"select",options:["Besar","Menengah","Kecil"]})}
+            ${inp(B+"kual","Kualifikasi SBU (disyaratkan: "+esc(S.paket.kualifikasiUsaha||"Besar")+")",{type:"select",options:["Besar","Menengah","Kecil"]})}
             ${inp(B+"berlaku","Masa berlaku s.d.",{type:"date"})}
-            ${inp(B+"nomorRK","Nomor SBU RK001 (jika sertifikat terpisah)")}
-            ${inp(B+"berlakuRK","Masa berlaku SBU RK001 (jika terpisah)",{type:"date"})}
+            ${inp(B+"nomorRK","Nomor SBU kedua (jika sertifikat terpisah)")}
+            ${inp(B+"berlakuRK","Masa berlaku SBU kedua (jika terpisah)",{type:"date"})}
           </div>
-          <div class="row">${inp(B+"ar","Memiliki subklasifikasi AR001",{type:"check"})}${inp(B+"rk","Memiliki subklasifikasi RK001",{type:"check"})}</div>
+          <div class="row">${sbuList().map(x=>inp(B+"sub."+x.kode,"Memiliki subklasifikasi "+esc(x.kode),{type:"check"})).join("")}</div>
           <div class="grid c2">${inp(B+"hasil","Penetapan Pokja",{type:"select",options:[["","Otomatis"],["M","M"],["TM","TM"]],blank:false})}${inp(B+"ket","Keterangan")}</div>
           ${res.note? `<p class="hint">${esc(res.note)}</p>`:""}</div>`;
         return;
@@ -940,13 +1247,13 @@ function vExp(){
     const E = `${B}exps.${j}.`, f = expFlags(x);
     h += `<div class="card"><div class="row"><h3 style="margin:0">Pengalaman ${j+1}</h3>
         ${f.a?'<span class="b ok">dihitung a</span>':""}${f.b?'<span class="b ok">dihitung b</span>':""}${f.c?'<span class="b ok">dihitung c</span>':""}
-        ${!f.in10 && x.tglBAST? '<span class="b bad">di luar 10 tahun</span>':""}${!f.subOk?'<span class="b bad">subkon tanpa referensi</span>':""}
+        ${!f.in10 && !f.in4 && x.tglBAST? '<span class="b bad">di luar periode pengalaman</span>':""}${!f.subOk?'<span class="b bad">subkon tanpa referensi</span>':""}
         <span class="sp"></span><button class="btn dan sm" data-act="delExp" data-i="${i}" data-j="${j}">Hapus</button></div>
       <div class="grid c3" style="margin-top:8px">
         ${p.bentuk==="KSO"? inp(E+"ent","Dimiliki oleh",{type:"select",options:p.ents.map((e,k)=>[String(k), (k===0?"Leadfirm: ":"")+(e.nama||("Anggota "+(k+1)))]),blank:false}) : ""}
         ${inp(E+"nama","Nama paket pekerjaan")}
         ${inp(E+"lingkup","Ringkasan lingkup pekerjaan")}
-        ${inp(E+"subklas","Klasifikasi/subklasifikasi",{ph:"mis. AR001 / RK001"})}
+        ${inp(E+"subklas","Klasifikasi/subklasifikasi",{ph:"mis. "+sbuList().map(x=>x.kode).join(" / ")})}
         ${inp(E+"lokasi","Lokasi")}
         ${inp(E+"pemberi","Pemberi tugas / PPK")}
         ${inp(E+"noKontrak","Nomor & tanggal kontrak")}
@@ -956,9 +1263,9 @@ function vExp(){
         ${inp(E+"tglBAST","Tanggal BAST/PHO",{type:"date"})}
       </div>
       <div class="row" style="margin-top:6px">
-        ${inp(E+"jkk","a. Pekerjaan Jasa Konsultansi Konstruksi",{type:"check"})}
-        ${inp(E+"sejB","b. Sejenis (subklasifikasi AR001/RK001 atau lingkup sejenis)",{type:"check"})}
-        ${inp(E+"sejC","c. Sejenis: perencanaan konstruksi gedung pendidikan",{type:"check"})}
+        ${U("a").aktif? inp(E+"jkk","a. "+esc(U("a").label),{type:"check"}) : ""}
+        ${U("b").aktif? inp(E+"sejB","b. "+esc(U("b").label),{type:"check"}) : ""}
+        ${U("c").aktif? inp(E+"sejC","c. "+esc(U("c").label),{type:"check"}) : ""}
         ${x.status==="Subkontrak"? inp(E+"referensi","Ada surat referensi PPK/pemilik pekerjaan",{type:"check"}) : ""}
       </div>
       <div class="grid c2">${inp(E+"ket","Keterangan evaluator")}<div class="hint" style="align-self:end">Nilai tertimbang: <b>${rp(expWeighted(x))}</b></div></div>
@@ -978,12 +1285,12 @@ function vTeknis(){
     ${lulus < P.minLulus ? `<div class="alert bad">Peserta lulus evaluasi kualifikasi kurang dari ${P.minLulus} — sesuai IKP 18.14 prakualifikasi dinyatakan gagal.</div>` : `<div class="alert ok">${lulus} peserta lulus evaluasi kualifikasi dan diundang pembuktian kualifikasi.</div>`}
     <div class="scroll"><table class="tbl">
       <tr><th rowspan="2">No</th><th rowspan="2">Peserta</th><th rowspan="2" class="c">Administrasi</th><th colspan="4" class="c">Pengalaman minimal (M/TM)</th><th colspan="4" class="c">Nilai unsur</th><th rowspan="2" class="c">Jumlah</th><th rowspan="2" class="c">Teknis</th><th rowspan="2" class="c">Hasil Evaluasi</th></tr>
-      <tr><th class="c">a</th><th class="c">b</th><th class="c">c</th><th class="c">d</th><th class="c">a (20)</th><th class="c">b (30; ≥${P.ambangB})</th><th class="c">c (40; ≥${P.ambangC})</th><th class="c">d (10)</th></tr>
+      <tr><th class="c">a</th><th class="c">b</th><th class="c">c</th><th class="c">d</th>${["a","b","c","d"].map(k=>`<th class="c">${k} (${uMax(k)}${uAmb(k)?"; ≥"+uAmb(k):""})</th>`).join("")}</tr>
       ${rows.map((r,i)=>{const t=r.e.t; return `<tr><td class="c">${i+1}</td><td>${esc(pName(r.p))}<div class="hint">${[...admReasons(r.p), ...t.reasons].map(esc).join("<br>")}</div></td><td class="c">${badge(r.e.ad)}</td>
         <td class="c">${badge(t.minA)}<div class="hint">${t.a}×</div></td><td class="c">${badge(t.minB)}<div class="hint">${t.b}×</div></td><td class="c">${badge(t.minC)}<div class="hint">${t.c}×</div></td><td class="c">${badge(t.minD)}<div class="hint">${isFinite(t.k)?t.k:"-"}</div></td>
         <td class="c">${t.na}</td><td class="c">${t.nb}</td><td class="c">${t.nc}</td><td class="c">${t.nd}</td><td class="c"><b>${t.total}</b></td><td class="c">${badge(t.hasil)}</td><td class="c">${badge(r.e.hasil)}</td></tr>`;}).join("")}
     </table></div>
-    <p class="hint">Kriteria (Bab IX): a ≥10 kali = 20; 5–9 = 10; 1–4 = 5 · b ≥10 = 30; 5–9 = 20; 1–4 = 10 · c ≥10 = 40; 5–9 = 30; 1–4 = 20 · d nilai 3 = 10; 2–&lt;3 = 5. Lulus bila seluruh pengalaman minimal M, unsur b ≥ ${P.ambangB}, unsur c ≥ ${P.ambangC} dan jumlah ≥ ${P.ambangTotal}.</p>
+    <p class="hint">Kriteria: ${["a","b","c","d"].map(k=>esc(tierTxt(k))).join(" · ")}. Lulus bila seluruh pengalaman minimal yang diwajibkan M, nilai unsur memenuhi ambang, dan jumlah ≥ ${esc(P.ambangTotal)}. <a href="#" onclick="S.ui.tab='atur';render();return false">Ubah pengaturan</a></p>
   </div>`;
 }
 
@@ -1069,7 +1376,7 @@ function labelTables(){
 }
 function render(){
   renderTabs();
-  const v = {paket:vPaket, peserta:vPeserta, admin:vAdmin, exp:vExp, teknis:vTeknis, pb:vPb, hasil:vHasil}[S.ui.tab] || vPaket;
+  const v = {paket:vPaket, atur:vAtur, peserta:vPeserta, admin:vAdmin, exp:vExp, teknis:vTeknis, pb:vPb, hasil:vHasil}[S.ui.tab] || vPaket;
   const y = window.scrollY, ae = document.activeElement, fp = ae && ae.dataset ? ae.dataset.path : null;
   document.getElementById("view").innerHTML = v(); labelTables();
   window.scrollTo(0, y);
@@ -1103,7 +1410,7 @@ document.addEventListener("click", e=>{
   if(t.dataset.sel){ S.ui.sel = t.dataset.sel; save(); render(); return; }
   const a = t.dataset.act; if(!a) return;
   const i = +t.dataset.i, j = +t.dataset.j;
-  const danger = ["delPeserta","delEnt","delExp","delPokja","reset","demo"];
+  const danger = ["delPeserta","delEnt","delExp","delPokja","reset","demo","paketBaru","cfgStd","admReset","pbReset"];
   if(danger.includes(a) && armed!==t){
     armed = t; const old = t.textContent; t.textContent = a==="demo"? "Ganti data saat ini? Tekan lagi" : "Tekan lagi untuk konfirmasi";
     setTimeout(()=>{ if(armed===t){ armed=null; t.textContent = old; } }, 3000); return;
@@ -1119,6 +1426,30 @@ document.addEventListener("click", e=>{
     case "addExp": S.peserta[i].exps.push(newExp()); break;
     case "delExp": S.peserta[i].exps.splice(j,1); break;
     case "allBukti": S.peserta[i].exps.forEach(x=>{ if(!x.bukti) x.bukti="Terbukti"; }); break;
+    case "addSbu": S.param.sbuList.push({kode:"", nama:""}); break;
+    case "delSbu": S.param.sbuList.splice(i,1); break;
+    case "addKbli": S.param.kbliList.push(""); break;
+    case "delKbli": S.param.kbliList.splice(i,1); break;
+    case "addTier": { const u = S.param.unsur[t.dataset.u]; u.tiers = u.tiers||[]; u.tiers.push({min:"", nilai:""}); break; }
+    case "delTier": S.param.unsur[t.dataset.u].tiers.splice(j,1); break;
+    case "admEdit": S.param.admCfg = ADMX().map(x=>({k:x.k, no:x.no, t:x.t, opt:x.opt||"ada", aktif:x.aktif!==false, custom:!!x.custom})); break;
+    case "admAdd": S.param.admCfg.push({k:"x"+uid(), no:"", t:"", opt:"ada", aktif:true, custom:true}); break;
+    case "admDel": S.param.admCfg.splice(i,1); break;
+    case "admReset": S.param.admCfg = null; break;
+    case "pbEdit": S.param.pbCfg = PBX().map(x=>({k:x.k, t:x.t, aktif:x.aktif!==false, custom:!!x.custom})); break;
+    case "pbAdd": S.param.pbCfg.push({k:"y"+uid(), t:"", aktif:true, custom:true}); break;
+    case "pbDel": S.param.pbCfg.splice(i,1); break;
+    case "pbReset": S.param.pbCfg = null; break;
+    case "cfgDl": saveFile("Pengaturan_Evaluasi_"+(S.paket.kodeTender||TAh())+".json", new Blob([JSON.stringify({jenis:"kk-pengaturan", v:1, dibuat:new Date().toISOString(), param:S.param, kualifikasiUsaha:S.paket.kualifikasiUsaha},null,1)],{type:"application/json"})); return;
+    case "cfgImp": document.getElementById("cfgImport").click(); return;
+    case "cfgStd": { const keepT = S.param.tahun; S.param = migrate({param:{tahun:keepT}}).param; S.paket.kualifikasiUsaha = "Besar"; toast("Pengaturan dikembalikan ke standar."); break; }
+    case "paketBaru": {
+      saveFile("Cadangan_sebelum_paket_baru_"+new Date().toISOString().slice(0,10)+".json", new Blob([JSON.stringify(S,null,1)],{type:"application/json"}));
+      const keepK = ["instansi","ukpbj","alamatPokja","spse","metode","kotaTtd","kop","useLogo","logo","logoW","logoH","fontBA","fontLamp","kualifikasiUsaha","metodePembuktian"];
+      const np = {}; Object.keys(DEFAULT_PAKET).forEach(k=>{ np[k] = keepK.includes(k)? S.paket[k] : (typeof DEFAULT_PAKET[k]==="number"? "" : ""); });
+      S.paket = np; S.peserta = []; S.ui.sel = null; S.ui.tab = "paket";
+      toast("Paket baru dimulai. Cadangan paket sebelumnya telah diunduh."); break;
+    }
     case "dlXlsx": exportXlsx(); return;
     case "dlBA": exportBA(t.dataset.pid); return;
     case "dlBAall": exportBAall(); return;
@@ -1130,6 +1461,17 @@ document.addEventListener("click", e=>{
     case "reset": { const keep = {paket:S.paket, param:S.param, pokja:S.pokjaAnggota}; S = defaultState(); S.paket = keep.paket; S.param = keep.param; S.pokjaAnggota = keep.pokja; S.ui.tab = "hasil"; toast("Data peserta dikosongkan."); break; }
   }
   save(); render();
+});
+document.getElementById("cfgImport").addEventListener("change", async e=>{
+  const f = e.target.files[0]; e.target.value = ""; if(!f) return;
+  try{
+    const o = JSON.parse(await f.text());
+    const prm = o.jenis==="kk-pengaturan"? o.param : (o.param || null);
+    if(!prm || typeof prm!=="object") throw 0;
+    S.param = migrate({param:prm}).param;
+    if(o.kualifikasiUsaha || (o.paket && o.paket.kualifikasiUsaha)) S.paket.kualifikasiUsaha = o.kualifikasiUsaha || o.paket.kualifikasiUsaha;
+    save(); render(); toast("Pengaturan evaluasi dimuat.");
+  }catch(err){ toast("Berkas bukan pengaturan kertas kerja yang valid."); }
 });
 document.getElementById("logoFile").addEventListener("change", e=>{
   const f = e.target.files[0]; e.target.value = ""; if(!f) return;
@@ -1329,17 +1671,20 @@ function makeWorkbook(){
   info.forEach(([a,b],k)=>{ s1.set(r,0,k+1,ST.ctr); s1.set(r,1,a,ST.txt); s1.set(r,2,b,ST.txt); r++; });
   s1.set(r,0,info.length+1,ST.ctr); s1.set(r,1,"Pagu anggaran (Rp)",ST.txt); s1.set(r,2,num(K.pagu),ST.num); r++;
   s1.set(r,0,info.length+2,ST.ctr); s1.set(r,1,"HPS (Rp)",ST.txt); s1.set(r,2,num(K.hps),ST.num); r++;
-  s1.set(r,0,info.length+3,ST.ctr); s1.set(r,1,"Kualifikasi usaha yang disyaratkan",ST.txt); s1.set(r,2,"Usaha Besar (HPS > Rp2.500.000.000,00 — IKP 3.4; SBU AR001 & RK001)",ST.txt); r++;
+  s1.set(r,0,info.length+3,ST.ctr); s1.set(r,1,"Kualifikasi usaha yang disyaratkan",ST.txt); s1.set(r,2,"Usaha "+(K.kualifikasiUsaha||"Besar")+"; SBU "+sbuList().map(x=>x.kode).join(S.param.sbuMode==="salah satu"?" atau ":" & ")+"; Sertifikat Standar "+kbliTxt(" & ")+(S.param.ksoBoleh===false?"; KSO tidak diperkenankan":""),ST.txt); r++;
   r++; s1.set(r,0,"B. PARAMETER EVALUASI (sel kuning = dapat diubah; dirujuk oleh rumus)",ST.lbl); r++;
   const PR = {};
   const params = [
     ["batas","Batas akhir pemasukan / batas hitungan pengalaman", excelDate(batasDate()), ST.inpDate, "Bab VIII B.2.a; jadwal SPSE"],
-    ["awal4","Awal hitungan pengalaman 4 tahun terakhir", excelDate(P.awal4), ST.inpDate, "LDK E.B.1"],
-    ["awal10","Awal hitungan pengalaman 10 tahun terakhir", excelDate(P.awal10), ST.inpDate, "Bab VIII B.7.a (dihitung dari 1 Januari)"],
-    ["ambB","Ambang batas nilai unsur b", +P.ambangB, ST.inpNum, "Bab IX 2.b"],
-    ["ambC","Ambang batas nilai unsur c", +P.ambangC, ST.inpNum, "Bab IX 2.b"],
-    ["ambT","Ambang batas jumlah nilai", +P.ambangTotal, ST.inpNum, "Bab IX 2.b"],
-    ["minK","Nilai kinerja minimal (Baik)", +P.minKinerja, ST.inpNum, "LDK E.B.4"],
+    ["awalA","Awal hitungan pengalaman unsur a ("+U("a").periode+" tahun terakhir)", excelDate(uAwal("a")), ST.inpDate, "LDK"],
+    ["awalB","Awal hitungan pengalaman unsur b ("+U("b").periode+" tahun terakhir)", excelDate(uAwal("b")), ST.inpDate, "LDK"],
+    ["awalC","Awal hitungan pengalaman unsur c ("+U("c").periode+" tahun terakhir)", excelDate(uAwal("c")), ST.inpDate, "LDK"],
+    ["ambA","Ambang batas nilai unsur a", uAmb("a"), ST.inpNum, "Bab IX"],
+    ["ambB","Ambang batas nilai unsur b", uAmb("b"), ST.inpNum, "Bab IX"],
+    ["ambC","Ambang batas nilai unsur c", uAmb("c"), ST.inpNum, "Bab IX"],
+    ["ambD","Ambang batas nilai unsur d", uAmb("d"), ST.inpNum, "Bab IX"],
+    ["ambT","Ambang batas jumlah nilai", +P.ambangTotal, ST.inpNum, "Bab IX"],
+    ["minK","Nilai kinerja minimal", isFinite(numPlain(U("d").min))? numPlain(U("d").min) : 0, ST.inpNum, "LDK"],
     ["minL","Jumlah minimal peserta lulus", +P.minLulus, ST.inpNum, "IKP 18.14 & 19.10"],
     ["maxS","Jumlah Daftar Pendek", +P.maxShortlist, ST.inpNum, "IKP 20.3"]
   ];
@@ -1369,7 +1714,7 @@ function makeWorkbook(){
     admRowsAll(p).forEach(row=>{
       const d = row.d;
       let kond = d.ada||"", data = row.it.extra? row.it.extra.map(([k,l,ty])=>d[k]? l.replace(/^Akta /,"")+": "+(ty==="date"? tglShort(d[k]) : d[k]) : "").filter(Boolean).join("; ") || (d.nomor||"") : (d.nomor||"");
-      if(row.it.special==="sbu"){ kond = d.kual? "Ada — Kualifikasi "+d.kual : ""; data = [d.nomor, (d.ar?"AR001 ✓":"AR001 ✗"), (d.rk?"RK001 ✓":"RK001 ✗")].filter(Boolean).join("; "); }
+      if(row.it.special==="sbu"){ kond = d.kual? "Ada — Kualifikasi "+d.kual : ""; data = [d.nomor, ...sbuList().map(x=>x.kode+(sbuHas(d,x.kode)?" ✓":" ✗"))].filter(Boolean).join("; "); }
       if(row.ei===-1){ kond = row.it.k==="kso1"? (p.ksoAda||"") : ""; data = row.it.k==="kso1"? p.ksoKet : ""; }
       s3.set(r,0,n++,ST.ctr); s3.set(r,1,k+1,ST.ctr); s3.set(r,2,pName(p),ST.txt); s3.set(r,3,row.ent,ST.txt); s3.set(r,4,row.it.no,ST.ctr);
       s3.set(r,5,row.it.t,ST.txt); s3.set(r,6,kond,ST.txt); s3.set(r,7,data,ST.txt);
@@ -1400,9 +1745,9 @@ function makeWorkbook(){
       const bd = excelDate(xp.tglBAST); s4.set(r,13,bd,bd?ST.date:ST.ctr);
       s4.set(r,14,xp.jkk?"Ya":"Tidak",ST.ctr); s4.set(r,15,xp.sejB?"Ya":"Tidak",ST.ctr); s4.set(r,16,xp.sejC?"Ya":"Tidak",ST.ctr);
       const subOk = `ISERROR(SEARCH("tanpa referensi",K${R1}))`;
-      s4.set(r,17,f.a?1:0,ST.ctr,`IF(AND(O${R1}="Ya",N${R1}>=${PR.awal4},N${R1}<=${PR.batas},${subOk}),1,0)`);
-      s4.set(r,18,f.b?1:0,ST.ctr,`IF(AND(P${R1}="Ya",N${R1}>=${PR.awal10},N${R1}<=${PR.batas},${subOk}),1,0)`);
-      s4.set(r,19,f.c?1:0,ST.ctr,`IF(AND(Q${R1}="Ya",N${R1}>=${PR.awal10},N${R1}<=${PR.batas},${subOk}),1,0)`);
+      s4.set(r,17,f.a?1:0,ST.ctr,`IF(AND(O${R1}="Ya",N${R1}>=${PR.awalA},N${R1}<=${PR.batas},${subOk}),1,0)`);
+      s4.set(r,18,f.b?1:0,ST.ctr,`IF(AND(P${R1}="Ya",N${R1}>=${PR.awalB},N${R1}<=${PR.batas},${subOk}),1,0)`);
+      s4.set(r,19,f.c?1:0,ST.ctr,`IF(AND(Q${R1}="Ya",N${R1}>=${PR.awalC},N${R1}<=${PR.batas},${subOk}),1,0)`);
       s4.set(r,20,xp.bukti||"",ST.ctr); s4.set(r,21,xp.ket,ST.txt);
       r++;
     });
@@ -1416,9 +1761,9 @@ function makeWorkbook(){
   /* ---- Sheet 5: Eval Teknis ---- */
   const s5 = new XSheet(NM.tek); s5.cols = [5,30,16,8,10,8,8,9,8,8,8,8,8,8,8,8,9,13,15,18,44]; s5.freeze = 5;
   s5.set(0,0,"EVALUASI PERSYARATAN KUALIFIKASI TEKNIS (SISTEM PEMBOBOTAN DENGAN AMBANG BATAS)",ST.title); s5.merge(0,0,0,20);
-  s5.set(1,0,"Kriteria Bab IX: a ≥10 kali=20; 5–9=10; 1–4=5 | b ≥10=30; 5–9=20; 1–4=10 | c ≥10=40; 5–9=30; 1–4=20 | d nilai 3=10; 2–<3=5; <2=0. Lulus bila pengalaman minimal a–d = M, nilai b ≥ ambang b, nilai c ≥ ambang c, dan jumlah ≥ ambang jumlah.",ST.note); s5.merge(1,0,1,20);
+  s5.set(1,0,"Kriteria: "+["a","b","c","d"].map(tierTxt).join(" | ")+". Lulus bila pengalaman minimal yang diwajibkan = M, setiap nilai unsur ≥ ambangnya, dan jumlah ≥ "+S.param.ambangTotal+".",ST.note); s5.merge(1,0,1,20);
   s5.row(3,0,["No","Nama Peserta","Hasil Administrasi","Jumlah Pengalaman","","","","Nilai Kinerja","Pengalaman Minimal (M/TM)","","","","Nilai Unsur","","","","Jumlah Nilai","Hasil Teknis","Hasil Evaluasi Kualifikasi","Nilai Kontrak Sejenis Tertinggi (Rp)","Keterangan"],ST.hdr);
-  s5.row(4,0,["","","","a (4 th)","KSO: semua anggota punya a","b","c","d","a","b","c","d","a","b","c","d","","","","",""],ST.hdr);
+  s5.row(4,0,["","","","a ("+U("a").periode+" th)","KSO: semua anggota punya a","b ("+U("b").periode+" th)","c ("+U("c").periode+" th)","d","a","b","c","d","a ("+uMax("a")+")","b ("+uMax("b")+")","c ("+uMax("c")+")","d ("+uMax("d")+")","","","","",""],ST.hdr);
   [[3,0,4,0],[3,1,4,1],[3,2,4,2],[3,3,3,6],[3,8,3,11],[3,12,3,15],[3,16,4,16],[3,17,4,17],[3,18,4,18],[3,19,4,19],[3,20,4,20]].forEach(m=>s5.merge(...m));
   r = 5;
   S.peserta.forEach((p,k)=>{
@@ -1431,16 +1776,18 @@ function makeWorkbook(){
     s5.set(r,5,t.b,ST.ctr,`COUNTIFS(${er("B")},A${R1},${er("S")},1)`);
     s5.set(r,6,t.c,ST.ctr,`COUNTIFS(${er("B")},A${R1},${er("T")},1)`);
     s5.set(r,7,isFinite(t.k)? t.k : null,ST.dec);
-    s5.set(r,8,t.minA,ST.boldCtr,`IF(AND(D${R1}>=1,E${R1}<>"Tidak"),"M","TM")`);
-    s5.set(r,9,t.minB,ST.boldCtr,`IF(F${R1}>=1,"M","TM")`);
-    s5.set(r,10,t.minC,ST.boldCtr,`IF(G${R1}>=1,"M","TM")`);
-    s5.set(r,11,t.minD,ST.boldCtr,`IF(AND(ISNUMBER(H${R1}),H${R1}>=${PR.minK}),"M","TM")`);
-    s5.set(r,12,t.na,ST.ctr,`IF(D${R1}>=10,20,IF(D${R1}>=5,10,IF(D${R1}>=1,5,0)))`);
-    s5.set(r,13,t.nb,ST.ctr,`IF(F${R1}>=10,30,IF(F${R1}>=5,20,IF(F${R1}>=1,10,0)))`);
-    s5.set(r,14,t.nc,ST.ctr,`IF(G${R1}>=10,40,IF(G${R1}>=5,30,IF(G${R1}>=1,20,0)))`);
-    s5.set(r,15,t.nd,ST.ctr,`IF(ISNUMBER(H${R1}),IF(H${R1}>=3,10,IF(H${R1}>=2,5,0)),0)`);
+    const wj = k=> U(k).aktif && U(k).wajib;
+    const tf = (k, cell)=>{ if(!U(k).aktif) return "0"; const ts = uTiers(k); let f = "0"; for(let z=ts.length-1; z>=0; z--) f = `IF(${cell}>=${ts[z].min},${ts[z].nilai},${f})`; return f; };
+    s5.set(r,8,t.minA,ST.boldCtr, wj("a")? `IF(AND(D${R1}>=1,E${R1}<>"Tidak"),"M","TM")` : `"M"`);
+    s5.set(r,9,t.minB,ST.boldCtr, wj("b")? `IF(F${R1}>=1,"M","TM")` : `"M"`);
+    s5.set(r,10,t.minC,ST.boldCtr, wj("c")? `IF(G${R1}>=1,"M","TM")` : `"M"`);
+    s5.set(r,11,t.minD,ST.boldCtr, wj("d")? `IF(AND(ISNUMBER(H${R1}),H${R1}>=${PR.minK}),"M","TM")` : `"M"`);
+    s5.set(r,12,t.na,ST.ctr,tf("a",`D${R1}`));
+    s5.set(r,13,t.nb,ST.ctr,tf("b",`F${R1}`));
+    s5.set(r,14,t.nc,ST.ctr,tf("c",`G${R1}`));
+    s5.set(r,15,t.nd,ST.ctr,U("d").aktif? `IF(ISNUMBER(H${R1}),${tf("d",`H${R1}`)},0)` : "0");
     s5.set(r,16,t.total,ST.boldCtr,`SUM(M${R1}:P${R1})`);
-    s5.set(r,17,t.hasil,ST.boldCtr,`IF(AND(I${R1}="M",J${R1}="M",K${R1}="M",L${R1}="M",N${R1}>=${PR.ambB},O${R1}>=${PR.ambC},Q${R1}>=${PR.ambT}),"LULUS","TIDAK LULUS")`);
+    s5.set(r,17,t.hasil,ST.boldCtr,`IF(AND(I${R1}="M",J${R1}="M",K${R1}="M",L${R1}="M",M${R1}>=${PR.ambA},N${R1}>=${PR.ambB},O${R1}>=${PR.ambC},P${R1}>=${PR.ambD},Q${R1}>=${PR.ambT}),"LULUS","TIDAK LULUS")`);
     s5.set(r,18,e.lulus?"LULUS":"GUGUR",ST.boldCtr,`IF(AND(C${R1}="MEMENUHI",R${R1}="LULUS"),"LULUS","GUGUR")`);
     s5.set(r,19,t.top,ST.num);
     s5.set(r,20,[...admReasons(p), ...t.reasons, p.catatanEval].filter(Boolean).join("; "),ST.txt);
@@ -1456,7 +1803,7 @@ function makeWorkbook(){
 
   /* ---- Sheet 6: Pembuktian ---- */
   const inv = S.peserta.filter(p=>evalResult(p).lulus);
-  const pbItems = PB;
+  const pbItems = PBX().filter(it=>it.aktif!==false);
   const s6 = new XSheet(NM.pb);
   const c0 = 7; // kolom awal item PB
   s6.cols = [5,28,10,22,24,26].concat([16]).concat(pbItems.map(()=>13)).concat([8,8,8,8,8,8,8,8,9,13,10,13,40]);
@@ -1625,7 +1972,7 @@ function stExp(p, xp){
   return PH;
 }
 function admAll(p, k){ // gabungan hasil admin seluruh badan usaha
-  const it = ADM.find(a=>a.k===k); const rs = ents(p).map((e,ei)=>admItem(p,ei,it).r);
+  const it = ADMX().find(a=>a.k===k); if(!it || it.aktif===false) return "M"; const rs = ents(p).map((e,ei)=>admItem(p,ei,it).r);
   return rs.includes("TM")? "TM" : rs.every(r=>r==="M")? "M" : "-";
 }
 /* hasil kolom "PEMBUKTIAN DOKUMEN KUALIFIKASI" pada BA */
@@ -1642,7 +1989,7 @@ function resTxt(r, extra){
   return base + (extra? "\n\n" + extra : "");
 }
 function safeName(s){ return String(s||"peserta").replace(/[^\w\- ]+/g,"").trim().replace(/\s+/g,"_").slice(0,60) || "peserta"; }
-function noBA(p){ return p.pb.noBA || S.paket.noBAPembuktian || "……/……………/……/" + TA; }
+function noBA(p){ return p.pb.noBA || S.paket.noBAPembuktian || "……/……………/……/" + TAh(); }
 function wakilLines(p){
   if(p.bentuk==="KSO") return p.ents.map(e=>e.nama||"PT ……………………");
   return [p.nama||"PT ……………………"];
@@ -1689,10 +2036,10 @@ function partBA(p, media){
   const ssWait = ents(p).some(e=>["ss1","ss2"].some(k=>((e.adm[k]||{}).ada||"").startsWith("Belum terverifikasi + ada")));
   const admMap = (r)=> p.pb.hadir==="Tidak Hadir"? "X" : r==="M"? "S" : r==="TM"? "TS" : "";
   const I = [
-    [["Memiliki Nomor Induk Berusaha (NIB) serta Sertifikat Standar terverifikasi KBLI 71101 dan KBLI 71102 (KBLI 2020) yang masih berlaku;"], resPB(p,["nib"])],
+    [["Memiliki Nomor Induk Berusaha (NIB) serta Sertifikat Standar terverifikasi "+kbliTxt()+" (KBLI 2020) yang masih berlaku;"], resPB(p,["nib"])],
     [["Dalam hal Sertifikat Standar belum terverifikasi, peserta menyampaikan NIB, Sertifikat Standar belum terverifikasi dan tangkapan layar laman OSS yang mencantumkan bahwa Sertifikat Standar sedang menunggu terverifikasi;"], ssWait? resPB(p,["nib"]) : "TD"],
-    [["Memiliki Sertifikat Badan Usaha (SBU) dengan Kualifikasi Usaha Besar serta subklasifikasi/layanan:","a. AR001 (Jasa Arsitektural Bangunan Gedung Hunian dan Non-Hunian); dan","b. RK001 (Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian)."], resPB(p,["sbu"])],
-    [["Mempunyai status valid keterangan Wajib Pajak berdasarkan hasil Konfirmasi Status Wajib Pajak beserta Bukti Lapor Pajak (SPT) Tahun 2025:","- NPWP","- KSWP status Valid","- Bukti Lapor SPT Tahunan 2025"], resPB(p,["pajak"])],
+    [["Memiliki Sertifikat Badan Usaha (SBU) dengan Kualifikasi Usaha "+(K.kualifikasiUsaha||"Besar")+" serta subklasifikasi/layanan:", ...sbuList().map((x,z,L)=>String.fromCharCode(97+z)+". "+x.kode+" ("+x.nama+")"+(z<L.length-1? (S.param.sbuMode==="salah satu"? "; atau" : (z===L.length-2? "; dan" : ";")) : "."))], resPB(p,["sbu"])],
+    [["Mempunyai status valid keterangan Wajib Pajak berdasarkan hasil Konfirmasi Status Wajib Pajak beserta Bukti Lapor Pajak (SPT) Tahun "+(S.param.tahunSPT||TAh()-1)+":","- NPWP","- KSWP status Valid","- Bukti Lapor SPT Tahunan "+(S.param.tahunSPT||TAh()-1)], resPB(p,["pajak"])],
     [["Secara hukum mempunyai kapasitas untuk mengikatkan diri pada Kontrak yang dibuktikan dengan:","a. Akta Pendirian Perusahaan dan/atau perubahannya;","b. Surat Kuasa apabila dikuasakan;","c. Bukti bahwa yang diberikan kuasa merupakan pegawai tetap (apabila dikuasakan); dan","d. Kartu Tanda Penduduk."], resPB(p,["akta","identitas","kedudukan"])],
     [["Menyetujui Pernyataan Pakta Integritas meliputi:","a. Tidak akan melakukan praktik korupsi, kolusi, dan/atau nepotisme;","b. Akan melaporkan kepada PA/KPA/APIP jika mengetahui terjadinya praktik Korupsi, Kolusi, dan Nepotisme dalam proses pengadaan ini;","c. Akan mengikuti proses pengadaan secara bersih, transparan, dan profesional untuk memberikan hasil kerja terbaik sesuai ketentuan peraturan perundang-undangan; dan","d. Apabila melanggar hal-hal yang dinyatakan dalam huruf a, b, dan c maka bersedia dikenakan sanksi administratif, sanksi Daftar Hitam, digugat secara perdata dan/atau dilaporkan secara pidana sesuai dengan peraturan perundang-undangan."], admMap(admAll(p,"pakta"))],
     [["Menyetujui surat pernyataan peserta yang berisi:","a. yang bersangkutan dan manajemennya tidak dalam pengawasan pengadilan, tidak pailit, dan kegiatan usahanya tidak sedang dihentikan;","b. badan usaha tidak sedang dikenakan sanksi daftar hitam;","c. yang bertindak untuk dan atas nama badan usaha tidak sedang dalam menjalani sanksi daftar hitam lain;","d. keikutsertaan yang bersangkutan tidak menimbulkan pertentangan kepentingan;","e. yang bertindak untuk dan atas nama badan usaha tidak sedang dalam menjalani sanksi pidana;","f. pimpinan dan pengurus badan usaha bukan sebagai pegawai Kementerian/Lembaga/Perangkat Daerah atau sebagai pegawai Kementerian/Lembaga/Perangkat Daerah yang sedang mengambil cuti diluar tanggungan Negara;","g. pernyataan lain yang menjadi syarat kualifikasi yang tercantum dalam Dokumen Kualifikasi;","h. data kualifikasi yang diisikan benar, dan jika dikemudian hari ditemukan bahwa data/dokumen yang disampaikan tidak benar dan ada pemalsuan maka direktur utama/pimpinan perusahaan/pimpinan koperasi, atau kepala cabang, dan seluruh anggota Kemitraan bersedia dikenakan sanksi administratif, sanksi pencantuman dalam daftar hitam, gugatan secara perdata, dan/atau pelaporan secara pidana kepada pihak berwenang sesuai dengan ketentuan peraturan perundang-undangan."], admMap(admAll(p,"pernyataan"))],
@@ -1710,16 +2057,16 @@ function partBA(p, media){
   const nv = (n)=> ready? "NILAI SETELAH PEMBUKTIAN: " + n : "NILAI SETELAH PEMBUKTIAN: ……";
   const jm = (n)=> ready? String(n) + " pekerjaan" : "";
   const II = [
-    [["Memiliki pengalaman paling kurang 1 (satu) pekerjaan jasa konsultansi konstruksi dalam kurun waktu 4 (empat) tahun terakhir, baik di lingkungan pemerintah atau swasta termasuk pengalaman subkontrak."], mm(t.minA), nv(t.na), jm(t.a)],
-    [["Memiliki pengalaman mengerjakan pekerjaan sejenis:","a) untuk pekerjaan Usaha Kecil berdasarkan subklasifikasi; atau","b) untuk pekerjaan Usaha Menengah atau Usaha Besar, pekerjaan sejenis berdasarkan subklasifikasi atau berdasarkan lingkup pekerjaan."], mm(t.minB), nv(t.nb), jm(t.b)],
-    [["Memiliki pengalaman mengerjakan pekerjaan sejenis (Jasa Konsultan Perencanaan Konstruksi Pembangunan Gedung Pendidikan) dalam waktu 10 (sepuluh) tahun terakhir."], mm(t.minC), nv(t.nc), jm(t.c)],
-    [["Memiliki rata-rata kinerja penyedia dengan nilai baik atau sangat baik dalam kurun waktu 4 (empat) tahun terakhir secara akumulatif dalam pengalaman pekerjaan Jasa Konsultansi Konstruksi (SIKaP dan/atau perhitungan manual sesuai Peraturan LKPP Nomor 4 Tahun 2021)."], kinR, nv(t.nd), isFinite(t.k)? "Nilai kinerja " + String(t.k).replace(".",",") : ""],
-    [["Dalam hal peserta melakukan KSO, maka:","1) setiap perusahaan yang tergabung dalam KSO harus memenuhi persyaratan kualifikasi administrasi legalitas;","2) persyaratan SBU dilakukan secara saling melengkapi oleh seluruh anggota KSO dan setiap anggota KSO harus memiliki salah satu SBU yang disyaratkan;","3) pengalaman 1 (satu) pekerjaan jasa konsultansi konstruksi dalam 4 (empat) tahun terakhir dimiliki oleh seluruh anggota KSO;","4) pengalaman sejenis dilakukan secara saling melengkapi; dan","5) nilai kontrak pekerjaan sejenis tertinggi yang digunakan adalah milik Lead Firm."], ksoOk, "", ""],
+    ...(U("a").aktif? [[U("a").uraian.split("\n"), mm(t.minA), nv(t.na), jm(t.a)]] : []),
+    ...(U("b").aktif? [[U("b").uraian.split("\n"), mm(t.minB), nv(t.nb), jm(t.b)]] : []),
+    ...(U("c").aktif? [[U("c").uraian.split("\n"), mm(t.minC), nv(t.nc), jm(t.c)]] : []),
+    ...(U("d").aktif? [[U("d").uraian.split("\n"), kinR, nv(t.nd), isFinite(t.k)? "Nilai kinerja " + String(t.k).replace(".",",") : ""]] : []),
+    [["Dalam hal peserta melakukan KSO, maka:","1) setiap perusahaan yang tergabung dalam KSO harus memenuhi persyaratan kualifikasi administrasi legalitas;","2) persyaratan SBU dilakukan secara saling melengkapi oleh seluruh anggota KSO dan setiap anggota KSO harus memiliki salah satu SBU yang disyaratkan;","3) pengalaman 1 (satu) pekerjaan jasa konsultansi konstruksi dalam "+U("a").periode+" tahun terakhir dimiliki oleh seluruh anggota KSO;","4) pengalaman sejenis dilakukan secara saling melengkapi; dan","5) nilai kontrak pekerjaan sejenis tertinggi yang digunakan adalah milik Lead Firm."], ksoOk, "", ""],
     [["Data kualifikasi yang diunggah (upload) pada fasilitas pengunggahan lain:","1) Asli Surat Perjanjian KSO;","2) Dokumen Kualifikasi Anggota KSO;","3) KSWP dengan status Valid;","4) Kontrak dan BAST (minimal BAST PHO) yang dijadikan pengalaman;","5) Tangkapan layar laman OSS (bagi Sertifikat Standar yang menunggu verifikasi);","6) Tangkapan layar Penilaian Kinerja Penyedia pada SIKaP / hasil perhitungan kinerja manual; dan","7) Dokumen lain yang dipersyaratkan dalam Dokumen Kualifikasi."], allPB, "", ""],
     [["Pengalaman tertinggi dengan Nilai Kontrak (pekerjaan sejenis)."], p.pb.hadir==="Tidak Hadir"? "X" : !ready? "" : t.top>0? "S" : "TS", "", ready? rp(t.top) : ""]
   ];
   II.forEach(([lines,r,ex,j],k)=>rows.push(["",{t:(k+1)+".",al:"center"},{raw:txt(lines)},{t:resTxt(r,ex),al:"center"},{t:j,al:"center"}]));
-  rows.push(["",{t:"Jumlah nilai teknis kualifikasi setelah pembuktian (ambang batas: unsur b ≥ "+S.param.ambangB+", unsur c ≥ "+S.param.ambangC+", jumlah ≥ "+S.param.ambangTotal+")",b:true,span:2},{t: ready? String(t.total) + " — " + t.hasil : "……",b:true,al:"center",span:2}]);
+  rows.push(["",{t:"Jumlah nilai teknis kualifikasi setelah pembuktian (ambang batas: "+["a","b","c","d"].filter(k=>uAmb(k)).map(k=>"unsur "+k+" ≥ "+uAmb(k)).concat(["jumlah ≥ "+S.param.ambangTotal]).join(", ")+")",b:true,span:2},{t: ready? String(t.total) + " — " + t.hasil : "……",b:true,al:"center",span:2}]);
   h += wtable(rows, C, {header:true, sz:fs, hdrFill:null, noSplit:false});
   // KESIMPULAN
   let kes;
@@ -1793,12 +2140,14 @@ function partLampiran(p){
     grp(p.bentuk==="KSO"? "" : "3","NIB","(sesuai dengan yang dipersyaratkan dalam Dokumen Kualifikasi)");
     const sN = stPB(p,"nib");
     row("a.  Nomor", nib.nomor||"", sN); row("b.  Berlaku Sampai", "Selama menjalankan kegiatan usaha", sN); row("c.  Instansi Pemberi", "Lembaga OSS", sN);
-    grp(p.bentuk==="KSO"? "" : "4","Sertifikat Standar Terverifikasi (KBLI 2020)","(KBLI 71101 dan KBLI 71102)");
-    row("a.  Nomor — KBLI 71101", s1.nomor||"", sN); row("b.  Nomor — KBLI 71102", s2.nomor||"", sN); row("c.  Instansi Pemberi", "Lembaga OSS", sN);
-    row("d.  Status verifikasi / Tangkapan Layar OSS (jika belum terverifikasi)", [s1.ada, s2.ada].filter(Boolean).map((v,i)=>(i?"71102: ":"71101: ")+v).join("; ") || "Terverifikasi / Tidak Terverifikasi", sN);
+    const KB = (S.param.kbliList||[]).filter(Boolean);
+    grp(p.bentuk==="KSO"? "" : "4","Sertifikat Standar Terverifikasi (KBLI 2020)","("+kbliTxt()+")");
+    KB.forEach((kb,z)=> row(String.fromCharCode(97+z)+".  Nomor — KBLI "+kb, (A["ss"+(z+1)]||{}).nomor||"", sN));
+    row(String.fromCharCode(97+KB.length)+".  Instansi Pemberi", "Lembaga OSS", sN);
+    row(String.fromCharCode(98+KB.length)+".  Status verifikasi / Tangkapan Layar OSS (jika belum terverifikasi)", KB.map((kb,z)=>(A["ss"+(z+1)]||{}).ada? kb+": "+(A["ss"+(z+1)]).ada : "").filter(Boolean).join("; ") || "Terverifikasi / Tidak Terverifikasi", sN);
     const sS = stPB(p,"sbu");
-    [["AR001","Jasa Arsitektural Bangunan Gedung Hunian dan Non-Hunian",sb.ar,sb.nomor,sb.berlaku],["RK001","Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian",sb.rk,sb.nomorRK||sb.nomor,sb.berlakuRK||sb.berlaku]].forEach(([kode,nama,has,no,bl])=>{
-      grp(p.bentuk==="KSO"? "" : "5","SBU : " + kode + " (B)","(sesuai dengan yang dipersyaratkan dalam Dokumen Kualifikasi)");
+    sbuList().map((x,z)=>[x.kode, x.nama, sbuHas(sb,x.kode), z? (sb.nomorRK||sb.nomor) : sb.nomor, z? (sb.berlakuRK||sb.berlaku) : sb.berlaku]).forEach(([kode,nama,has,no,bl])=>{
+      grp(p.bentuk==="KSO"? "" : "5","SBU : " + kode + " (" + (K.kualifikasiUsaha||"Besar").charAt(0) + ")","(sesuai dengan yang dipersyaratkan dalam Dokumen Kualifikasi)");
       if(sb.kual && !has){ row("     Tidak memiliki subklasifikasi " + kode, p.bentuk==="KSO"? "Saling melengkapi dalam KSO" : "-", p.bentuk==="KSO"? NA : stPB(p,"sbu")); return; }
       row("a.  Nomor", no||"", sS); row("b.  Berlaku Sampai", tglShort(bl), sS); row("c.  Instansi Pemberi", "LPJK", sS);
       row("d.  Kualifikasi", sb.kual? sb.kual : "K / M / B", sS); row("e.  Subbidang Klasifikasi", kode + " — " + nama, sS);
@@ -1806,7 +2155,7 @@ function partLampiran(p){
     grp(p.bentuk==="KSO"? "" : "6","Perpajakan :");
     const sP = stPB(p,"pajak");
     row("a.  NPWP", e.npwp || (ei===0? p.npwp : "") || kw.nomor || "", sP);
-    row("b.  Pajak Tahun Terakhir (Bukti Lapor SPT Tahunan 2025)", spt.nomor || spt.ada || "", sP);
+    row("b.  Pajak Tahun Terakhir (Bukti Lapor SPT Tahunan "+(S.param.tahunSPT||TAh()-1)+")", spt.nomor || spt.ada || "", sP);
     row("c.  Konfirmasi Status Wajib Pajak Valid", kw.ada || "Valid / Tidak Valid", sP);
   });
   grp("7","KSO (jika ada) :", p.bentuk==="KSO"? "" : "(tuliskan No. & Tgl. Surat Perjanjian KSO)");
@@ -1826,9 +2175,9 @@ function partLampiran(p){
     if(!xs.length) row("     1.", "", PH);
     xs.forEach((xp,i)=> row(`     ${i+1}.  ${xp.nama||"-"}${p.bentuk==="KSO"? " ("+eName(p,+xp.ent)+")" : ""}`, `${xp.noKontrak||"-"}; ${rp(xp.nilai)}${xp.status==="KSO"? " (KSO "+(xp.share||"…")+"%)" : xp.status==="Subkontrak"? " (subkontrak)" : ""}\nBAST/PHO: ${tglShort(xp.tglBAST)||"-"}`, stExp(p,xp)));
   };
-  cat("a.  Kontrak Pekerjaan Jasa Konsultansi Konstruksi (4 tahun terakhir)", f=>f.a);
-  cat("b.  Kontrak Pekerjaan Sejenis (subklasifikasi AR001/RK001 atau lingkup pekerjaan)", f=>f.b);
-  cat("c.  Kontrak Sejenis (10 tahun terakhir) – Jasa Konsultan Perencanaan Konstruksi Pembangunan Gedung Pendidikan", f=>f.c);
+  if(U("a").aktif) cat("a.  "+U("a").label+" ("+U("a").periode+" tahun terakhir)", f=>f.a);
+  if(U("b").aktif) cat("b.  "+U("b").label+" ("+U("b").periode+" tahun terakhir)", f=>f.b);
+  if(U("c").aktif) cat("c.  "+U("c").label+" ("+U("c").periode+" tahun terakhir)", f=>f.c);
   row("d.  Penilaian Kinerja Penyedia (4 tahun terakhir, akumulatif)", isFinite(numPlain(p.kinerja))? `Nilai ${String(p.kinerja).replace(".",",")} — ${p.kinerjaSumber||""}` : "", stPB(p,"kinerja"));
   row("e.  Verifikasi data kualifikasi pada SIKaP", "", stPB(p,"sikap"));
   const topX = p.exps.filter(xp=>{ const f = expFlags(xp); return (f.b||f.c) && +xp.ent===0; }).sort((a,b2)=>expWeighted(b2)-expWeighted(a))[0];
